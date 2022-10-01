@@ -9,9 +9,8 @@ namespace Code.Items
 {
     public class Item : TileParent<ItemTile>
     {
-        public Box MyBox;
+        [HideInInspector] public Box MyBox;
 
-        public bool IsInBox => MyBox != null;
         public ItemTile[,] GetTiles()
         {
             return _tiles;
