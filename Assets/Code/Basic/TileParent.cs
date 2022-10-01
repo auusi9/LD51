@@ -8,7 +8,6 @@ namespace Code.Basic
     {
         [SerializeField] private T[] _tilesList;
         [SerializeField] private Vector2 _tileSize;
-        [SerializeField] private GridCanvas _gridCanvas;
 
         private int _width, _height;
         protected T[,] _tiles;
