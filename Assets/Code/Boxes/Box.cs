@@ -50,6 +50,8 @@ namespace Code.Boxes
             {
                 tile.Item = item;
             }
+
+            item.MyBox = this;
         }
     }
 }

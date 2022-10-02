@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Basic;
 using Code.Boxes;
+using Code.ConveyorBelts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,15 +11,23 @@ namespace Code.Items
     public class MovingItem : DraggableObject
     {
         [SerializeField] private Item _item;
+        [SerializeField] private GridCanvas _conveyorBeltCanvas;
 
         private List<BoxTile> _lastTiles;
         private Transform _defaultParent;
         private Vector3 _oldPosition;
         private bool _isDragging = false;
+        private Belt _myBelt;
         
         private void Awake()
         {
             _defaultParent = transform.parent;
+        }
+
+        public void SetBelt(Belt belt)
+        {
+            _myBelt = belt;
+            _myBelt.AddObjectToBelt(transform);
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -30,7 +39,13 @@ namespace Code.Items
             }
             
             base.OnPointerDown(eventData);
+            _isDragging = true;
             _oldPosition = transform.position;
+
+            if (_myBelt != null)
+            {
+                _myBelt.RemoveObjectFromBelt(transform);
+            }
         }
 
         public override void OnPointerUp(PointerEventData eventData)
@@ -39,6 +54,31 @@ namespace Code.Items
             _isDragging = false;
             
             TrySetIntoTile(eventData);
+
+            if (!_item.MyBox)
+            {
+                TrySetIntoBelt(eventData);
+            }
+        }
+
+        private void TrySetIntoBelt(PointerEventData eventData)
+        {
+            var results = new List<RaycastResult>();
+            _conveyorBeltCanvas.GraphicRaycaster.Raycast(eventData, results);
+
+            Belt currentBelt = null;
+
+            bool invalidPosition = false;
+
+            foreach (var hit in results)
+            {
+                var slot = hit.gameObject.GetComponent<Belt>();
+                if (slot != null)
+                {
+                    SetBelt(slot);
+                    break;
+                }
+            }
         }
 
         private void TrySetIntoTile(PointerEventData eventData)
@@ -79,7 +119,7 @@ namespace Code.Items
                 ClearLastTiles();
                 
                 transform.SetParent(_defaultParent);
-                return;
+                _item.MyBox = null;
             }
         }
 
@@ -99,7 +139,6 @@ namespace Code.Items
         public override void OnDrag(PointerEventData eventData)
         {
             base.OnDrag(eventData);
-            _isDragging = true;
             
             if (eventData.button == PointerEventData.InputButton.Right)
             {

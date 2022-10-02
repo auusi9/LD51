@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 7488813991003458606}
   - component: {fileID: 7488813991003458611}
   - component: {fileID: 7488813991003458609}
-  - component: {fileID: 7488813991003458615}
+  - component: {fileID: 6914145849379644712}
   - component: {fileID: 7488813991003458612}
   - component: {fileID: 7488813991003458614}
   m_Layer: 5
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Spacing: {x: 1, y: 1}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &7488813991003458615
+--- !u!114 &6914145849379644712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,13 +438,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7488813991003458607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77d8a1769e447afbd3a21c3a33653f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 10609cf822614356806625efa2970398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 7488813991003458606}
   _shadow: {fileID: 7488813991003458612}
-  _scale: 1
+  _scale: 1.2
   _gridCanvas: {fileID: 11400000, guid: 9bd1881041b31134888ef0499b578124, type: 2}
+  _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
 --- !u!114 &7488813991003458612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,11 +480,8 @@ MonoBehaviour:
   - {fileID: 7488813991871292338}
   - {fileID: 7488813990997788727}
   - {fileID: 7488813991273025045}
-  _padding: {x: 0, y: 0}
   _tileSize: {x: 50, y: 50}
-  _spacing: {x: 1, y: 1}
-  _width: 3
-  _height: 2
+  _doubleGrid: 0
 --- !u!1 &7488813991273025043
 GameObject:
   m_ObjectHideFlags: 0
