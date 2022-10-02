@@ -6,7 +6,7 @@ namespace Code.Basic
 {
     public abstract class TileParent<T> : MonoBehaviour where T : Tile
     {
-        [SerializeField] private T[] _tilesList;
+        [SerializeField] protected T[] _tilesList;
         [SerializeField] private Vector2 _tileSize;
         [SerializeField] private bool _doubleGrid;
 

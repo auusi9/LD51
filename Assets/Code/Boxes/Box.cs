@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Code.Basic;
 using Code.Items;
 using UnityEngine;
@@ -53,7 +54,7 @@ namespace Code.Boxes
             }
         }
 
-        public bool Fits(Item item, BoxTile boxTile, List<BoxTile> boxTiles, out BoxTile mainTile)
+        public bool Fits(Item item, Vector3 position, List<BoxTile> boxTiles, out BoxTile mainTile)
         {
             mainTile = null;
             ItemTile[,] getTiles = item.GetTiles();
@@ -63,8 +64,9 @@ namespace Code.Boxes
                 return false;
             }
 
-            Point initialPosition = boxTile.Position;
-
+            float distance = _tilesList.Min(x => Vector3.Distance(position, x.transform.position));
+            Point initialPosition =
+                _tilesList.FirstOrDefault(x => Vector3.Distance(position, x.transform.position) == distance).Position;
             for(int i = 0; i < item.TiledWidth; i++)
             {
                 for(int j = 0; j < item.TiledHeight; j++)

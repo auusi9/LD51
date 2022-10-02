@@ -124,9 +124,9 @@ namespace Code.Items
 
             foreach (var hit in results)
             {
-                var slot = hit.gameObject.GetComponent<BoxTile>();
+                var slot = hit.gameObject.GetComponent<Box>();
                 List<BoxTile> tiles = new List<BoxTile>();
-                if (slot && slot.Fits(_item,  tiles, out BoxTile mainTile))
+                if (slot && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
                 {
                     if(mainTile == null)
                         continue;
@@ -186,9 +186,9 @@ namespace Code.Items
             
             foreach (var hit in results)
             {
-                var slot = hit.gameObject.GetComponent<BoxTile>();
+                var slot = hit.gameObject.GetComponent<Box>();
                 List<BoxTile> tiles = new List<BoxTile>();
-                if (slot && slot.Fits(_item, tiles, out BoxTile mainTile))
+                if (slot && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
                 {
                     if (mainTile != null)
                     {
