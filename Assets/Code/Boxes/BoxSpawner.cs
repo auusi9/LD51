@@ -6,7 +6,7 @@ namespace Code.Boxes
 {
     public class BoxSpawner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private DraggableObject _boxPrefab;
+        [SerializeField] private MovingBox _boxPrefab;
         [SerializeField] private GridCanvas _gridCanvas;
 
         private DraggableObject _lastBox;
