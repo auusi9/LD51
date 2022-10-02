@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using Code.Basic;
 using Code.Items;
@@ -12,7 +13,44 @@ namespace Code.Boxes
         [SerializeField] private Image _closedBox;
         [SerializeField] private Image _background;
         [SerializeField] private Button _closeBoxButton;
+
+        private bool _open = true;
         
+        private void OnEnable()
+        {
+            _closeBoxButton.onClick.AddListener(CloseOpenBox);
+        }
+
+        private void OnDisable()
+        {
+            _closeBoxButton.onClick.RemoveListener(CloseOpenBox);
+        }
+
+        private void CloseOpenBox()
+        {
+            if (_open)
+            {
+                _open = false;
+                _closedBox.gameObject.SetActive(true);
+                _background.gameObject.SetActive(false);
+
+                foreach (var tile in _tiles)
+                {
+                    tile.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                _open = true;
+                _closedBox.gameObject.SetActive(false);
+                _background.gameObject.SetActive(true);
+                foreach (var tile in _tiles)
+                {
+                    tile.gameObject.SetActive(true);
+                }
+            }
+        }
+
         public bool Fits(Item item, BoxTile boxTile, List<BoxTile> boxTiles, out BoxTile mainTile)
         {
             mainTile = null;
