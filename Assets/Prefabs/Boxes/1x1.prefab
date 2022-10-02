@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 30547476953b0b6409199ed62cd02df5, type: 3}
+    - target: {fileID: 643919033201270977, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 706533850540624355, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27,9 +31,25 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 96
       objectReference: {fileID: 0}
+    - target: {fileID: 1499728235441431869, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827778912324328545, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4266462779631040119, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449567368178100021, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979477049135326515, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567576482831651966, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
       propertyPath: m_Sprite
@@ -172,6 +192,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7488813991871292339, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579508716362991998, guid: 027646d789c843a47ac30a2afdef714e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
