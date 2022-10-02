@@ -33,8 +33,8 @@ namespace Code.Basic
         {
             if (_tilesList.Length == 1)
             {
-                _xMax = _tileSize.x;
-                _yMax = _tileSize.y;
+                _xMax = _tileSize.x/2;
+                _yMax = _tileSize.y/2;
             }
             else
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Basic;
+using Code.Configurations;
 using Code.Items;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,17 +9,17 @@ namespace Code.ConveyorBelts
 {
     public class BeltItemSpawner : MonoBehaviour
     {
-        [SerializeField] private MovingItem[] _itemsPrefab;
+        [SerializeField] private ItemsConfiguration _itemsConfiguration;
         [SerializeField] private ComponentPool<MovingItem>[] _poolArray;
         [SerializeField] private Transform _itemsParent;
 
         private void Start()
         {
-            _poolArray = new ComponentPool<MovingItem>[_itemsPrefab.Length];
-            for (var i = 0; i < _itemsPrefab.Length; i++)
+            _poolArray = new ComponentPool<MovingItem>[_itemsConfiguration.ShapesAmount];
+            for (var i = 0; i < _itemsConfiguration.ShapesAmount; i++)
             {
-                var prefab = _itemsPrefab[i];
-                _poolArray[i] = new ComponentPool<MovingItem>(10, _itemsPrefab[i], _itemsParent);
+                var prefab = _itemsConfiguration.Shapes[i];
+                _poolArray[i] = new ComponentPool<MovingItem>(10, prefab.GetComponent<MovingItem>(), _itemsParent);
             }
         }
 

@@ -230,15 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6954f8140caa45e1b321f0b5718998a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemsPrefab:
-  - {fileID: 5334699788442945070, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
-  - {fileID: 354812004053662932, guid: e99ceaed69d6c7e4ab12d6a4c2759790, type: 3}
-  - {fileID: 354812004053662932, guid: 91777ce8442b6bd449fa7fd183444eb0, type: 3}
-  - {fileID: 354812004053662932, guid: 9582a38a1c20bfb4eb684e5887a890cf, type: 3}
-  - {fileID: 354812004053662932, guid: af204d8ef4236364ea89dcc539496cb4, type: 3}
-  - {fileID: 354812004053662932, guid: a9f52ae7b1eaffc40acf51fd598386f4, type: 3}
-  - {fileID: 354812004053662932, guid: 14d3c4ed0da626549954c7f0a3a4998f, type: 3}
-  - {fileID: 354812004053662932, guid: 754a162c747488646806f30670ec9a5e, type: 3}
+  _itemsConfiguration: {fileID: 11400000, guid: 2659a029108ad694394dad52130c1d7b, type: 2}
   _itemsParent: {fileID: 0}
 --- !u!114 &1448931420406422679
 MonoBehaviour:
