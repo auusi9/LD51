@@ -17,5 +17,11 @@ namespace Code.Items
         {
             return _tiles;
         }
+
+        public override void Rotate()
+        {
+            base.Rotate();
+            _image.transform.Rotate(Vector3.forward, -90f);
+        }
     }
 }

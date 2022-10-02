@@ -101,13 +101,14 @@ namespace Code.Basic
             return _tiles[x, y];
         }
 
-        public void Rotate()
+        public virtual void Rotate()
         {
             foreach (var item in _tilesList)
             {
                 RectTransform rectTransform = (RectTransform) item.transform;
                 rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.y, -rectTransform.anchoredPosition.x);
             }
+            
             CalculateTilePositions();
         }
     }

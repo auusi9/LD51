@@ -21,6 +21,8 @@ namespace Code.Items
         private ComponentPool<MovingItem> _myPool;
 
 
+        public override bool HasPool => _myPool != null;
+
         private void Awake()
         {
             _defaultParent = transform.parent;
@@ -31,17 +33,27 @@ namespace Code.Items
             _myPool = myPool;
         }
 
-        public override void ReturnToPool()
+        protected override void ReturnToPool()
         {
             _myPool.ReturnMono(this);
         }
 
-        public override bool HasPool => _myPool != null;
-        
         public override void SetBelt(Belt belt)
         {
             _myBelt = belt;
             _myBelt.AddObjectToBelt(this);
+        }
+        
+        public override void Destroy()
+        {
+            if (HasPool)
+            {
+                ReturnToPool();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -49,6 +61,7 @@ namespace Code.Items
             if (eventData.button == PointerEventData.InputButton.Right && _isDragging)
             {
                 _item.Rotate();
+                base.OnDrag(eventData);
                 return;
             }
             
@@ -64,6 +77,11 @@ namespace Code.Items
 
         public override void OnPointerUp(PointerEventData eventData)
         {
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                return;
+            }
+            
             base.OnPointerUp(eventData);
             _isDragging = false;
             

@@ -28,7 +28,6 @@ namespace Code.ConveyorBelts
         {
             if (_timeBetweenItems <= _timeWithoutItem)
             {
-                //NewItem
                 _timeWithoutItem = 0;
                 DraggableObject item = _beltItemSpawner.GetRandomItem();
                 item.SetBelt(this);
@@ -54,15 +53,7 @@ namespace Code.ConveyorBelts
             foreach (var obj in toDestroy)
             {
                 RemoveObjectFromBelt(obj);
-
-                if (obj.HasPool)
-                {
-                    obj.ReturnToPool();
-                }
-                else
-                {
-                    Destroy(obj);
-                }
+                obj.Destroy();
             }
         }
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Burners;
 using Code.ConveyorBelts;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +14,8 @@ namespace Code.Basic
         [SerializeField] private Shadow _shadow;
         [SerializeField] private float _scale = 1.0f;
         [SerializeField] protected GridCanvas _gridCanvas;
+        [SerializeField] protected GridCanvas _burner;
+        [SerializeField] protected GridCanvas _sender;
 
         public event Action RightClickEvent;
 
@@ -19,7 +23,7 @@ namespace Code.Basic
 
         public virtual bool HasPool => false;
         
-        public virtual void ReturnToPool()
+        protected virtual void ReturnToPool()
         {
         }
         
@@ -82,6 +86,7 @@ namespace Code.Basic
             
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             _shadow.enabled = false;
+            TrySetIntoBurner(eventData);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -97,6 +102,27 @@ namespace Code.Basic
         public virtual void SetBelt(Belt belt)
         {
             
+        }
+
+        public virtual void Destroy()
+        {
+            Destroy(gameObject);
+        }
+        
+        private void TrySetIntoBurner(PointerEventData eventData)
+        {
+            var results = new List<RaycastResult>();
+            _burner.GraphicRaycaster.Raycast(eventData, results);
+            
+            foreach (var hit in results)
+            {
+                var slot = hit.gameObject.GetComponent<Burner>();
+                if (slot != null)
+                {
+                    Destroy();
+                    break;
+                }
+            }
         }
     }
 }

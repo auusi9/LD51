@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Basic;
 using Code.ConveyorBelts;
+using Code.Senders;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -30,7 +31,11 @@ namespace Code.Boxes
         public override void OnPointerUp(PointerEventData eventData)
         {
             base.OnPointerUp(eventData);
-
+            if (TrySend(eventData))
+            {
+                return;
+            }
+            
             TrySetIntoBelt(eventData);
         }
         
@@ -52,6 +57,28 @@ namespace Code.Boxes
                     break;
                 }
             }
+        }
+        
+        private bool TrySend(PointerEventData eventData)
+        {
+            var results = new List<RaycastResult>();
+            _sender.GraphicRaycaster.Raycast(eventData, results);
+
+            Sender currentBelt = null;
+
+            bool invalidPosition = false;
+
+            foreach (var hit in results)
+            {
+                var slot = hit.gameObject.GetComponent<Sender>();
+                if (slot != null)
+                {
+                    slot.Send(this);
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

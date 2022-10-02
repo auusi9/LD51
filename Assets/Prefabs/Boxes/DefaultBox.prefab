@@ -816,8 +816,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 7488813991003458606}
   _shadow: {fileID: 7488813991003458612}
-  _scale: 1.2
+  _scale: 1.1
   _gridCanvas: {fileID: 11400000, guid: 9bd1881041b31134888ef0499b578124, type: 2}
+  _burner: {fileID: 11400000, guid: 4330b24143ca9f34c9be7ad0cc3acc65, type: 2}
+  _sender: {fileID: 11400000, guid: 38d225fac71f0ce4cba21c2d0068d04e, type: 2}
   _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
 --- !u!114 &7488813991003458612
 MonoBehaviour:
