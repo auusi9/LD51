@@ -1,4 +1,6 @@
-﻿using Code.Configurations;
+﻿using System.Linq;
+using Code.Configurations;
+using Code.Items;
 using Code.Orders;
 using Code.Services.Entities;
 using UnityEngine;
@@ -14,7 +16,17 @@ namespace Code.Notifications
         
         public void SetItem(ItemEntity itemEntity)
         {
-            
+            if (itemEntity.Shape == -1)
+            {
+                ItemType itemType = _itemsConfiguration.Types[itemEntity.ItemId];
+
+                Item item = _itemsConfiguration.Shapes.FirstOrDefault(x => x.ItemType == itemType);
+                if (item != null)
+                {
+                    _icon.sprite = item._image.sprite;
+                    _icon.SetNativeSize();
+                }
+            }
         }
 
         public void UpdateNotification(ItemsCompleted itemsCompleted)

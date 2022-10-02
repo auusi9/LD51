@@ -10,8 +10,9 @@ namespace Code.Boxes
     public class MovingBox : DraggableObject
     {
         [SerializeField] private GridCanvas _conveyorBeltCanvas;
+        public Box Box;
         private Belt _myBelt;
-        
+
         public override void SetBelt(Belt belt)
         {
             _myBelt = belt;

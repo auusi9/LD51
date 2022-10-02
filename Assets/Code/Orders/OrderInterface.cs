@@ -95,6 +95,7 @@ namespace Code.Orders
             else
             {
                 OrderUpdated?.Invoke(orderUpdater);
+                Destroy(box.gameObject);
             }
         }
 
