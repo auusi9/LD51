@@ -13,6 +13,7 @@ namespace Code.Items
     {
         [HideInInspector] public Box MyBox;
         [SerializeField] public Image _image;
+        [SerializeField] public Image _shadow;
         [SerializeField] private ItemType _itemType;
 
         public ItemType ItemType => _itemType;
@@ -31,6 +32,7 @@ namespace Code.Items
         {
             base.Rotate();
             _image.transform.Rotate(Vector3.forward, -90f);
+            _shadow.transform.Rotate(Vector3.forward, -90f);
         }
     }
 }
