@@ -51,6 +51,7 @@ namespace Code.Orders
         public void BoxSent(Box box)
         {
             List<Item> items = box.GetItems();
+            Debug.Log("Box  item count " + items.Count + " and box is open " + box.IsOpen);
 
             if (items.Count == 0 || _currentOrders.Count == 0 || box.IsOpen)
             {
@@ -72,31 +73,75 @@ namespace Code.Orders
                 entities.Add(new ItemEntity (itemsIds[i], _itemsHaveDifferentShapes ? shapes[i] : -1));
             }
 
-            OrderUpdater orderUpdater = _currentOrders.FirstOrDefault(x => x.Order.Items.Intersect(entities).Count() == entities.Count);
+            List<OrderUpdater> ordersUpdater = new List<OrderUpdater>();
 
+            foreach (var order in _currentOrders)
+            {
+                bool hasAllItems = true;
+                foreach (var entity in entities)
+                {
+                    ItemsCompleted itemsCompleted =
+                        order.ItemsCompleted.FirstOrDefault(x => !x.Completed && x.ItemEntity.Equals(entity));
+                    if (itemsCompleted == null)
+                    {
+                        hasAllItems = false;
+                        break;
+                    }
+                }
+
+                if (hasAllItems)
+                {
+                    ordersUpdater.Add(order);
+                }
+            }
+
+            OrderUpdater orderUpdater = GetBestOrder(ordersUpdater, entities.Count);
+            
             if (orderUpdater == null)
             {
                 Destroy(box.gameObject);
+                Debug.Log("No order found for this items");
                 return;
             }
 
             foreach (var entity in entities)
             {
-                ItemsCompleted itemsCompleted = orderUpdater.ItemsCompleted.FirstOrDefault(x => Equals(x.ItemEntity, entity));
+                ItemsCompleted itemsCompleted = orderUpdater.ItemsCompleted.FirstOrDefault(x => Equals(x.ItemEntity, entity) && !x.Completed);
                 itemsCompleted.Completed = true;
             }
 
             if (orderUpdater.IsComplete)
             {
                 Destroy(box.gameObject);
+                Debug.Log("Order completed");
                 OrderCompleted?.Invoke(new OrderCompleted(orderUpdater.Order, orderUpdater.Score));
                 _currentOrders.Remove(orderUpdater);
             }
             else
             {
                 OrderUpdated?.Invoke(orderUpdater);
+                Debug.Log("Order updated");
                 Destroy(box.gameObject);
             }
+        }
+
+        private OrderUpdater GetBestOrder(List<OrderUpdater> ordersUpdater, int entitiesCount)
+        {
+            OrderUpdater orderUpdater =
+                ordersUpdater.FirstOrDefault(x => x.ItemsCompleted.Count(y => !y.Completed) == entitiesCount);
+
+            if (orderUpdater != null)
+            {
+                Debug.Log("Best order found");
+                return orderUpdater;
+            }
+
+            if (ordersUpdater.Count > 0)
+            {
+                return ordersUpdater[0];
+            }
+
+            return null;
         }
 
         public void OrderExpired(string id)
