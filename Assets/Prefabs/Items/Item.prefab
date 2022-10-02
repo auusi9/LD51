@@ -335,6 +335,7 @@ MonoBehaviour:
   _image: {fileID: 5334699788092099543}
   _shadow: {fileID: 5897631036303969911}
   _itemType: {fileID: 11400000, guid: db2f5f708185ad548a3750adf94ff1a7, type: 2}
+  Icon: {fileID: 21300000, guid: dd062b3dd3c09eb42b7ebedece796ee1, type: 3}
 --- !u!1 &9196474124139263046
 GameObject:
   m_ObjectHideFlags: 0
