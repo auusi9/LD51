@@ -18,16 +18,30 @@ namespace Code.Items
         private Vector3 _oldPosition;
         private bool _isDragging = false;
         private Belt _myBelt;
-        
+        private ComponentPool<MovingItem> _myPool;
+
+
         private void Awake()
         {
             _defaultParent = transform.parent;
         }
 
-        public void SetBelt(Belt belt)
+        public void SetPool(ComponentPool<MovingItem> myPool)
+        {
+            _myPool = myPool;
+        }
+
+        public override void ReturnToPool()
+        {
+            _myPool.ReturnMono(this);
+        }
+
+        public override bool HasPool => _myPool != null;
+        
+        public override void SetBelt(Belt belt)
         {
             _myBelt = belt;
-            _myBelt.AddObjectToBelt(transform);
+            _myBelt.AddObjectToBelt(this);
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -44,7 +58,7 @@ namespace Code.Items
 
             if (_myBelt != null)
             {
-                _myBelt.RemoveObjectFromBelt(transform);
+                _myBelt.RemoveObjectFromBelt(this);
             }
         }
 

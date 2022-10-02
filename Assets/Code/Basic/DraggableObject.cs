@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.ConveyorBelts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,14 +14,15 @@ namespace Code.Basic
         [SerializeField] protected GridCanvas _gridCanvas;
 
         public event Action RightClickEvent;
-        
+
         private Vector3 _moveOffset;
 
-        public void SetGridCanvas(GridCanvas gridCanvas)
+        public virtual bool HasPool => false;
+        
+        public virtual void ReturnToPool()
         {
-            _gridCanvas = gridCanvas;
         }
-
+        
         public void OnBeginDrag(PointerEventData eventData)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
@@ -88,6 +90,11 @@ namespace Code.Basic
         }
 
         public void OnPointerExit(PointerEventData eventData)
+        {
+            
+        }
+
+        public virtual void SetBelt(Belt belt)
         {
             
         }
