@@ -15,6 +15,8 @@ namespace Code.Boxes
         [SerializeField] private Button _closeBoxButton;
 
         private bool _open = true;
+
+        public bool IsOpen => _open;
         
         private void OnEnable()
         {

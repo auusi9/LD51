@@ -52,7 +52,7 @@ namespace Code.Orders
         {
             List<Item> items = box.GetItems();
 
-            if (items.Count == 0 || _currentOrders.Count == 0)
+            if (items.Count == 0 || _currentOrders.Count == 0 || box.IsOpen)
             {
                 Destroy(box.gameObject);
                 return;
