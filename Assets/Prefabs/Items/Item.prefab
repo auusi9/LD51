@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -7}
+  m_AnchoredPosition: {x: 9, y: -9}
   m_SizeDelta: {x: 79, y: 83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5504382167669409606
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.32941177}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 5334699788442945064}
   _shadow: {fileID: 5334699788442945071}
-  _scale: 1
+  _scale: 0.95
   _gridCanvas: {fileID: 11400000, guid: 9e69418d6db15c54fb48db3847fda42c, type: 2}
   _burner: {fileID: 11400000, guid: 4330b24143ca9f34c9be7ad0cc3acc65, type: 2}
   _sender: {fileID: 11400000, guid: 38d225fac71f0ce4cba21c2d0068d04e, type: 2}
@@ -333,6 +333,7 @@ MonoBehaviour:
   _doubleGrid: 1
   MyBox: {fileID: 0}
   _image: {fileID: 5334699788092099543}
+  _shadow: {fileID: 5897631036303969911}
   _itemType: {fileID: 11400000, guid: db2f5f708185ad548a3750adf94ff1a7, type: 2}
 --- !u!1 &9196474124139263046
 GameObject:
