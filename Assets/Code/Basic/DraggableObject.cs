@@ -20,6 +20,7 @@ namespace Code.Basic
         public event Action RightClickEvent;
 
         private Vector3 _moveOffset;
+        private Vector3 _oldScale;
 
         public virtual bool HasPool => false;
         
@@ -71,7 +72,7 @@ namespace Code.Basic
                 RightClickEvent?.Invoke();
                 return;
             }
-            
+            _oldScale = transform.localScale;
             transform.localScale = new Vector3(_scale, _scale, 1.0f);
             _shadow.enabled = true;
             transform.SetAsLastSibling();
@@ -83,8 +84,8 @@ namespace Code.Basic
             {
                 return;
             }
-            
-            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+            transform.localScale = _oldScale; // new Vector3(1.0f, 1.0f, 1.0f);
             _shadow.enabled = false;
             TrySetIntoBurner(eventData);
         }
