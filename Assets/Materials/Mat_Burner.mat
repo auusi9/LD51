@@ -33,5 +33,5 @@ Material:
     - _BeltTexTilling: 8
     - _Speed: 1.2
     m_Colors:
-    - _Color: {r: 0.34509805, g: 0.36078432, b: 0.75294125, a: 1}
+    - _Color: {r: 0.7411765, g: 0.33333334, b: 0.38823533, a: 1}
   m_BuildTextureStacks: []

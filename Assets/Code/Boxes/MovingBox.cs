@@ -44,10 +44,6 @@ namespace Code.Boxes
             var results = new List<RaycastResult>();
             _conveyorBeltCanvas.GraphicRaycaster.Raycast(eventData, results);
 
-            Belt currentBelt = null;
-
-            bool invalidPosition = false;
-
             foreach (var hit in results)
             {
                 var slot = hit.gameObject.GetComponent<Belt>();
@@ -63,10 +59,6 @@ namespace Code.Boxes
         {
             var results = new List<RaycastResult>();
             _sender.GraphicRaycaster.Raycast(eventData, results);
-
-            Sender currentBelt = null;
-
-            bool invalidPosition = false;
 
             foreach (var hit in results)
             {

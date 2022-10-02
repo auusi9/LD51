@@ -7,5 +7,6 @@
         public int MaximumItemsXOrder;
         public int MinimumItemsXOrder;
         public float OrderExpirationTime;
+        public bool ItemsHaveDifferentShapes;
     }
 }

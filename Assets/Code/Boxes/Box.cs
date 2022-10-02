@@ -82,5 +82,20 @@ namespace Code.Boxes
 
             item.MyBox = this;
         }
+
+        public List<Item> GetItems()
+        {
+            List<Item> items = new List<Item>();
+            
+            foreach (var tile in _tiles)
+            {
+                if (tile.Item && !items.Contains(tile.Item))
+                {
+                    items.Add(tile.Item);
+                }
+            }
+
+            return items;
+        }
     }
 }

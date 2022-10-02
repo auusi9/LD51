@@ -249,6 +249,10 @@ PrefabInstance:
       value: Item2
       objectReference: {fileID: 0}
     - target: {fileID: 5334699788442945068, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
+      propertyPath: _itemType
+      value: 
+      objectReference: {fileID: 11400000, guid: ca56aaf1002773b43b2b492b4a3b9168, type: 2}
+    - target: {fileID: 5334699788442945068, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
       propertyPath: _tilesList.Array.size
       value: 2
       objectReference: {fileID: 0}

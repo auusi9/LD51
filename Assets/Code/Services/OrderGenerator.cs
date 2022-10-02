@@ -27,10 +27,21 @@ namespace Code.Services
 
             for (int i = 0; i < quantity; i++)
             {
-                newItems.Add(new ItemEntity(
-                    Random.Range(0, _orderConfigurator.ItemAmount),
-                    Random.Range(0, _orderConfigurator.ShapesAmount)
+                if (!_orderConfigurator.ItemsHaveDifferentShapes)
+                {
+                    newItems.Add(new ItemEntity(
+                        Random.Range(0, _orderConfigurator.ItemAmount),
+                        -1 //Same shape for this item type
                     ));
+                }
+                else
+                {
+                                    
+                    newItems.Add(new ItemEntity(
+                        Random.Range(0, _orderConfigurator.ItemAmount),
+                        Random.Range(0, _orderConfigurator.ShapesAmount)
+                    ));
+                }
             }
             return newItems;
         }

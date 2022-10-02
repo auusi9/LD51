@@ -333,6 +333,7 @@ MonoBehaviour:
   _doubleGrid: 1
   MyBox: {fileID: 0}
   _image: {fileID: 5334699788092099543}
+  _itemType: {fileID: 11400000, guid: db2f5f708185ad548a3750adf94ff1a7, type: 2}
 --- !u!1 &9196474124139263046
 GameObject:
   m_ObjectHideFlags: 0
