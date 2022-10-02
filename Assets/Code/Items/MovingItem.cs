@@ -14,6 +14,7 @@ namespace Code.Items
         private List<BoxTile> _lastTiles;
         private Transform _defaultParent;
         private Vector3 _oldPosition;
+        private bool _isDragging = false;
         
         private void Awake()
         {
@@ -22,6 +23,12 @@ namespace Code.Items
 
         public override void OnPointerDown(PointerEventData eventData)
         {
+            if (eventData.button == PointerEventData.InputButton.Right && _isDragging)
+            {
+                _item.Rotate();
+                return;
+            }
+            
             base.OnPointerDown(eventData);
             _oldPosition = transform.position;
         }
@@ -29,6 +36,7 @@ namespace Code.Items
         public override void OnPointerUp(PointerEventData eventData)
         {
             base.OnPointerUp(eventData);
+            _isDragging = false;
             
             TrySetIntoTile(eventData);
         }
@@ -91,6 +99,13 @@ namespace Code.Items
         public override void OnDrag(PointerEventData eventData)
         {
             base.OnDrag(eventData);
+            _isDragging = true;
+            
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                return;
+            }
+            
             var results = new List<RaycastResult>();
             _gridCanvas.GraphicRaycaster.Raycast(eventData, results);
             

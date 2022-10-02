@@ -19,14 +19,16 @@ namespace Code.Boxes
             }
 
             Point initialPosition = boxTile.Position;
+            int width = item.Width-1;
+            int height = item.Height-1;
             
-            for(int i = 0; i < item.Width; i++)
+            for(int i = 0; i < item.TiledWidth; i++)
             {
-                for(int j = 0; j < item.Height; j++)
+                for(int j = 0; j < item.TiledHeight; j++)
                 {
                     if (getTiles[i, j] != null)
                     {
-                        BoxTile tile = GetTileAtPosition(initialPosition.X + i, initialPosition.Y + j);
+                        BoxTile tile = GetTileAtPosition(initialPosition.X + i - width, initialPosition.Y + j - height);
                         
                         if(tile != null && tile.IsAvailable(item))
                         {
