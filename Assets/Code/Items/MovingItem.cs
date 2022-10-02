@@ -125,13 +125,17 @@ namespace Code.Items
             foreach (var hit in results)
             {
                 var slot = hit.gameObject.GetComponent<BoxTile>();
-                if (slot && slot.Fits(_item, out List<BoxTile> tiles))
+                List<BoxTile> tiles = new List<BoxTile>();
+                if (slot && slot.Fits(_item,  tiles, out BoxTile mainTile))
                 {
+                    if(mainTile == null)
+                        continue;
+                    
                     ClearLastTiles();
                     _lastTiles = tiles;
-                    currentTile = slot;
-                    slot.SetItemToBox(_item, tiles);
-                    transform.SetParent(slot.transform);
+                    currentTile = mainTile;
+                    mainTile.SetItemToBox(_item, tiles);
+                    transform.SetParent(mainTile.transform);
                     break;
                 }
 
@@ -183,9 +187,13 @@ namespace Code.Items
             foreach (var hit in results)
             {
                 var slot = hit.gameObject.GetComponent<BoxTile>();
-                if (slot && slot.Fits(_item, out List<BoxTile> tiles))
+                List<BoxTile> tiles = new List<BoxTile>();
+                if (slot && slot.Fits(_item, tiles, out BoxTile mainTile))
                 {
-                    transform.position = slot.transform.position;
+                    if (mainTile != null)
+                    {
+                        transform.position = mainTile.transform.position;
+                    }
                     break;
                 }
             }

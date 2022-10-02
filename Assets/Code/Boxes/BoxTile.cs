@@ -11,15 +11,15 @@ namespace Code.Boxes
 
         [HideInInspector] public Item Item;
         
-        public bool Fits(Item item, out List<BoxTile> result)
+        public bool Fits(Item item, List<BoxTile> result, out BoxTile mainTile)
         {
+            mainTile = null;
             if (!IsAvailable(item))
             {
-                result = new List<BoxTile>(0);
                 return false;
             }
             
-            return _box.Fits(item, this, out result);
+            return _box.Fits(item, this, result, out mainTile);
         }
 
         public void SetItemToBox(Item item, List<BoxTile> tilesToGo)
