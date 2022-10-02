@@ -19,9 +19,6 @@ namespace Code.Basic
 
         public event Action RightClickEvent;
 
-        private Vector3 _moveOffset;
-        private Vector3 _oldScale;
-
         public virtual bool HasPool => false;
         
         protected virtual void ReturnToPool()
@@ -31,7 +28,6 @@ namespace Code.Basic
         public void OnBeginDrag(PointerEventData eventData)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
-            _moveOffset = transform.position - _gridCanvas.Canvas.transform.TransformPoint(localPoint);
             OnDrag(eventData);
         }
 
@@ -43,7 +39,7 @@ namespace Code.Basic
             }
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
-            transform.position = _gridCanvas.Canvas.transform.TransformPoint(localPoint) + _moveOffset;
+            transform.position = _gridCanvas.Canvas.transform.TransformPoint(localPoint);
             
             Vector3[] fourCornersArray = new Vector3[4];
             _gridCanvas.Parent.GetWorldCorners(fourCornersArray);
@@ -72,10 +68,12 @@ namespace Code.Basic
                 RightClickEvent?.Invoke();
                 return;
             }
-            _oldScale = transform.localScale;
             transform.localScale *= _scale;
             _shadow.enabled = true;
             transform.SetAsLastSibling();
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
+            transform.position = _gridCanvas.Canvas.transform.TransformPoint(localPoint);
         }
 
         public virtual void OnPointerUp(PointerEventData eventData)
