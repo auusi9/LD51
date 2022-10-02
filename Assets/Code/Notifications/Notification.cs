@@ -84,7 +84,7 @@ namespace Code.Notifications
 
         private void Update()
         {
-            _barFill.fillAmount = (Time.time - _order.OrderCreatedTime) / (_order.OrderExpirationTime - _order.OrderCreatedTime);
+            _barFill.fillAmount = 1 - (Time.time - _order.OrderCreatedTime) / (_order.OrderExpirationTime - _order.OrderCreatedTime);
             
             if(_order.OrderExpirationTime < Time.time)
             {
