@@ -73,7 +73,7 @@ namespace Code.Basic
                 return;
             }
             _oldScale = transform.localScale;
-            transform.localScale = new Vector3(_scale, _scale, 1.0f);
+            transform.localScale *= _scale;
             _shadow.enabled = true;
             transform.SetAsLastSibling();
         }
@@ -85,7 +85,7 @@ namespace Code.Basic
                 return;
             }
 
-            transform.localScale = _oldScale; // new Vector3(1.0f, 1.0f, 1.0f);
+            transform.localScale *= 1 / _scale;
             _shadow.enabled = false;
             TrySetIntoBurner(eventData);
         }
