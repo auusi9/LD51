@@ -44,6 +44,3 @@ TagManager:
   - name: Box
     uniqueID: 2210058493
     locked: 0
-  - name: Items
-    uniqueID: 1709162251
-    locked: 0
