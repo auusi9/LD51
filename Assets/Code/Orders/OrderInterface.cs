@@ -63,7 +63,7 @@ namespace Code.Orders
 
             if (_itemsHaveDifferentShapes)
             {
-                shapes = items.Select(x => Array.IndexOf(_itemsConfiguration.Shapes,  _itemsConfiguration.Shapes.FirstOrDefault(y => y._image.sprite == x._image.sprite))).ToList();
+                shapes = items.Select(x => Array.IndexOf(_itemsConfiguration.Shapes,  _itemsConfiguration.Shapes.FirstOrDefault(y => y.Icon == x.Icon))).ToList();
             }
 
             List<ItemEntity> entities = new List<ItemEntity>();

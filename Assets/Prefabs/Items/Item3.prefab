@@ -386,6 +386,10 @@ PrefabInstance:
       value: Item3
       objectReference: {fileID: 0}
     - target: {fileID: 5334699788442945068, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
+      propertyPath: Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: c5b7175d12bd0db4d9ba974f9e66fd1f, type: 3}
+    - target: {fileID: 5334699788442945068, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
       propertyPath: _itemType
       value: 
       objectReference: {fileID: 11400000, guid: 683b869783fcca34b9afa50d0bad9086, type: 2}

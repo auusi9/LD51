@@ -12,10 +12,11 @@ namespace Code.Items
     public class Item : TileParent<ItemTile>
     {
         [HideInInspector] public Box MyBox;
-        [SerializeField] public Image _image;
-        [SerializeField] public Image _shadow;
+        [SerializeField] private Image _image;
+        [SerializeField] private Image _shadow;
         [SerializeField] private ItemType _itemType;
-
+        public Sprite Icon;
+        
         public ItemType ItemType => _itemType;
         
         public ItemTile[,] GetTiles()

@@ -23,7 +23,7 @@ namespace Code.Notifications
                 Item item = _itemsConfiguration.Shapes.FirstOrDefault(x => x.ItemType == itemType);
                 if (item != null)
                 {
-                    _icon.sprite = item._image.sprite;
+                    _icon.sprite = item.Icon;
                     _icon.SetNativeSize();
                 }
             }
