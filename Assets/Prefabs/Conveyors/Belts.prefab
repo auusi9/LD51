@@ -731,7 +731,6 @@ GameObject:
   - component: {fileID: 7836901222337492121}
   - component: {fileID: 8511126589824036121}
   - component: {fileID: 6830366875553519040}
-  - component: {fileID: 2032605970954575334}
   m_Layer: 5
   m_Name: BorderFillRight
   m_TagString: Untagged
@@ -797,21 +796,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2032605970954575334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106296921780473639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: -8, y: -8}
-  m_UseGraphicAlpha: 1
 --- !u!1 &6017389087512935101
 GameObject:
   m_ObjectHideFlags: 0
