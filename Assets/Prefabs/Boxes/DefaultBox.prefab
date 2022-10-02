@@ -1211,6 +1211,9 @@ MonoBehaviour:
   - {fileID: 7488813991273025045}
   _tileSize: {x: 80, y: 80}
   _doubleGrid: 0
+  _closedBox: {fileID: 3193968722241980473}
+  _background: {fileID: 5769881672343305482}
+  _closeBoxButton: {fileID: 763112609084072882}
 --- !u!1 &7488813991273025043
 GameObject:
   m_ObjectHideFlags: 0

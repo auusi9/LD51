@@ -2,11 +2,17 @@
 using System.Drawing;
 using Code.Basic;
 using Code.Items;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Code.Boxes
 {
     public class Box : TileParent<BoxTile>
     {
+        [SerializeField] private Image _closedBox;
+        [SerializeField] private Image _background;
+        [SerializeField] private Button _closeBoxButton;
+        
         public bool Fits(Item item, BoxTile boxTile, List<BoxTile> boxTiles, out BoxTile mainTile)
         {
             mainTile = null;
