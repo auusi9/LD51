@@ -11,10 +11,10 @@ namespace Code.Boxes
         [SerializeField] private GridCanvas _conveyorBeltCanvas;
         private Belt _myBelt;
         
-        public void SetBelt(Belt belt)
+        public override void SetBelt(Belt belt)
         {
             _myBelt = belt;
-            _myBelt.AddObjectToBelt(transform);
+            _myBelt.AddObjectToBelt(this);
         }
         
         public override void OnPointerDown(PointerEventData eventData)
@@ -23,7 +23,7 @@ namespace Code.Boxes
 
             if (_myBelt != null)
             {
-                _myBelt.RemoveObjectFromBelt(transform);
+                _myBelt.RemoveObjectFromBelt(this);
             }
         }
         
