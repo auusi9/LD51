@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 1529493761138117494}
   - component: {fileID: 6444377282602315446}
   - component: {fileID: 7143447970970292216}
+  - component: {fileID: 3929320703220395656}
   m_Layer: 5
   m_Name: PanelUI
   m_TagString: Untagged
@@ -302,6 +303,19 @@ MonoBehaviour:
   _scoreTimeBonus: 100
   _scoreTime: 50
   _missedOrderPenalization: 100
+--- !u!114 &3929320703220395656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425023615709429315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5e596016f14207a90f3599b17d8020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _totalTime: 600
 --- !u!1 &8298528650978735423
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +405,7 @@ GameObject:
   - component: {fileID: 8433647097140570810}
   - component: {fileID: 6285996028900611067}
   - component: {fileID: 5594635649305138383}
+  - component: {fileID: 7418595903316015194}
   m_Layer: 5
   m_Name: TimerFiller
   m_TagString: Untagged
@@ -457,3 +472,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7418595903316015194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712966923596936042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5d8f2d92e84785b7571df14bc40021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeHandler: {fileID: 0}
+  _image: {fileID: 5594635649305138383}

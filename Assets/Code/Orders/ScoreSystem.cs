@@ -12,7 +12,8 @@ namespace Code.Orders
 
         private int _currentScore = 0;
 
-        public Action<int> ScoreUpdated;
+        public event Action<int> ScoreUpdated;
+        public event Action<int> LastBoxCompletedScore;
 
         private void Start()
         {
@@ -50,8 +51,11 @@ namespace Code.Orders
                 score += _scoreTime;
             }
 
+            obj.Score = score;
+            
             _currentScore += score;
             ScoreUpdated?.Invoke(_currentScore);
+            LastBoxCompletedScore?.Invoke(score);
         }
 
         private void OrderUpdated(OrderUpdater obj)

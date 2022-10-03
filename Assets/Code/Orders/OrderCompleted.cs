@@ -6,7 +6,7 @@ namespace Code.Orders
     public class OrderCompleted
     {
         public Order Order { get; }
-        public int Score { get; private set; }
+        public int Score { get; set; }
         public int Boxes { get; private set; }
 
         public OrderCompleted(Order order, int score)
