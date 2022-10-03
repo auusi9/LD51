@@ -1,4 +1,4 @@
-Shader "Unlit/ItemPattern"
+Shader "LD51/ItemPattern"
 {
     Properties
     {

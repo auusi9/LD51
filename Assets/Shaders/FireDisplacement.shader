@@ -1,11 +1,11 @@
-Shader "LD51/ConveyerBelt"
+Shader "LD51/FireDisplacement"
 {
     Properties
     {
-        _PatternTex ("Pattern Texture", 2D) = "white" {}
-        _BeltTexTilling ("Belt Texture Tilling", Float) = 1
-        _Color ("Color", Color) = (1,1,1,1)
-        _Speed ("Speed", Range(0, 10)) = 1
+        _MainTex ("Texture", 2D) = "white" {}
+        _DisplaceTex ("Displacement Texture", 2D) = "white" {}
+        _Magnitude ("Magnitude", Range(0, 1)) = 1
+        _Speed ("Speed", Range(0, 2)) = 1
     }
     SubShader
     {
@@ -16,15 +16,15 @@ Shader "LD51/ConveyerBelt"
             "PreviewType" = "Plane"
             "CanUseSpriteAtlas" = "True"
         }
-
+        
         Lighting Off
         ZWrite Off
         ZTest Always
         Cull Off
-        Blend SrcAlpha OneMinusSrcAlpha
+        Blend SrcAlpha OneMinusSrcAlpha      
 
         Pass
-        {
+        {  
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -39,30 +39,30 @@ Shader "LD51/ConveyerBelt"
 
             struct v2f
             {
-                half2 uv : TEXCOORD0;
                 half4 vertex : SV_POSITION;
+                half2 uv : TEXCOORD0;
             };
-
-            sampler2D _MainTex, _PatternTex;
-            half4 _MainTex_ST;
-            half _BeltTexTilling, _Speed;
-
+            
             v2f vert (appdata v)
-            {
+            {               
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                half t = _Time.y * _Speed; 
-                o.uv = half2(v.uv.x, (v.uv.y * _BeltTexTilling) - t);
+                o.uv = v.uv;
                 return o;
             }
 
-            half4 _Color;
-
-            half4 frag (v2f i) : SV_Target
+            sampler2D _MainTex, _DisplaceTex;
+            half _Magnitude, _Speed;
+            
+            fixed4 frag (v2f i) : SV_Target
             {
-                half4 patternCol = tex2D(_PatternTex, i.uv);
-                half4 c = patternCol * _Color;
-                return c;
+                half timeDistorsion = _Time.y * _Speed;
+                half2 disp = tex2D(_DisplaceTex, half2(i.uv.x + timeDistorsion, i.uv.y)).xy;
+                disp = ((disp * 2) - 1) * _Magnitude;
+                
+                half4 color = tex2D(_MainTex, i.uv + disp);
+                
+                return color;
             }
             ENDCG
         }
