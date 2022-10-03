@@ -18,6 +18,7 @@ namespace Code.Items
 
         private List<BoxTile> _lastTiles;
         private Transform _defaultParent;
+        private Transform _lastParent;
         private Vector3 _oldPosition;
         private bool _isDragging = false;
         private Belt _myBelt;
@@ -67,13 +68,15 @@ namespace Code.Items
                 base.OnDrag(eventData);
                 return;
             }
-            
+
+            _oldPosition = transform.position;
+            _lastParent = transform.parent;
+            transform.SetParent(_defaultParent);
             base.OnPointerDown(eventData);
             _isDragging = true;
             _itemAudioSource.clip = _itemPickUp;
             _itemAudioSource.Play();
-            _oldPosition = transform.position;
-
+            
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
@@ -133,7 +136,7 @@ namespace Code.Items
             {
                 var slot = hit.gameObject.GetComponent<Box>();
                 List<BoxTile> tiles = new List<BoxTile>();
-                if (slot && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
+                if (slot && slot.IsOpen && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
                 {
                     if(mainTile == null)
                         continue;
@@ -155,6 +158,7 @@ namespace Code.Items
                 if (invalidPosition)
                 {
                     transform.position = _oldPosition;
+                    transform.SetParent(_lastParent);
                     return;
                 }
                 
@@ -195,7 +199,7 @@ namespace Code.Items
             {
                 var slot = hit.gameObject.GetComponent<Box>();
                 List<BoxTile> tiles = new List<BoxTile>();
-                if (slot && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
+                if (slot && slot.IsOpen && slot.Fits(_item, eventData.pointerCurrentRaycast.worldPosition, tiles, out BoxTile mainTile))
                 {
                     if (mainTile != null)
                     {
