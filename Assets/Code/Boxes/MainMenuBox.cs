@@ -13,6 +13,9 @@ namespace Code.Boxes
         [SerializeField] private GridCanvas _conveyorBeltCanvas;
         [SerializeField] private MainMenuBoxAction _action;
         [SerializeField] private Animator _animator;
+        [SerializeField] private AudioSource _boxAudioSource;
+        [SerializeField] private AudioClip _boxPickUp;
+        [SerializeField] private AudioClip _boxPutDown;
         private Belt _myBelt;
 
         private Vector3 _initialPosition;
@@ -31,7 +34,8 @@ namespace Code.Boxes
         public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
-
+            _boxAudioSource.clip = _boxPickUp;
+            _boxAudioSource.Play();
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
@@ -45,7 +49,8 @@ namespace Code.Boxes
             {
                 return;
             }
-            
+            _boxAudioSource.clip = _boxPutDown;
+            _boxAudioSource.Play();
             TrySetIntoBelt(eventData);
         }
         
