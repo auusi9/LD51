@@ -27,6 +27,7 @@ namespace Code.Orders
         public Action<OrderCompleted> OrderCompleted;
         public Action<OrderCompleted> OrderCancelled;
         public Action<OrderUpdater> OrderUpdated;
+        public Action InvalidBox;
         public Action<Order> NewOrderCreated;
 
         private void OnEnable()
@@ -58,6 +59,7 @@ namespace Code.Orders
             if (items.Count == 0 || _currentOrders.Count == 0 || box.IsOpen)
             {
                 Destroy(box.gameObject);
+                InvalidBox?.Invoke();
                 return;
             }
 
@@ -103,6 +105,7 @@ namespace Code.Orders
             {
                 Destroy(box.gameObject);
                 Debug.Log("No order found for this items");
+                InvalidBox?.Invoke();
                 return;
             }
 
