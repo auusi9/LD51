@@ -15,6 +15,8 @@ namespace Code.Notifications
         [SerializeField] private Transform _container;
         [SerializeField] private Image _barFill;
         [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _orderCancelled;
+        [SerializeField] private AudioClip _orderAppear;
         [SerializeField] private OrderInterface _orderInterface;
         [SerializeField] private Animator _animator;
 
@@ -63,6 +65,8 @@ namespace Code.Notifications
         {
             if (_order == obj.Order)
             {
+                _audioSource.clip = _orderCancelled;
+                _audioSource.Play();
                 _animator.SetTrigger("Out");
             }
         }
@@ -73,6 +77,7 @@ namespace Code.Notifications
             
             if (_audioSource != null)
             {
+                _audioSource.clip = _orderAppear;
                 _audioSource.Play();
             }
 
