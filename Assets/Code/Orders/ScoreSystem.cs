@@ -12,6 +12,8 @@ namespace Code.Orders
 
         private int _currentScore = 0;
 
+        public int TotalScore => _currentScore;
+
         public event Action<int> ScoreUpdated;
         public event Action<int> LastBoxCompletedScore;
 

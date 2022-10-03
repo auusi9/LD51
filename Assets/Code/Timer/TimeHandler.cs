@@ -1,4 +1,6 @@
 ﻿using System;
+using Code.Menus;
+using Code.Orders;
 using UnityEngine;
 
 namespace Code.Timer
@@ -6,6 +8,8 @@ namespace Code.Timer
     public class TimeHandler : MonoBehaviour
     {
         [SerializeField] private float _totalTime;
+        [SerializeField] private EndOfGamePopup _popup;
+        [SerializeField] private ScoreSystem _scoreSystem;
 
         private float _currentTime;
         private bool _hasTriggered = false;
@@ -19,6 +23,7 @@ namespace Code.Timer
             if (_totalTime < _currentTime && !_hasTriggered)
             {
                 _hasTriggered = true;
+                _popup.OpenPopup(_scoreSystem.TotalScore);
                 TimesUp?.Invoke();
             }
 

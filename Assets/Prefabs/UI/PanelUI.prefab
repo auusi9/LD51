@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalTime: 600
+  _popup: {fileID: 0}
+  _scoreSystem: {fileID: 7143447970970292216}
 --- !u!1 &8298528650978735423
 GameObject:
   m_ObjectHideFlags: 0
