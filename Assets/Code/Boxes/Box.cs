@@ -14,6 +14,9 @@ namespace Code.Boxes
         [SerializeField] private Image _closedBox;
         [SerializeField] private Image _background;
         [SerializeField] private Button _closeBoxButton;
+        [SerializeField] private AudioSource _boxAudioSource;
+        [SerializeField] private AudioClip _openBoxAudio;
+        [SerializeField] private AudioClip _closeBoxAudio;
 
         private bool _open = true;
 
@@ -41,6 +44,8 @@ namespace Code.Boxes
                 {
                     tile.gameObject.SetActive(false);
                 }
+                _boxAudioSource.clip = _closeBoxAudio;
+                _boxAudioSource.Play();
             }
             else
             {
@@ -51,6 +56,8 @@ namespace Code.Boxes
                 {
                     tile.gameObject.SetActive(true);
                 }
+                _boxAudioSource.clip = _openBoxAudio;
+                _boxAudioSource.Play();
             }
         }
 

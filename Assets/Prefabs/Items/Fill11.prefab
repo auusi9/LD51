@@ -115,5 +115,13 @@ PrefabInstance:
       propertyPath: _itemType
       value: 
       objectReference: {fileID: 11400000, guid: dbec181544b99e24099db85f763d928f, type: 2}
+    - target: {fileID: 5334699788442945070, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
+      propertyPath: _itemPickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 4da4103d083a30e4ba9ca830a3906e4c, type: 3}
+    - target: {fileID: 5334699788442945070, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}
+      propertyPath: _itemPutDown
+      value: 
+      objectReference: {fileID: 8300000, guid: 954b2c0f3a525f74eb82692671c1f00e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518170371a8af1d45ad2b20ab2ac2704, type: 3}

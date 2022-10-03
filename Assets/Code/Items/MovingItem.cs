@@ -12,6 +12,9 @@ namespace Code.Items
     {
         [SerializeField] private Item _item;
         [SerializeField] private GridCanvas _conveyorBeltCanvas;
+        [SerializeField] private AudioSource _itemAudioSource;
+        [SerializeField] private AudioClip _itemPickUp;
+        [SerializeField] private AudioClip _itemPutDown;
 
         private List<BoxTile> _lastTiles;
         private Transform _defaultParent;
@@ -67,6 +70,8 @@ namespace Code.Items
             
             base.OnPointerDown(eventData);
             _isDragging = true;
+            _itemAudioSource.clip = _itemPickUp;
+            _itemAudioSource.Play();
             _oldPosition = transform.position;
 
             if (_myBelt != null)
@@ -84,7 +89,9 @@ namespace Code.Items
             
             base.OnPointerUp(eventData);
             _isDragging = false;
-            
+            _itemAudioSource.clip = _itemPutDown;
+            _itemAudioSource.Play();
+
             TrySetIntoTile(eventData);
 
             if (!_item.MyBox)
