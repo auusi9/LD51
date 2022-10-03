@@ -118,6 +118,7 @@ namespace Code.Basic
                 var slot = hit.gameObject.GetComponent<Burner>();
                 if (slot != null)
                 {
+                    slot.DestroyThing();
                     Destroy();
                     break;
                 }
