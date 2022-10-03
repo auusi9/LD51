@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5e596016f14207a90f3599b17d8020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totalTime: 600
+  _totalTime: 300
   _popup: {fileID: 0}
   _scoreSystem: {fileID: 7143447970970292216}
 --- !u!95 &9099627869844282573
