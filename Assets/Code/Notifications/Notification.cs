@@ -16,10 +16,12 @@ namespace Code.Notifications
         [SerializeField] private Image _barFill;
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private OrderInterface _orderInterface;
+        [SerializeField] private Animator _animator;
 
         private Order _order;
         private string _phrase;
         private List<NotificationItem> _notificationItems = new List<NotificationItem>();
+        private bool _callbackCalled = false;
 
         private void Start()
         {
@@ -53,7 +55,7 @@ namespace Code.Notifications
         {
             if (_order == obj.Order)
             {
-                Destroy(gameObject);
+                _animator.SetTrigger("Out");
             }
         }
 
@@ -61,7 +63,7 @@ namespace Code.Notifications
         {
             if (_order == obj.Order)
             {
-                Destroy(gameObject);
+                _animator.SetTrigger("Out");
             }
         }
 
@@ -86,9 +88,10 @@ namespace Code.Notifications
         {
             _barFill.fillAmount = 1 - (Time.time - _order.OrderCreatedTime) / (_order.OrderExpirationTime - _order.OrderCreatedTime);
             
-            if(_order.OrderExpirationTime < Time.time)
+            if(_order.OrderExpirationTime < Time.time && !_callbackCalled)
             {
                 _orderInterface.OrderExpired(_order.Id);
+                _callbackCalled = true;
             }
         }
     }
