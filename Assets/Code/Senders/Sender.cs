@@ -13,6 +13,9 @@ namespace Code.Senders
         [SerializeField] private TextMeshProUGUI _orderCompletedText;
         [SerializeField] private Animator _orderUpdated;
         [SerializeField] private ScoreSystem _scoreSystem;
+        [SerializeField] private AudioSource _senderAudioSource;
+        [SerializeField] private AudioClip _badBox;
+        [SerializeField] private AudioClip _goodBox;
 
         private void Start()
         {
@@ -34,7 +37,8 @@ namespace Code.Senders
                 _orderCompleted.Rebind();
                 return;
             }
-            
+            _senderAudioSource.clip = _goodBox;
+            _senderAudioSource.Play();
             _orderCompleted.gameObject.SetActive(true);
         }
 
@@ -45,7 +49,8 @@ namespace Code.Senders
                 _orderUpdated.Rebind();
                 return;
             }
-            
+            _senderAudioSource.clip = _goodBox;
+            _senderAudioSource.Play();
             _orderUpdated.gameObject.SetActive(true);
         }
 
@@ -53,6 +58,12 @@ namespace Code.Senders
         {
             //CalculateScore
             _orderInterface.BoxSent(movingBox.Box);
+        }
+
+        private void BadBox()
+        {
+            _senderAudioSource.clip = _badBox;
+            _senderAudioSource.Play();
         }
     }
 }
