@@ -20,11 +20,13 @@ namespace Code.Senders
         private void Start()
         {
             _orderInterface.OrderUpdated += OrderUpdated;
+            _orderInterface.InvalidBox += BadBox;
             _scoreSystem.LastBoxCompletedScore += OrderCompleted;
         }
 
         private void OnDestroy()
         {
+            _orderInterface.InvalidBox -= BadBox;
             _orderInterface.OrderUpdated -= OrderUpdated;
             _scoreSystem.LastBoxCompletedScore -= OrderCompleted;
         }
