@@ -131,19 +131,40 @@ namespace Code.Boxes
             item.MyBox = this;
         }
 
-        public List<Item> GetItems()
+        public List<Item> GetItems(out BoxInfo boxInfo)
         {
+            boxInfo = new BoxInfo();
             List<Item> items = new List<Item>();
             
             foreach (var tile in _tiles)
             {
-                if (tile.Item && !items.Contains(tile.Item))
+                if (tile.Item && !items.Contains(tile.Item) && !tile.Item.IsFill)
                 {
                     items.Add(tile.Item);
+                    boxInfo.ItemTiles++;
+                }
+                else if (tile.Item &&!tile.Item.IsFill)
+                {
+                    boxInfo.ItemTiles++;
+                }               
+                else if (tile.Item && tile.Item.IsFill)
+                {
+                    boxInfo.FillTiles++;
+                }
+                else if(tile.Item == null)
+                {
+                    boxInfo.EmptyTiles++;
                 }
             }
 
             return items;
+        }
+
+        public class BoxInfo
+        {
+            public int EmptyTiles;
+            public int FillTiles;
+            public int ItemTiles;
         }
     }
 }

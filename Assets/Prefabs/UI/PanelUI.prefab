@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6111812979089331824}
   - component: {fileID: 4081970868769609721}
   - component: {fileID: 1739550272655774947}
+  - component: {fileID: 3302532603026422952}
   m_Layer: 5
   m_Name: TextScore
   m_TagString: Untagged
@@ -211,6 +212,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3302532603026422952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294882884326727056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657e656abf57498a8a1f8577997c27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreSystem: {fileID: 7143447970970292216}
+  _textMeshProUGUI: {fileID: 1739550272655774947}
 --- !u!1 &5425023615709429315
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529493761138117494}
   - component: {fileID: 6444377282602315446}
+  - component: {fileID: 7143447970970292216}
   m_Layer: 5
   m_Name: PanelUI
   m_TagString: Untagged
@@ -270,6 +286,22 @@ Canvas:
   m_SortingLayerID: 158118763
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &7143447970970292216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425023615709429315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945281b6d8644024ae07876796ae376c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
+  _scoreTimeBonus: 100
+  _scoreTime: 50
+  _missedOrderPenalization: 100
 --- !u!1 &8298528650978735423
 GameObject:
   m_ObjectHideFlags: 0

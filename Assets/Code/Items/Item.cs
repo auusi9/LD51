@@ -15,9 +15,12 @@ namespace Code.Items
         [SerializeField] private Image _image;
         [SerializeField] private Image _shadow;
         [SerializeField] private ItemType _itemType;
+        [SerializeField] private bool _isFill;
+        
         public Sprite Icon;
         
         public ItemType ItemType => _itemType;
+        public bool IsFill => _isFill;
         
         public ItemTile[,] GetTiles()
         {

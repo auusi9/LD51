@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Code.ConveyorBelts;
 using Code.Services.Configurations;
 using Code.Services.Entities;
 using Random = UnityEngine.Random;
@@ -9,10 +11,18 @@ namespace Code.Services
     public class OrderGenerator
     {
         private readonly OrderConfigurator _orderConfigurator;
-
+        private readonly BeltItemSpawner.RandomNumberGenerator<int> _randomNumberGenerator;
+        
         public OrderGenerator(OrderConfigurator orderConfigurator)
         {
             _orderConfigurator = orderConfigurator;
+            
+            _randomNumberGenerator = new BeltItemSpawner.RandomNumberGenerator<int>();
+
+            for (int i = 0; i < _orderConfigurator.ShapesAmount; i++)
+            {
+                _randomNumberGenerator.Add(1f, i);
+            }
         }
 
         public Order NewOrder()
@@ -30,7 +40,7 @@ namespace Code.Services
                 if (!_orderConfigurator.ItemsHaveDifferentShapes)
                 {
                     newItems.Add(new ItemEntity(
-                        Random.Range(0, _orderConfigurator.ItemAmount),
+                        _randomNumberGenerator.NextItem(),
                         -1 //Same shape for this item type
                     ));
                 }

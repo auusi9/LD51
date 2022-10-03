@@ -19,6 +19,7 @@ namespace Code.Orders
         [SerializeField] private int _minimumItemsXOrder = 1;
         [SerializeField] private bool _itemsHaveDifferentShapes = false;
         [SerializeField] private float _orderExpirationTime = 30f;
+        [SerializeField] private ScoreConfiguration _scoreConfiguration;
         private OrderGenerator _orderGenerator;
 
         private List<OrderUpdater> _currentOrders = new List<OrderUpdater>();
@@ -50,7 +51,8 @@ namespace Code.Orders
 
         public void BoxSent(Box box)
         {
-            List<Item> items = box.GetItems();
+            List<Item> items = box.GetItems(out Box.BoxInfo boxInfo);
+            
             Debug.Log("Box  item count " + items.Count + " and box is open " + box.IsOpen);
 
             if (items.Count == 0 || _currentOrders.Count == 0 || box.IsOpen)
@@ -74,15 +76,15 @@ namespace Code.Orders
             }
 
             List<OrderUpdater> ordersUpdater = new List<OrderUpdater>();
+            List<ItemEntity> distinctEntities = entities.Distinct().ToList();
 
             foreach (var order in _currentOrders)
             {
                 bool hasAllItems = true;
-                foreach (var entity in entities)
+                foreach (var entity in distinctEntities)
                 {
-                    ItemsCompleted itemsCompleted =
-                        order.ItemsCompleted.FirstOrDefault(x => !x.Completed && x.ItemEntity.Equals(entity));
-                    if (itemsCompleted == null)
+                    int count = order.ItemsCompleted.Count(x => !x.Completed && x.ItemEntity.Equals(entity));
+                    if (count == 0 || count < entities.Count(x => x.Equals(entity)))
                     {
                         hasAllItems = false;
                         break;
@@ -107,9 +109,14 @@ namespace Code.Orders
             foreach (var entity in entities)
             {
                 ItemsCompleted itemsCompleted = orderUpdater.ItemsCompleted.FirstOrDefault(x => Equals(x.ItemEntity, entity) && !x.Completed);
-                itemsCompleted.Completed = true;
+                if (itemsCompleted != null)
+                {
+                    itemsCompleted.Completed = true;
+                }
             }
-
+            
+            orderUpdater.UpdateScore(boxInfo, _scoreConfiguration);
+            
             if (orderUpdater.IsComplete)
             {
                 Destroy(box.gameObject);
@@ -151,5 +158,15 @@ namespace Code.Orders
 
             OrderCancelled?.Invoke(order);
         }
+    }
+
+    [Serializable]
+    public class ScoreConfiguration
+    {
+        public int ScoreXEmptyTile;
+        public int ScoreXItemTile;
+        public int BonusNoFillNoEmpty;
+        public int BonusLessFillThanItem;
+        public int BonusMoreFillThanItem;
     }
 }

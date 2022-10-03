@@ -16,4 +16,10 @@ MonoBehaviour:
   _maximumItemsXOrder: 4
   _minimumItemsXOrder: 1
   _itemsHaveDifferentShapes: 0
-  _orderExpirationTime: 30
+  _orderExpirationTime: 50
+  _scoreConfiguration:
+    ScoreXEmptyTile: 20
+    ScoreXItemTile: 10
+    BonusNoFillNoEmpty: 50
+    BonusLessFillThanItem: 30
+    BonusMoreFillThanItem: 10
