@@ -10,6 +10,9 @@ namespace Code.Boxes
     public class MovingBox : DraggableObject
     {
         [SerializeField] private GridCanvas _conveyorBeltCanvas;
+        [SerializeField] private AudioSource _boxAudioSource;
+        [SerializeField] private AudioClip _boxPickUp;
+        [SerializeField] private AudioClip _boxPutDown;
         public Box Box;
         private Belt _myBelt;
 
@@ -22,7 +25,8 @@ namespace Code.Boxes
         public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
-
+            _boxAudioSource.clip = _boxPickUp;
+            _boxAudioSource.Play();
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
@@ -32,6 +36,8 @@ namespace Code.Boxes
         public override void OnPointerUp(PointerEventData eventData)
         {
             base.OnPointerUp(eventData);
+            _boxAudioSource.clip = _boxPutDown;
+            _boxAudioSource.Play();
             if (TrySend(eventData))
             {
                 return;

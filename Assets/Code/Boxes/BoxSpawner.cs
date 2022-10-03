@@ -8,9 +8,11 @@ namespace Code.Boxes
     {
         [SerializeField] private MovingBox _boxPrefab;
         [SerializeField] private GridCanvas _gridCanvas;
-        
+        [SerializeField] private AudioSource _spawnerAudioSource;
+
         public void OnPointerDown(PointerEventData eventData)
         {
+            _spawnerAudioSource.Play();
             Instantiate(_boxPrefab, Vector3.zero, _boxPrefab.transform.rotation, _gridCanvas.Canvas.transform);
         }
     }
