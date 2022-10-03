@@ -979,9 +979,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Fill
       objectReference: {fileID: 0}
+    - target: {fileID: 3368647151281257174, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b36f063cedb98a64eb43f899184da665, type: 3}
     m_RemovedComponents:
     - {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+--- !u!82 &5095235658300214337 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3368647151281257174, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+  m_PrefabInstance: {fileID: 7496874252501743255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7791804551220124401 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 299546126646520934, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
@@ -1006,4 +1015,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemPrefab: {fileID: 1395569251274179364, guid: c7d7b45fe50b0ec41aa49c747c0e67de, type: 3}
   _gridCanvas: {fileID: 11400000, guid: 9e69418d6db15c54fb48db3847fda42c, type: 2}
-  _spawnerAudioSource: {fileID: 0}
+  _spawnerAudioSource: {fileID: 5095235658300214337}
