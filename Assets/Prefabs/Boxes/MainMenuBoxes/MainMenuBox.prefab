@@ -234,6 +234,9 @@ MonoBehaviour:
   _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
   _action: {fileID: 7849798011793218039}
   _animator: {fileID: 6622471322734620334}
+  _boxAudioSource: {fileID: 7972871935778174428}
+  _boxPickUp: {fileID: 8300000, guid: 63f7c64f98c0f5b49acd09bdc1998f85, type: 3}
+  _boxPutDown: {fileID: 8300000, guid: cd074c023a6eaab42b815f51726eab73, type: 3}
 --- !u!114 &7488813991003458612
 MonoBehaviour:
   m_ObjectHideFlags: 0
