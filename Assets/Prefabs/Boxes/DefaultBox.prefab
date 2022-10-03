@@ -1221,6 +1221,8 @@ MonoBehaviour:
   _closedBox: {fileID: 3193968722241980473}
   _background: {fileID: 5769881672343305482}
   _closeBoxButton: {fileID: 763112609084072882}
+  _tick: {fileID: 21300000, guid: 71aab85c4d2492a4ea5eab4db6c83ad9, type: 3}
+  _cross: {fileID: 21300000, guid: 2b720b28241e10a42a61996dca8d7909, type: 3}
   _boxAudioSource: {fileID: 7972871935778174428}
   _openBoxAudio: {fileID: 8300000, guid: 77083f4cb8d49b5488ca68c408bb8f7e, type: 3}
   _closeBoxAudio: {fileID: 8300000, guid: 379544a4d73d7b64f9632ed52cb9c3d7, type: 3}
