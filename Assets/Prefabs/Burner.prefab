@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 3559142473752284936}
   - component: {fileID: 665308522191155850}
   - component: {fileID: 7360751519090412930}
+  - component: {fileID: 3591266686346415208}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
@@ -324,6 +325,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3591266686346415208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689231782338304516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1533b9d541c64d8fcef21e2decd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 7360751519090412930}
 --- !u!1 &766222224184255293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,6 +5660,7 @@ GameObject:
   - component: {fileID: 3368768636814783395}
   - component: {fileID: 7625070436749799210}
   - component: {fileID: 7220587230408437979}
+  - component: {fileID: 856101633060867627}
   m_Layer: 5
   m_Name: Belt
   m_TagString: Untagged
@@ -5711,6 +5726,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &856101633060867627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475433162307334344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1533b9d541c64d8fcef21e2decd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 7220587230408437979}
 --- !u!1 &8559154288619364264
 GameObject:
   m_ObjectHideFlags: 0

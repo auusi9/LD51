@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 5879895271680732885}
   - component: {fileID: 1623654915548705372}
   - component: {fileID: 1976373760816737709}
+  - component: {fileID: 7236303599644006439}
   m_Layer: 5
   m_Name: Belt
   m_TagString: Untagged
@@ -485,6 +486,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7236303599644006439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794616799251525054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1533b9d541c64d8fcef21e2decd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 1976373760816737709}
 --- !u!1 &3152468713664653606
 GameObject:
   m_ObjectHideFlags: 0
