@@ -11,10 +11,14 @@ PrefabInstance:
       propertyPath: _action
       value: 
       objectReference: {fileID: 2802495085639591965}
-    - target: {fileID: 3575024693734258861, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
-      propertyPath: m_Name
-      value: Tutorial
+    - target: {fileID: -2372974851139671828, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
+      propertyPath: _shadows.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2372974851139671828, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
+      propertyPath: _shadows.Array.data[0]
+      value: 
+      objectReference: {fileID: 1179757433755060125}
     - target: {fileID: 7488813991003458606, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -101,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488813991003458607, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
       propertyPath: m_Name
-      value: TutorialBox
+      value: MainMenuBox_Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8569253508004248224, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
       propertyPath: m_text
@@ -127,3 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e220bce6c4361aad49880e3c3cc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tutorial: {fileID: 0}
+--- !u!224 &1179757433755060125 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8981595013703577348, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
+  m_PrefabInstance: {fileID: 7852692489451366553}
+  m_PrefabAsset: {fileID: 0}

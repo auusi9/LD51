@@ -12,7 +12,9 @@ namespace Code.Boxes
     public class Box : TileParent<BoxTile>
     {
         [SerializeField] private Image _closedBox;
-        [SerializeField] private Image _background;
+        [SerializeField] private Image _closedBoxShadow;
+        [SerializeField] private Image _boxOpened;
+        [SerializeField] private Image _boxOpenedShadow;
         [SerializeField] private Button _closeBoxButton;
         [SerializeField] private Sprite _tick;
         [SerializeField] private Sprite _cross;
@@ -40,7 +42,9 @@ namespace Code.Boxes
             {
                 _open = false;
                 _closedBox.gameObject.SetActive(true);
-                _background.gameObject.SetActive(false);
+                _closedBoxShadow.gameObject.SetActive(true);
+                _boxOpened.gameObject.SetActive(false);
+                _boxOpenedShadow.gameObject.SetActive(false);
                 _closeBoxButton.image.sprite = _cross;
 
                 foreach (var tile in _tiles)
@@ -55,7 +59,9 @@ namespace Code.Boxes
                 _open = true;
                 _closeBoxButton.image.sprite = _tick;
                 _closedBox.gameObject.SetActive(false);
-                _background.gameObject.SetActive(true);
+                _closedBoxShadow.gameObject.SetActive(false);
+                _boxOpened.gameObject.SetActive(true);
+                _boxOpenedShadow.gameObject.SetActive(true);
                 foreach (var tile in _tiles)
                 {
                     tile.gameObject.SetActive(true);
