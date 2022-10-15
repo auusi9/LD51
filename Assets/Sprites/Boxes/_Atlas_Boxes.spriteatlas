@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _Atlas_Boxes
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3272c95a8c4e4974883eed05617fd1e0, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0d580b301ffbbcc4695b106580ba8d2f, type: 3}
+  - {fileID: 21300000, guid: 555d36410026dbc4b838b75111f3fec7, type: 3}
+  - {fileID: 21300000, guid: 839e4105f18f72d4db4b1dc245c9d072, type: 3}
+  - {fileID: 21300000, guid: 30547476953b0b6409199ed62cd02df5, type: 3}
+  - {fileID: 21300000, guid: 2caa75573b7cbf647afe7234bba7b0f5, type: 3}
+  - {fileID: 21300000, guid: bbde3ec74cdbfae459401f64b4e6b15a, type: 3}
+  - {fileID: 21300000, guid: 8c550948df8b86d4b96570fda2a8db79, type: 3}
+  - {fileID: 21300000, guid: 19c4249850d2b69408098f80562e4570, type: 3}
+  - {fileID: 21300000, guid: 40f14fbad424ded48a742d736079678e, type: 3}
+  - {fileID: 21300000, guid: 4246cd2b2a2fcdc41800b169a5e7f776, type: 3}
+  - {fileID: 21300000, guid: 0b92ec5b365ca3448b7a5200659d0044, type: 3}
+  - {fileID: 21300000, guid: 15e4b5cba5779dd46a7f12f344ecf9cc, type: 3}
+  - {fileID: 21300000, guid: 16e244ebea45d6d489748d2c4ec210fe, type: 3}
+  - {fileID: 21300000, guid: f4ffc00c153f6da4a954f6b097e1c2bb, type: 3}
+  - {fileID: 21300000, guid: c601387cf0c134649994ee69ea40fa72, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - BoxLid02
+  - BoxLid03
+  - BoxClosed3x5
+  - BoxLid01
+  - Pixel_Boxes
+  - BoxClosed2x2
+  - TapeBox
+  - BoxLid05
+  - BoxClosed1x1
+  - BoxClosed1x3
+  - BoxClosed3x4
+  - DotLine
+  - BoxClosed2x4
+  - BoxClosed2x3
+  - BoxLid04
+  m_RenderDataMap: {}
+  m_Tag: _Atlas_Boxes
+  m_IsVariant: 0
