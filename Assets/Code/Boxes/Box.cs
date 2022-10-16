@@ -16,8 +16,9 @@ namespace Code.Boxes
         [SerializeField] private Image _boxOpened;
         [SerializeField] private Image _boxOpenedShadow;
         [SerializeField] private Button _closeBoxButton;
-        [SerializeField] private Sprite _tick;
-        [SerializeField] private Sprite _cross;
+        [SerializeField] private Image _closeButtonImage;
+        [SerializeField] private Sprite _closeImage;
+        [SerializeField] private Sprite _openImage;
         [SerializeField] private AudioSource _boxAudioSource;
         [SerializeField] private AudioClip _openBoxAudio;
         [SerializeField] private AudioClip _closeBoxAudio;
@@ -45,7 +46,7 @@ namespace Code.Boxes
                 _closedBoxShadow.gameObject.SetActive(true);
                 _boxOpened.gameObject.SetActive(false);
                 _boxOpenedShadow.gameObject.SetActive(false);
-                _closeBoxButton.image.sprite = _cross;
+                _closeButtonImage.sprite = _openImage;
 
                 foreach (var tile in _tiles)
                 {
@@ -57,7 +58,7 @@ namespace Code.Boxes
             else
             {
                 _open = true;
-                _closeBoxButton.image.sprite = _tick;
+                _closeButtonImage.sprite = _closeImage;
                 _closedBox.gameObject.SetActive(false);
                 _closedBoxShadow.gameObject.SetActive(false);
                 _boxOpened.gameObject.SetActive(true);

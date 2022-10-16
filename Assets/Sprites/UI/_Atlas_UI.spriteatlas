@@ -63,9 +63,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f6ed67e57db6c9b4386cb71739745dce, type: 3}
   - {fileID: 21300000, guid: 7f9dc44625e80754c95242a546ec7d5c, type: 3}
   - {fileID: 21300000, guid: eadc1756b90f6094f9933af567f2a3f4, type: 3}
+  - {fileID: 21300000, guid: 11d6b2f66c1f3f54ebf6fae788bd2eba, type: 3}
   - {fileID: 21300000, guid: 1c2aaa57964cc1c43ae1a219ef45e580, type: 3}
+  - {fileID: 21300000, guid: 366f3a87744b1f445a1c016c7d15effe, type: 3}
   - {fileID: 21300000, guid: 57bd0db792c73864fa58c61ad1ac049d, type: 3}
-  - {fileID: 21300000, guid: 5551c1e7be1366341898072dc7c490a4, type: 3}
   - {fileID: 21300000, guid: 3d37d718bc4d2ac4bb01cd2b225a6aa8, type: 3}
   - {fileID: 21300000, guid: 2b720b28241e10a42a61996dca8d7909, type: 3}
   - {fileID: 21300000, guid: d636dca8cbb82074490583d3c8579717, type: 3}
@@ -79,7 +80,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5cc833ea18bae5f498e5655adf8c2b64, type: 3}
   - {fileID: 21300000, guid: 6dfaf24bbdae6ab4e94006cda5967ad0, type: 3}
   - {fileID: 21300000, guid: e0d7cb8b7eb58f944a723eb648a3fef6, type: 3}
-  - {fileID: 21300000, guid: a8cfd6eb144f93e4882a004be8913653, type: 3}
   - {fileID: 21300000, guid: 90be7deb9eadbaa42918887aa8c8ee06, type: 3}
   - {fileID: 21300000, guid: 91ff77fbcf539f5429a8929f9a52835f, type: 3}
   - {fileID: 21300000, guid: 8265dbfb085009448a8548a96aa8b8b2, type: 3}
@@ -106,9 +106,10 @@ SpriteAtlas:
   - TutoLine
   - SquareDefaultUI_Frame
   - Button03
+  - IconLockClose
   - UIBoxBg
+  - IconLockOpen
   - IconFX
-  - IconClose
   - TitleBox
   - ButtonBoxOpen
   - TutoCircle
@@ -122,7 +123,6 @@ SpriteAtlas:
   - TinyItem06
   - TinyItem08
   - ButtonSlideHandle
-  - IconOpen
   - TinyItem07
   - TutoDot
   - ButtonBox01
