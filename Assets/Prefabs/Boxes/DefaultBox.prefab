@@ -1189,8 +1189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 2}
-  m_SizeDelta: {x: 25, y: 41}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 36, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8172652524808236184
 CanvasRenderer:
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11d6b2f66c1f3f54ebf6fae788bd2eba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d13f99b7f8605c49bb709ae1f434a56, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1937,8 +1937,8 @@ MonoBehaviour:
   _boxOpenedShadow: {fileID: 8862418059898223245}
   _closeBoxButton: {fileID: 763112609084072882}
   _closeButtonImage: {fileID: 2763997634698761926}
-  _closeImage: {fileID: 21300000, guid: 11d6b2f66c1f3f54ebf6fae788bd2eba, type: 3}
-  _openImage: {fileID: 21300000, guid: 366f3a87744b1f445a1c016c7d15effe, type: 3}
+  _closeImage: {fileID: 21300000, guid: 7d13f99b7f8605c49bb709ae1f434a56, type: 3}
+  _openImage: {fileID: 21300000, guid: 8e25063c859f5874e88f74c380a6aa80, type: 3}
   _boxAudioSource: {fileID: 7972871935778174428}
   _openBoxAudio: {fileID: 8300000, guid: 77083f4cb8d49b5488ca68c408bb8f7e, type: 3}
   _closeBoxAudio: {fileID: 8300000, guid: 379544a4d73d7b64f9632ed52cb9c3d7, type: 3}
