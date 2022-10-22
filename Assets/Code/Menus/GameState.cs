@@ -12,6 +12,11 @@ namespace Code.Menus
 
         public event Action GameStart;
 
+        private void OnEnable()
+        {
+            _gameStarted = false;
+        }
+
         public void StartGame()
         {
             _gameStarted = true;
