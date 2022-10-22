@@ -10,6 +10,7 @@ namespace Code.Timer
         [SerializeField] private float _totalTime;
         [SerializeField] private EndOfGamePopup _popup;
         [SerializeField] private ScoreSystem _scoreSystem;
+        [SerializeField] private GameState _gameState;
 
         private float _currentTime;
         private bool _hasTriggered = false;
@@ -20,6 +21,11 @@ namespace Code.Timer
 
         private void Update()
         {
+            if (!_gameState.GameStarted)
+            {
+                return;
+            }
+            
             if (_totalTime < _currentTime && !_hasTriggered)
             {
                 _hasTriggered = true;

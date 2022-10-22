@@ -7,22 +7,25 @@ namespace Code.Menus
     public class EndOfGamePopup : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
+        [SerializeField] private GameState _gameState;
 
         public void OpenPopup(int score)
         {
-            Time.timeScale = 0f;
+            _gameState.PauseGame();
             gameObject.SetActive(true);
             _textMeshProUGUI.text = $"{score:n0}";
         }
 
         public void Continue()
         {
-            Time.timeScale = 1f;
+            _gameState.ResumeGame();
             gameObject.SetActive(false);
         }
 
         public void MainMenu()
         {
+            _gameState.ResumeGame();
+            _gameState.EndGame();
             SceneManager.LoadScene(0);
         }
     }

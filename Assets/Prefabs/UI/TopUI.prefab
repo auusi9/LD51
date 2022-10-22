@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeBetweenOrders: 10
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
+  _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}

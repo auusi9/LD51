@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Code.Basic;
 using Code.Items;
+using Code.Menus;
 using UnityEngine;
 
 namespace Code.ConveyorBelts
@@ -14,6 +15,7 @@ namespace Code.ConveyorBelts
         [SerializeField] private Transform _finalPosition;
         [SerializeField] private float _velocity;
         [SerializeField] private BeltItemSpawner _beltItemSpawner;
+        [SerializeField] private GameState _gameState;
         
         private List<DraggableObject> _objectsInBelt = new List<DraggableObject>();
         private float _timeWithoutItem = 0f;
@@ -26,7 +28,7 @@ namespace Code.ConveyorBelts
 
         private void Update()
         {
-            if (_timeBetweenItems <= _timeWithoutItem)
+            if (_timeBetweenItems <= _timeWithoutItem && _gameState.GameStarted)
             {
                 _timeWithoutItem = 0;
                 DraggableObject item = _beltItemSpawner.GetRandomItem();
