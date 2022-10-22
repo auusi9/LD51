@@ -27,6 +27,9 @@ namespace Code.Boxes
         
         public override void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             base.OnPointerDown(eventData);
             _boxAudioSource.clip = _boxPickUp;
             _boxAudioSource.Play();
@@ -40,6 +43,9 @@ namespace Code.Boxes
         
         public override void OnPointerUp(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             base.OnPointerUp(eventData);
             _boxAudioSource.clip = _boxPutDown;
             _boxAudioSource.Play();

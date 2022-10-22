@@ -27,12 +27,18 @@ namespace Code.Basic
         
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
             OnDrag(eventData);
         }
 
         public virtual void OnDrag(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 return;
@@ -61,11 +67,15 @@ namespace Code.Basic
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 RightClickEvent?.Invoke();
                 return;
             }
+            
             transform.localScale *= _scale;
             foreach(RectTransform _shadow in _shadows)
             {
@@ -79,6 +89,9 @@ namespace Code.Basic
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 return;
