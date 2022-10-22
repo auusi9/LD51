@@ -991,7 +991,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -2084908803
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1024,6 +1024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e4e25ffd1d4109ba250c07c8683c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
+  _enableOnGameStart:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5481355758550167896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1660,10 @@ PrefabInstance:
       propertyPath: _mainMenu
       value: 
       objectReference: {fileID: 5304213035984253882}
+    - target: {fileID: 7972871935778174428, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}
 --- !u!224 &3346672613281621602 stripped
@@ -1670,6 +1678,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5304213035984253881}
     m_Modifications:
+    - target: {fileID: 170867397700181317, guid: 962cae306482eda478367100250140ed, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
     - target: {fileID: 799321395608478902, guid: 962cae306482eda478367100250140ed, type: 3}
       propertyPath: m_Name
       value: TutorialBox
