@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875798849129431937}
+  - component: {fileID: 1036185313870843563}
   - component: {fileID: 4875798849129431939}
   - component: {fileID: 4875798849129431936}
   - component: {fileID: 3435390222180339755}
   - component: {fileID: 2378917815188591411}
-  - component: {fileID: 1036185313870843563}
   m_Layer: 5
   m_Name: TopUI
   m_TagString: Untagged
@@ -41,6 +41,27 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 116}
   m_SizeDelta: {x: 980, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!223 &1036185313870843563
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875798849129431950}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 1
+  m_SortingLayerID: 158118763
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!222 &4875798849129431939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -104,24 +125,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeBetweenOrders: 10
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
---- !u!223 &1036185313870843563
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4875798849129431950}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 158118763
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
