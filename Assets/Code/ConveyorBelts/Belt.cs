@@ -46,7 +46,7 @@ namespace Code.ConveyorBelts
             {
                 obj.transform.Translate(_beltDirection.normalized * Time.deltaTime * _velocity);
 
-                if (Vector3.Distance(obj.transform.position, _finalPosition.position) < 1f)
+                if (Mathf.Abs(_finalPosition.position.y - obj.transform.position.y) < 1f)
                 {
                     toDestroy.Add(obj);
                 }

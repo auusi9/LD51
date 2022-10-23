@@ -479,6 +479,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1973449003}
     m_Modifications:
+    - target: {fileID: 3346672613281621603, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508611927790866982, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795096877170770832, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5304213035984253880, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
       propertyPath: m_Name
       value: MainMenuBoxes
@@ -575,6 +587,10 @@ PrefabInstance:
       propertyPath: _enableOnGameStart.Array.data[1]
       value: 
       objectReference: {fileID: 1267121382}
+    - target: {fileID: 7891403795601291419, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032222479736295227, guid: 8176c627288407741ac17c292b2ec80e, type: 3}
       propertyPath: _tutorial
       value: 

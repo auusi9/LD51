@@ -16,6 +16,9 @@ namespace Code.Boxes
         [SerializeField] private AudioSource _boxAudioSource;
         [SerializeField] private AudioClip _boxPickUp;
         [SerializeField] private AudioClip _boxPutDown;
+        [SerializeField] private Animator _boxAnimator;
+        private int _dropTrigger = Animator.StringToHash("Drop");
+        private int _grabTrigger = Animator.StringToHash("Grab");
         private Belt _myBelt;
 
         private Vector3 _initialPosition;
@@ -39,6 +42,8 @@ namespace Code.Boxes
             base.OnPointerDown(eventData);
             _boxAudioSource.clip = _boxPickUp;
             _boxAudioSource.Play();
+            _boxAnimator.ResetTrigger(_grabTrigger);
+            _boxAnimator.SetTrigger(_grabTrigger);
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
@@ -57,6 +62,8 @@ namespace Code.Boxes
             }
             _boxAudioSource.clip = _boxPutDown;
             _boxAudioSource.Play();
+            _boxAnimator.ResetTrigger(_dropTrigger);
+            _boxAnimator.SetTrigger(_dropTrigger);
             TrySetIntoBelt(eventData);
         }
         
