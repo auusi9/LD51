@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _Atlas_Basic
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 952662dc0c7e7c44c9ee4fef02562f9a, type: 3}
+    - {fileID: 2800000, guid: f5cdf0d91f439484eb29f8d669661610, type: 3}
+    - {fileID: 2800000, guid: e4ba2d06b83e64a44962afcbfe69405d, type: 3}
+    - {fileID: 2800000, guid: adeeb80d5817e2740b1b8621e22db692, type: 3}
+    - {fileID: 2800000, guid: d9a15e01cfc15214b97f5773ca5d3e76, type: 3}
+    - {fileID: 2800000, guid: 45f0ab4bb74813e45af11f94fccc4f4a, type: 3}
+    - {fileID: 2800000, guid: 976e3acaefc053947a58a9bcd9dc5bb5, type: 3}
+    - {fileID: 2800000, guid: f470713dcf2e84045ab52d77484afe41, type: 3}
+    - {fileID: 2800000, guid: 62608e952be05314081ed5947cc9dce1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d9a15e01cfc15214b97f5773ca5d3e76, type: 3}
+  - {fileID: 21300000, guid: 62608e952be05314081ed5947cc9dce1, type: 3}
+  - {fileID: 21300000, guid: e4ba2d06b83e64a44962afcbfe69405d, type: 3}
+  - {fileID: 21300000, guid: f5cdf0d91f439484eb29f8d669661610, type: 3}
+  - {fileID: 21300000, guid: 976e3acaefc053947a58a9bcd9dc5bb5, type: 3}
+  - {fileID: 21300000, guid: 45f0ab4bb74813e45af11f94fccc4f4a, type: 3}
+  - {fileID: 21300000, guid: 952662dc0c7e7c44c9ee4fef02562f9a, type: 3}
+  - {fileID: 21300000, guid: adeeb80d5817e2740b1b8621e22db692, type: 3}
+  - {fileID: 21300000, guid: f470713dcf2e84045ab52d77484afe41, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SquareDefault_Fill
+  - ResultsPaper
+  - IconTrash
+  - IconEnvelop
+  - SquareTiny_Fill
+  - SquareDefault_Frame
+  - FireFlare
+  - Pixel_Basic
+  - SquareTiny_Frame
+  m_RenderDataMap: {}
+  m_Tag: _Atlas_Basic
+  m_IsVariant: 0

@@ -6,6 +6,7 @@ Shader "LD51/ConveyerBelt"
         _BeltTexTilling ("Belt Texture Tilling", Float) = 1
         _Color ("Color", Color) = (1,1,1,1)
         _Speed ("Speed", Range(0, 10)) = 1
+        _UnscaledTime ("Unscaled Time", Float) = 1
     }
     SubShader
     {
@@ -47,11 +48,13 @@ Shader "LD51/ConveyerBelt"
             half4 _MainTex_ST;
             half _BeltTexTilling, _Speed;
 
+            half _UnscaledTime;
+
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                half t = _Time.y * _Speed; 
+                half t = _UnscaledTime * _Speed; 
                 o.uv = half2(v.uv.x, (v.uv.y * _BeltTexTilling) - t);
                 return o;
             }

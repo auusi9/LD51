@@ -9,17 +9,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894985301767404256}
+  - component: {fileID: 906231595967913191}
   - component: {fileID: 1894985301767404263}
   - component: {fileID: 1894985301767404262}
   - component: {fileID: 6087245680706970117}
   - component: {fileID: 729338858022430971}
+  - component: {fileID: 1931019869093817512}
   m_Layer: 5
   m_Name: BottomUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1894985301767404256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,6 +50,27 @@ RectTransform:
   m_AnchoredPosition: {x: 90, y: -45}
   m_SizeDelta: {x: -980, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!223 &906231595967913191
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894985301767404257}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 158118763
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!222 &1894985301767404263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -114,6 +137,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1931019869093817512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894985301767404257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &1894985301678693305
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -62,6 +62,9 @@ namespace Code.Items
 
         public override void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right && _isDragging)
             {
                 _item.Rotate();
@@ -185,6 +188,9 @@ namespace Code.Items
 
         public override void OnDrag(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             base.OnDrag(eventData);
             
             if (eventData.button == PointerEventData.InputButton.Right)

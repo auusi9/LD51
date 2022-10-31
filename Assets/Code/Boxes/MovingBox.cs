@@ -13,6 +13,9 @@ namespace Code.Boxes
         [SerializeField] private AudioSource _boxAudioSource;
         [SerializeField] private AudioClip _boxPickUp;
         [SerializeField] private AudioClip _boxPutDown;
+        [SerializeField] private Animator _boxAnimator;
+        private int _dropTrigger = Animator.StringToHash("Drop");
+        private int _grabTrigger = Animator.StringToHash("Grab");
         public Box Box;
         private Belt _myBelt;
 
@@ -24,9 +27,14 @@ namespace Code.Boxes
         
         public override void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             base.OnPointerDown(eventData);
             _boxAudioSource.clip = _boxPickUp;
             _boxAudioSource.Play();
+            _boxAnimator.ResetTrigger(_grabTrigger);
+            _boxAnimator.SetTrigger(_grabTrigger);
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
@@ -35,9 +43,14 @@ namespace Code.Boxes
         
         public override void OnPointerUp(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             base.OnPointerUp(eventData);
             _boxAudioSource.clip = _boxPutDown;
             _boxAudioSource.Play();
+            _boxAnimator.ResetTrigger(_dropTrigger);
+            _boxAnimator.SetTrigger(_dropTrigger);
             if (TrySend(eventData))
             {
                 return;

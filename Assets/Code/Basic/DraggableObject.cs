@@ -11,12 +11,12 @@ namespace Code.Basic
     public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private RectTransform _rectTransform;
-        [SerializeField] private Shadow _shadow;
+        [SerializeField] private RectTransform[] _shadows;
         [SerializeField] private float _scale = 1.0f;
         [SerializeField] protected GridCanvas _gridCanvas;
         [SerializeField] protected GridCanvas _burner;
         [SerializeField] protected GridCanvas _sender;
-
+        private Vector3 _shadowDistSum = new Vector3(8, -8, 0);
         public event Action RightClickEvent;
 
         public virtual bool HasPool => false;
@@ -27,12 +27,18 @@ namespace Code.Basic
         
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
             OnDrag(eventData);
         }
 
         public virtual void OnDrag(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 return;
@@ -57,19 +63,24 @@ namespace Code.Basic
             {
                 return;
             }
-            
-            _shadow.enabled = false;
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 RightClickEvent?.Invoke();
                 return;
             }
+            
             transform.localScale *= _scale;
-            _shadow.enabled = true;
+            foreach(RectTransform _shadow in _shadows)
+            {
+                _shadow.localPosition += _shadowDistSum;
+            }
             transform.SetAsLastSibling();
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_gridCanvas.Canvas.transform as RectTransform, eventData.position, _gridCanvas.Canvas.worldCamera, out Vector2 localPoint);
@@ -78,13 +89,19 @@ namespace Code.Basic
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
+            if(eventData.pointerId > 0)
+                return;
+            
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 return;
             }
 
             transform.localScale *= 1 / _scale;
-            _shadow.enabled = false;
+            foreach (RectTransform _shadow in _shadows)
+            {
+                _shadow.localPosition -= _shadowDistSum;
+            }
             TrySetIntoBurner(eventData);
         }
 
