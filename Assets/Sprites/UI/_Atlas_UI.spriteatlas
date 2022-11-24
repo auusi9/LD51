@@ -59,6 +59,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 482cada25cc7b394e9160127aaa47394, type: 3}
   - {fileID: 21300000, guid: f29c47b23583ec942a417ad2b3ac676e, type: 3}
   - {fileID: 21300000, guid: e9450683422680040a70c45791af4bdd, type: 3}
+  - {fileID: 21300000, guid: 690088c35b691ff4ca676f4169fa01a0, type: 3}
+  - {fileID: 21300000, guid: 7d0a8be3c2328ab4eb1a3e329da2e9b1, type: 3}
   - {fileID: 21300000, guid: 4655277547885624f9345769dd789688, type: 3}
   - {fileID: 21300000, guid: 431e3095f6d706d41b558ed7191162bc, type: 3}
   - {fileID: 21300000, guid: f6ed67e57db6c9b4386cb71739745dce, type: 3}
@@ -77,6 +79,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6022d5bab2136d348af749e9bee9dbba, type: 3}
   - {fileID: 21300000, guid: 5cc833ea18bae5f498e5655adf8c2b64, type: 3}
   - {fileID: 21300000, guid: 6dfaf24bbdae6ab4e94006cda5967ad0, type: 3}
+  - {fileID: 21300000, guid: 376ea15b3c1183846af93d850bf5309a, type: 3}
   - {fileID: 21300000, guid: e0d7cb8b7eb58f944a723eb648a3fef6, type: 3}
   - {fileID: 21300000, guid: 7d13f99b7f8605c49bb709ae1f434a56, type: 3}
   - {fileID: 21300000, guid: 90be7deb9eadbaa42918887aa8c8ee06, type: 3}
@@ -90,6 +93,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c5b7175d12bd0db4d9ba974f9e66fd1f, type: 3}
   - {fileID: 21300000, guid: 43fd777d04d62254c8a6ab6d13a361c0, type: 3}
   - {fileID: 21300000, guid: 26dd30cd8ec37404b92c7c30474efa4e, type: 3}
+  - {fileID: 21300000, guid: be989afda4fa10a4b92e0116dc20c3d4, type: 3}
   - {fileID: 21300000, guid: be1bfd1f9a3cb934db19cbe21a453843, type: 3}
   - {fileID: 21300000, guid: 19ca9aef66252c049b35c558bbd26daa, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -102,6 +106,8 @@ SpriteAtlas:
   - ButtonSlideHolder_Pressed
   - TinyItem05
   - LoadingBoxFront
+  - IconTick
+  - IconCross
   - Title&
   - PanelTimerFill
   - TutoLine
@@ -120,6 +126,7 @@ SpriteAtlas:
   - TextPause01
   - TinyItem06
   - TinyItem08
+  - Check
   - ButtonSlideHandle
   - IconBoxClose
   - TinyItem07
@@ -133,6 +140,7 @@ SpriteAtlas:
   - TinyItem03
   - LoadingCircle
   - UIResults
+  - Circle_UI
   - TinyItem10
   - SquareDefaultUI_Fill
   m_RenderDataMap: {}

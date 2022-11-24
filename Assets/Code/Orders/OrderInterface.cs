@@ -122,6 +122,7 @@ namespace Code.Orders
             
             if (orderUpdater.IsComplete)
             {
+                OrderUpdated?.Invoke(orderUpdater);
                 Destroy(box.gameObject);
                 Debug.Log("Order completed");
                 OrderCompleted?.Invoke(new OrderCompleted(orderUpdater.Order, orderUpdater.Score));

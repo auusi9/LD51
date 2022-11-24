@@ -17,7 +17,7 @@ namespace Code.Timer
 
         public event Action TimesUp;
 
-        public float Time => _currentTime / _totalTime;
+        public float Time => 1 - (_currentTime / _totalTime);
 
         private void Update()
         {

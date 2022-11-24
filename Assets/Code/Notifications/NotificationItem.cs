@@ -12,7 +12,8 @@ namespace Code.Notifications
     {
         [SerializeField] private ItemsConfiguration _itemsConfiguration;
         [SerializeField] private Image _icon;
-        [SerializeField] private Image _completed;
+        [SerializeField] private GameObject _completed;
+        [SerializeField] private Color _completedColor;
         
         public void SetItem(ItemEntity itemEntity)
         {
@@ -33,7 +34,8 @@ namespace Code.Notifications
         {
             if (itemsCompleted.Completed)
             {
-                _completed.gameObject.SetActive(true);
+                _icon.color = _completedColor;
+                _completed.SetActive(true);
             }
         }
     }

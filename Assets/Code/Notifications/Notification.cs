@@ -14,11 +14,15 @@ namespace Code.Notifications
         [SerializeField] private NotificationItem _item;
         [SerializeField] private Transform _container;
         [SerializeField] private Image _barFill;
+        [SerializeField] private Image _circleFill;
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _orderCancelled;
         [SerializeField] private AudioClip _orderAppear;
         [SerializeField] private OrderInterface _orderInterface;
         [SerializeField] private Animator _animator;
+        [SerializeField] private Color _color01;
+        [SerializeField] private Color _color02;
+        [SerializeField] private Color _color03;
 
         private Order _order;
         private string _phrase;
@@ -57,7 +61,7 @@ namespace Code.Notifications
         {
             if (_order == obj.Order)
             {
-                _animator.SetTrigger("Out");
+                _animator.SetTrigger("Completed");
             }
         }
 
@@ -67,7 +71,7 @@ namespace Code.Notifications
             {
                 _audioSource.clip = _orderCancelled;
                 _audioSource.Play();
-                _animator.SetTrigger("Out");
+                _animator.SetTrigger("Failed");
             }
         }
 
@@ -98,6 +102,27 @@ namespace Code.Notifications
                 _orderInterface.OrderExpired(_order.Id);
                 _callbackCalled = true;
             }
+
+            UpdateColor();
+        }
+
+        private void UpdateColor()
+        {
+            Color newColor = Color.white;
+            if(_barFill.fillAmount < 0.33)
+            {
+                newColor = _color03;
+            }
+            else if (_barFill.fillAmount < 0.66)
+            {
+                newColor = _color02;
+            }
+            else
+            {
+                newColor = _color01;
+            }
+            _barFill.color = newColor;
+            _circleFill.color = newColor;
         }
     }
 }
