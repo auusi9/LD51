@@ -19,12 +19,10 @@ namespace Code.Notifications
         {
             if (itemEntity.Shape == -1)
             {
-                ItemType itemType = _itemsConfiguration.Types[itemEntity.ItemId];
-
-                Item item = _itemsConfiguration.Shapes.FirstOrDefault(x => x.ItemType == itemType);
-                if (item != null)
+                Item itemType = _itemsConfiguration.Shapes[itemEntity.ItemId];
+                if (itemType != null)
                 {
-                    _icon.sprite = item.Icon;
+                    _icon.sprite = itemType.Icon;
                     _icon.SetNativeSize();
                 }
             }

@@ -4,6 +4,7 @@
     {
         public int ItemAmount;
         public int ShapesAmount;
+        public float[] ShapeChance;
         public int MaximumItemsXOrder;
         public int MinimumItemsXOrder;
         public float OrderExpirationTime;

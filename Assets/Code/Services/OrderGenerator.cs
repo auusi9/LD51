@@ -11,17 +11,17 @@ namespace Code.Services
     public class OrderGenerator
     {
         private readonly OrderConfigurator _orderConfigurator;
-        private readonly BeltItemSpawner.RandomNumberGenerator<int> _randomNumberGenerator;
+        private readonly RandomNumberGenerator<int> _randomNumberGenerator;
         
         public OrderGenerator(OrderConfigurator orderConfigurator)
         {
             _orderConfigurator = orderConfigurator;
             
-            _randomNumberGenerator = new BeltItemSpawner.RandomNumberGenerator<int>();
+            _randomNumberGenerator = new RandomNumberGenerator<int>();
 
             for (int i = 0; i < _orderConfigurator.ShapesAmount; i++)
             {
-                _randomNumberGenerator.Add(1f, i);
+                _randomNumberGenerator.Add(_orderConfigurator.ShapeChance[i], i);
             }
         }
 

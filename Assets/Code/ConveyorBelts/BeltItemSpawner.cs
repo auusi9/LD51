@@ -15,15 +15,15 @@ namespace Code.ConveyorBelts
         [SerializeField] private ComponentPool<MovingItem>[] _poolArray;
         [SerializeField] private Transform _itemsParent;
 
-        private RandomNumberGenerator<int> _randomNumberGenerator;
+        private RandomNumberGeneratorVariablePossibility<int> _randomNumberGeneratorVariablePossibility;
 
         private void Start()
         {
-            _randomNumberGenerator = new RandomNumberGenerator<int>();
+            _randomNumberGeneratorVariablePossibility = new RandomNumberGeneratorVariablePossibility<int>();
 
             for (int i = 0; i < _itemsConfiguration.ShapesAmount; i++)
             {
-                _randomNumberGenerator.Add(1f, i);
+                _randomNumberGeneratorVariablePossibility.Add(1f, i);
             }
             
             _poolArray = new ComponentPool<MovingItem>[_itemsConfiguration.ShapesAmount];
@@ -36,7 +36,7 @@ namespace Code.ConveyorBelts
 
         public MovingItem GetRandomItem()
         {
-            int randomInt = _randomNumberGenerator.NextItem();
+            int randomInt = _randomNumberGeneratorVariablePossibility.NextItem();
             MovingItem movingItem = _poolArray[randomInt].GetComponent();
             Debug.Log("New item " + randomInt + " name "+ movingItem.name);
             movingItem.SetPool(_poolArray[randomInt]);
@@ -44,7 +44,7 @@ namespace Code.ConveyorBelts
         }
         
         [Serializable]
-        public class RandomNumberGenerator<T>
+        public class RandomNumberGeneratorVariablePossibility<T>
         {
             [SerializeField] private List<RandomItem<T>> _items = new List<RandomItem<T>>();
             private System.Random _random = new System.Random();

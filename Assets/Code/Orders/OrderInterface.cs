@@ -30,6 +30,8 @@ namespace Code.Orders
         public Action InvalidBox;
         public Action<Order> NewOrderCreated;
 
+        public int QueueLength => _currentOrders.Count;
+
         private void OnEnable()
         {
             _orderGenerator = new OrderGenerator(new OrderConfigurator()
@@ -39,8 +41,14 @@ namespace Code.Orders
                 MaximumItemsXOrder = _maximumItemsXOrder,
                 MinimumItemsXOrder = _minimumItemsXOrder,
                 ItemsHaveDifferentShapes = _itemsHaveDifferentShapes,
-                OrderExpirationTime = _orderExpirationTime
+                OrderExpirationTime = _orderExpirationTime,
+                ShapeChance = _itemsConfiguration.Chances
             });
+        }
+
+        public void Clear()
+        {
+            
         }
 
         public void NewOrder()
@@ -63,7 +71,7 @@ namespace Code.Orders
                 return;
             }
 
-            List<int> itemsIds = items.Select(x => Array.IndexOf(_itemsConfiguration.Types, x.ItemType)).ToList();
+            List<int> itemsIds = items.Select(x => Array.IndexOf(_itemsConfiguration.Shapes,  _itemsConfiguration.Shapes.FirstOrDefault(y => y.Icon == x.Icon))).ToList();
             List<int> shapes = new List<int>();
 
             if (_itemsHaveDifferentShapes)
