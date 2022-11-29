@@ -420,7 +420,6 @@ GameObject:
   - component: {fileID: 5879895271680732885}
   - component: {fileID: 1623654915548705372}
   - component: {fileID: 1976373760816737709}
-  - component: {fileID: 7236303599644006439}
   m_Layer: 5
   m_Name: Belt
   m_TagString: Untagged
@@ -486,19 +485,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7236303599644006439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794616799251525054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3de1533b9d541c64d8fcef21e2decd30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _image: {fileID: 1976373760816737709}
 --- !u!1 &3152468713664653606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,7 +5868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100240714574864859, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 100240714574864859, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5912,32 +5898,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100240715345773918, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240715365271255, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240715365271255, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240716112668569, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240716112668569, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345329380338385902, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: ShapeModule.m_Rotation.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345329380338385902, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: ShapeModule.m_Rotation.z
+    - target: {fileID: 8665273838717529025, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6049,34 +6011,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100240714574864868, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240715345773918, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240715365271255, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240715365271255, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240716112668569, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100240716112668569, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345329380338385902, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: ShapeModule.m_Rotation.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345329380338385902, guid: a658591b979ffd941890d7e16c6e1eda, type: 3}
-      propertyPath: ShapeModule.m_Rotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

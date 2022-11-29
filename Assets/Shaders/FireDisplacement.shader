@@ -6,7 +6,6 @@ Shader "LD51/FireDisplacement"
         _DisplaceTex ("Displacement Texture", 2D) = "white" {}
         _Magnitude ("Magnitude", Range(0, 1)) = 1
         _Speed ("Speed", Range(0, 2)) = 1
-        _UnscaledTime ("Unscaled Time", Float) = 1
     }
     SubShader
     {
@@ -53,11 +52,11 @@ Shader "LD51/FireDisplacement"
             }
 
             sampler2D _MainTex, _DisplaceTex;
-            half _Magnitude, _Speed, _UnscaledTime;
+            half _Magnitude, _Speed;
             
             fixed4 frag (v2f i) : SV_Target
             {
-                half timeDistorsion =_UnscaledTime * _Speed;
+                half timeDistorsion = _Time.y * _Speed;
                 half2 disp = tex2D(_DisplaceTex, half2(i.uv.x + timeDistorsion, i.uv.y)).xy;
                 disp = ((disp * 2) - 1) * _Magnitude;
                 

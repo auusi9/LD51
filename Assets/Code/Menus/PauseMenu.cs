@@ -11,6 +11,8 @@ namespace Code.Menus
         [SerializeField] private AudioMixer _audioMixer;
         [SerializeField] private Slider _fxSlider;
         [SerializeField] private Slider _musicSlider;
+        [SerializeField] private Animator _pauseAnimator;
+        private int _outTrigger = Animator.StringToHash("Out");
 
         public void Show()
         {
@@ -30,7 +32,7 @@ namespace Code.Menus
 
         public void Resume()
         {
-            Hide();
+            _pauseAnimator.SetTrigger(_outTrigger);
         }
 
         public void MainMenu()
@@ -39,7 +41,7 @@ namespace Code.Menus
             _gameState.EndGame();
             SceneManager.LoadScene(0);
         }
-        
+
         private void Hide()
         {
             _gameState.ResumeGame();
