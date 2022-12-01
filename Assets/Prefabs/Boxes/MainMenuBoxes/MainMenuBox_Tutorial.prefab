@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tutorial: {fileID: 0}
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
 --- !u!224 &1179757433755060125 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8981595013703577348, guid: 1a37cbaffad507746b55edef54050ba2, type: 3}

@@ -39,7 +39,7 @@ namespace Code.Menus
         {
             _gameState.ResumeGame();
             _gameState.EndGame();
-            SceneManager.LoadScene(0);
+            LoadTransition.Instance.LoadMainMenu();
         }
 
         private void Hide()

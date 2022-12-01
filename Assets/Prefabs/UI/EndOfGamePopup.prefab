@@ -1617,7 +1617,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5500549325758006998, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
       propertyPath: m_text
-      value: Submit
+      value: 'Cancel
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8061542732717515432, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
       propertyPath: m_Name

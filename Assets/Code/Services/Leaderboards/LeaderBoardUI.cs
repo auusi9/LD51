@@ -9,11 +9,15 @@ namespace Code.Services.Leaderboards
         [SerializeField] private TextMeshProUGUI[] _positions;
         [SerializeField] private TextMeshProUGUI[] _aliases;
         [SerializeField] private TextMeshProUGUI[] _scores;
+        [SerializeField] private GameObject _loadingIcon;
+        [SerializeField] private GameObject _content;
         [SerializeField] private LeaderboardService _service;
 
         private void Start()
         {
             _service.LeaderboardUpdated += LeaderboardUpdated;
+            _loadingIcon.SetActive(true);
+            _content.SetActive(false);
         }
         
         private void OnDestroy()
@@ -23,6 +27,9 @@ namespace Code.Services.Leaderboards
 
         private void LeaderboardUpdated()
         {
+            _content.SetActive(true);
+            _loadingIcon.SetActive(false);
+            
             for (int i = 0; i < _service.Top.Length; i++)
             {
                 _positions[i].text = $"{i + 1}.";

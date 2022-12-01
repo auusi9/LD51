@@ -24,11 +24,12 @@ namespace Code.Orders
 
         private List<OrderUpdater> _currentOrders = new List<OrderUpdater>();
 
-        public Action<OrderCompleted> OrderCompleted;
-        public Action<OrderCompleted> OrderCancelled;
-        public Action<OrderUpdater> OrderUpdated;
-        public Action InvalidBox;
-        public Action<Order> NewOrderCreated;
+        public event Action<OrderCompleted> OrderCompleted;
+        public event Action<OrderCompleted> OrderCancelled;
+        public event Action<OrderUpdater> OrderUpdated;
+        public event Action MainMenuBoxSent;
+        public event Action InvalidBox;
+        public event Action<Order> NewOrderCreated;
 
         public int QueueLength => _currentOrders.Count;
 
@@ -48,7 +49,12 @@ namespace Code.Orders
 
         public void Clear()
         {
-            
+            _currentOrders.Clear();
+        }
+
+        public void MainMenuBox()
+        {
+            MainMenuBoxSent?.Invoke();
         }
 
         public void NewOrder()

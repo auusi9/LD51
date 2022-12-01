@@ -17,13 +17,14 @@ namespace Code.Boxes
         [SerializeField] private AudioClip _boxPickUp;
         [SerializeField] private AudioClip _boxPutDown;
         [SerializeField] private Animator _boxAnimator;
+        [SerializeField] private BeltLocator _beltLocator;
         private int _dropTrigger = Animator.StringToHash("Drop");
         private int _grabTrigger = Animator.StringToHash("Grab");
         private Belt _myBelt;
 
         private Vector3 _initialPosition;
 
-        private void Start()
+        private void Awake()
         {
             _initialPosition = transform.position;
         }
@@ -47,6 +48,7 @@ namespace Code.Boxes
             if (_myBelt != null)
             {
                 _myBelt.RemoveObjectFromBelt(this);
+                _myBelt = null;
             }
         }
         
@@ -85,13 +87,25 @@ namespace Code.Boxes
 
         public override void Destroy()
         {
-            transform.position = _initialPosition;
-            _animator.enabled = true;
-            _animator.Rebind();
+            if (_myBelt == null)
+            {
+                transform.position = _initialPosition;
+                _animator.enabled = true;
+                _animator.Rebind(); 
+            }
+            else
+            {
+                Belt belt = _beltLocator.GetOtherBelt(_myBelt);
+                transform.position = belt.GetInitPosition().position;
+                SetBelt(belt);
+            }
         }
         
         private bool TrySend(PointerEventData eventData)
         {
+            if (_action == null)
+                return false;
+            
             var results = new List<RaycastResult>();
             _sender.GraphicRaycaster.Raycast(eventData, results);
 

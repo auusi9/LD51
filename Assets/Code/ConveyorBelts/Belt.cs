@@ -16,6 +16,8 @@ namespace Code.ConveyorBelts
         [SerializeField] private float _velocity;
         [SerializeField] private BeltItemSpawner _beltItemSpawner;
         [SerializeField] private GameState _gameState;
+        [SerializeField] private BeltLocator _beltLocator;
+        
         
         private List<DraggableObject> _objectsInBelt = new List<DraggableObject>();
         private float _timeWithoutItem = 0f;
@@ -24,6 +26,17 @@ namespace Code.ConveyorBelts
         private void Start()
         {
             _beltDirection = _finalPosition.position - _initialPosition.position;
+            _beltLocator.AddBelt(this);
+        }
+
+        private void OnDestroy()
+        {
+            _beltLocator.RemoveBelt(this);
+        }
+
+        public Transform GetInitPosition()
+        {
+            return _initialPosition;
         }
 
         private void Update()

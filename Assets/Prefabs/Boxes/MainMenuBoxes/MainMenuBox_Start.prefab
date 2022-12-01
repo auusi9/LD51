@@ -457,6 +457,7 @@ MonoBehaviour:
   _boxPickUp: {fileID: 8300000, guid: 63f7c64f98c0f5b49acd09bdc1998f85, type: 3}
   _boxPutDown: {fileID: 8300000, guid: cd074c023a6eaab42b815f51726eab73, type: 3}
   _boxAnimator: {fileID: 6622471322734620334}
+  _beltLocator: {fileID: 11400000, guid: 27f755757c9451f45a445a6c1ec97d62, type: 2}
 --- !u!95 &6622471322734620334
 Animator:
   serializedVersion: 4
@@ -587,6 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 0}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
 --- !u!225 &8578678952644655210
 CanvasGroup:
   m_ObjectHideFlags: 0

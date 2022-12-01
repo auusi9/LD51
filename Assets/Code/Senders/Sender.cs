@@ -21,13 +21,15 @@ namespace Code.Senders
         {
             _orderInterface.OrderUpdated += OrderUpdated;
             _orderInterface.InvalidBox += BadBox;
+            _orderInterface.MainMenuBoxSent += ValidBoxOnSender;
             _scoreSystem.LastBoxCompletedScore += OrderCompleted;
         }
 
         private void OnDestroy()
         {
-            _orderInterface.InvalidBox -= BadBox;
             _orderInterface.OrderUpdated -= OrderUpdated;
+            _orderInterface.InvalidBox -= BadBox;
+            _orderInterface.MainMenuBoxSent -= ValidBoxOnSender;
             _scoreSystem.LastBoxCompletedScore -= OrderCompleted;
         }
 
@@ -45,6 +47,11 @@ namespace Code.Senders
         }
 
         private void OrderUpdated(OrderUpdater order)
+        {
+            ValidBoxOnSender();
+        }
+
+        private void ValidBoxOnSender()
         {
             if (_orderUpdated.gameObject.activeSelf)
             {
