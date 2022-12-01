@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Code.Orders
 {
@@ -9,6 +10,9 @@ namespace Code.Orders
         [SerializeField] private int _scoreTimeBonus = 100;
         [SerializeField] private int _scoreTime = 50;
         [SerializeField] private int _missedOrderPenalization = 100;
+        [SerializeField] private Animator _scoreAnimator;
+        private int _completedTrigger = Animator.StringToHash("Completed");
+        private int _cancelledTrigger = Animator.StringToHash("Cancelled");
 
         private int _currentScore = 0;
 
@@ -34,7 +38,8 @@ namespace Code.Orders
         private void OrderCancelled(OrderCompleted obj)
         {
             _currentScore -= _missedOrderPenalization;
-            
+            _scoreAnimator.SetTrigger(_cancelledTrigger);
+
             ScoreUpdated?.Invoke(_currentScore);
         }
 
@@ -56,6 +61,8 @@ namespace Code.Orders
             obj.Score = score;
             
             _currentScore += score;
+            _scoreAnimator.SetTrigger(_completedTrigger);
+
             ScoreUpdated?.Invoke(_currentScore);
             LastBoxCompletedScore?.Invoke(score);
         }

@@ -89,14 +89,14 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 30
+  m_Spacing: 35
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
-  m_ReverseArrangement: 1
+  m_ReverseArrangement: 0
 --- !u!114 &3435390222180339755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febae32571754418aac0a3609bdb5f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minTimeBetweenOrders: 5
   _timeBetweenOrders: 10
+  _maxTimeBetweenOrders: 20
+  _slowDownOrders: 6
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
 --- !u!114 &1578759189

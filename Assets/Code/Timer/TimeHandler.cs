@@ -11,6 +11,9 @@ namespace Code.Timer
         [SerializeField] private EndOfGamePopup _popup;
         [SerializeField] private ScoreSystem _scoreSystem;
         [SerializeField] private GameState _gameState;
+        [SerializeField] private Animator _scoreAnimator;
+        private int _lowTimerTrigger = Animator.StringToHash("Timer Low");
+        private bool _timerLow = false;
 
         private float _currentTime;
         private bool _hasTriggered = false;
@@ -34,6 +37,12 @@ namespace Code.Timer
             }
 
             _currentTime += UnityEngine.Time.deltaTime;
+            
+            if(Time < 0.2 && !_timerLow)
+            {
+                _timerLow = true;
+                _scoreAnimator.SetTrigger(_lowTimerTrigger);
+            }
         }
     }
 }
