@@ -10,6 +10,8 @@ namespace Code.Menus
         [SerializeField] private Animator _animator;
         public static LoadTransition Instance;
 
+        private int _outHash = Animator.StringToHash("Out");
+
         private void Awake()
         {
             if (Instance == null)
@@ -30,17 +32,26 @@ namespace Code.Menus
         {
             if (AnimationFinished())
             {
-                gameObject.SetActive(false);
+                _animator.SetTrigger(_outHash);
+                StartCoroutine(WaitForAnimationToFinish());
             }
             else
             {
-                StartCoroutine(WaitForAnimationToFinish());
+                StartCoroutine(WaitForOut());
             }
         }
 
         private bool AnimationFinished()
         {
             return _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0);
+        }
+
+        private IEnumerator WaitForOut()
+        {
+            yield return new WaitUntil(AnimationFinished);
+            _animator.SetTrigger(_outHash);
+            yield return 0;
+            yield return WaitForAnimationToFinish();
         }
 
         private IEnumerator WaitForAnimationToFinish()
