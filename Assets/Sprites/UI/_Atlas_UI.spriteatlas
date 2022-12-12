@@ -93,7 +93,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: dd062b3dd3c09eb42b7ebedece796ee1, type: 3}
   - {fileID: 21300000, guid: c5b7175d12bd0db4d9ba974f9e66fd1f, type: 3}
   - {fileID: 21300000, guid: 43fd777d04d62254c8a6ab6d13a361c0, type: 3}
-  - {fileID: 21300000, guid: 26dd30cd8ec37404b92c7c30474efa4e, type: 3}
   - {fileID: 21300000, guid: be989afda4fa10a4b92e0116dc20c3d4, type: 3}
   - {fileID: 21300000, guid: be1bfd1f9a3cb934db19cbe21a453843, type: 3}
   - {fileID: 21300000, guid: 19ca9aef66252c049b35c558bbd26daa, type: 3}
@@ -141,7 +140,6 @@ SpriteAtlas:
   - TinyItem01
   - TinyItem03
   - LoadingCircle
-  - UIResults
   - Circle_UI
   - TinyItem10
   - SquareDefaultUI_Fill
