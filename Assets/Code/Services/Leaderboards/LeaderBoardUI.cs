@@ -1,11 +1,10 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Code.Services.Leaderboards
 {
-    public class LeaderBoardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class LeaderBoardUI : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI[] _positions;
         [SerializeField] private TextMeshProUGUI[] _aliases;
@@ -13,8 +12,6 @@ namespace Code.Services.Leaderboards
         [SerializeField] private GameObject _loadingIcon;
         [SerializeField] private GameObject _content;
         [SerializeField] private LeaderboardService _service;
-        [SerializeField] private Animator _animator;
-        private int _hoverBool = Animator.StringToHash("Hover");
 
         private void Start()
         {
@@ -39,15 +36,6 @@ namespace Code.Services.Leaderboards
                 _aliases[i].text = _service.Top[i].Alias;
                 _scores[i].text = _service.Top[i].Score.ToString("N0");
             }
-        }
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            _animator.SetBool(_hoverBool, true);
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            _animator.SetBool(_hoverBool, false);
         }
     }
 }

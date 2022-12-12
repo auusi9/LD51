@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 8047676566590751497}
   - component: {fileID: 8047676566590751499}
   - component: {fileID: 8047676566590751498}
+  - component: {fileID: 5484504831862640118}
   m_Layer: 5
   m_Name: Leaderboard
   m_TagString: Untagged
@@ -731,7 +732,6 @@ MonoBehaviour:
   _loadingIcon: {fileID: 163662993487719300}
   _content: {fileID: 8047676565694522942}
   _service: {fileID: 0}
-  _animator: {fileID: 8047676566590751498}
 --- !u!95 &8047676566590751498
 Animator:
   serializedVersion: 4
@@ -752,6 +752,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5484504831862640118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047676566590751510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42534a36b05a5bd439ff0e443933cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8047676566590751498}
 --- !u!1001 &4728849615902471426
 PrefabInstance:
   m_ObjectHideFlags: 0
