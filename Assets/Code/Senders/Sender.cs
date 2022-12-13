@@ -12,6 +12,7 @@ namespace Code.Senders
         [SerializeField] private Animator _orderCompleted;
         [SerializeField] private TextMeshProUGUI _orderCompletedText;
         [SerializeField] private Animator _orderUpdated;
+        [SerializeField] private Animator _objectSentAnimator;
         [SerializeField] private ScoreSystem _scoreSystem;
         [SerializeField] private AudioSource _senderAudioSource;
         [SerializeField] private AudioClip _badBox;
@@ -73,6 +74,14 @@ namespace Code.Senders
         {
             _senderAudioSource.clip = _badBox;
             _senderAudioSource.Play();
+
+            if (_objectSentAnimator.gameObject.activeSelf)
+            {
+                _objectSentAnimator.Rebind();
+                return;
+            }
+
+            _objectSentAnimator.gameObject.SetActive(true);
         }
     }
 }
