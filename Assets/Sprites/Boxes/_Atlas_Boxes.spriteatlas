@@ -59,6 +59,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8c550948df8b86d4b96570fda2a8db79, type: 3}
   - {fileID: 21300000, guid: 19c4249850d2b69408098f80562e4570, type: 3}
   - {fileID: 21300000, guid: 40f14fbad424ded48a742d736079678e, type: 3}
+  - {fileID: 21300000, guid: c8d6bf0be27aeea4d8a80d9ad7995dfa, type: 3}
   - {fileID: 21300000, guid: 4246cd2b2a2fcdc41800b169a5e7f776, type: 3}
   - {fileID: 21300000, guid: 0b92ec5b365ca3448b7a5200659d0044, type: 3}
   - {fileID: 21300000, guid: 15e4b5cba5779dd46a7f12f344ecf9cc, type: 3}
@@ -75,6 +76,7 @@ SpriteAtlas:
   - TapeBox
   - BoxLid05
   - BoxClosed1x1
+  - BoxClosed3x3
   - BoxClosed1x3
   - BoxClosed3x4
   - DotLine
