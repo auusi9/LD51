@@ -33,6 +33,8 @@ namespace Code.Orders
 
         public int QueueLength => _currentOrders.Count;
 
+        public GameStats GameStats;
+
         private void OnEnable()
         {
             _orderGenerator = new OrderGenerator(new OrderConfigurator()
@@ -50,6 +52,7 @@ namespace Code.Orders
         public void Clear()
         {
             _currentOrders.Clear();
+            GameStats.Clear();
         }
 
         public void MainMenuBox()
@@ -133,9 +136,18 @@ namespace Code.Orders
             }
             
             orderUpdater.UpdateScore(boxInfo, _scoreConfiguration);
+
+            if (boxInfo.EmptyTiles == 0)
+            {
+                GameStats.PerfectBoxesSent++;
+            }
             
+            GameStats.BoxesSent++;
+            GameStats.ItemsSent += entities.Count;
+
             if (orderUpdater.IsComplete)
             {
+                GameStats.OrdersCompleted++;
                 OrderUpdated?.Invoke(orderUpdater);
                 Destroy(box.gameObject);
                 Debug.Log("Order completed");
@@ -173,7 +185,7 @@ namespace Code.Orders
         {
             OrderUpdater order = _currentOrders.FirstOrDefault(x => x.Order.Id == id);
             _currentOrders.Remove(order);
-
+            GameStats.OrdersLost++;
             OrderCancelled?.Invoke(order);
         }
     }
@@ -186,5 +198,23 @@ namespace Code.Orders
         public int BonusNoFillNoEmpty;
         public int BonusLessFillThanItem;
         public int BonusMoreFillThanItem;
+    }
+
+    public struct GameStats
+    {
+        public int ItemsSent;
+        public int BoxesSent;
+        public int PerfectBoxesSent;
+        public int OrdersCompleted;
+        public int OrdersLost;
+
+        public void Clear()
+        {
+            ItemsSent = 0;
+            BoxesSent = 0;
+            PerfectBoxesSent = 0;
+            OrdersCompleted = 0;
+            OrdersLost = 0;
+        }
     }
 }
