@@ -10,7 +10,7 @@ namespace Code.Menus
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && _gameState.GameStarted)
+            if (Input.GetKeyDown(KeyCode.Space) && _gameState.GameStarted && !_gameState.GamePaused)
             {
                 _pauseMenu.Show();
             }
