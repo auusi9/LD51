@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Code.Services.GoogleSpreadsheet;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Code.Services.Leaderboards
         private SpreadSheetRetriever<LeaderboardEntry[]> _spreadSheetGet;
         private SpreadSheetRetriever<string> _spreadSheetSet;
 
-        public LeaderboardEntry[] Top;
+        public LeaderboardPosition[] Top;
         public LeaderboardPosition[] Surroundings;
 
         public Action LeaderboardUpdated;
@@ -56,13 +57,20 @@ namespace Code.Services.Leaderboards
         private void OnGetResponseSuccessful(LeaderboardEntry[] leaderboard)
         {
             int topAmount = Mathf.Min(_topSize, leaderboard.Length);
-            Top = leaderboard.Take(topAmount).ToArray();
+            var top = leaderboard.Take(topAmount).ToArray();
+            Top = new LeaderboardPosition[top.Length];
+            
+            for (var i = 0; i < top.Length; i++)
+            {
+                Top[i] = new LeaderboardPosition(i + 1, top[i]);
+            }
+
             _leaderboard = leaderboard;
             GetSurroundings();
             LeaderboardUpdated?.Invoke();
         }
 
-        public void GetSurroundings()
+        private void GetSurroundings()
         {
             if (string.IsNullOrEmpty(_alias))
             {
@@ -98,6 +106,59 @@ namespace Code.Services.Leaderboards
             }
             
             Debug.Log("Hola");
+        }
+
+        public LeaderboardPosition[] GetPossibleSurroundings(int score)
+        {
+            LeaderboardEntry fakeEntry = new LeaderboardEntry()
+            {
+                Alias = "",
+                Date = DateTime.UtcNow.ToString(),
+                Score = score
+            };
+            List<LeaderboardEntry> leaderboard = _leaderboard.ToList();
+
+            int index = -1;
+            for (int i = 0; i < _leaderboard.Length; i++)
+            {
+                if (_leaderboard[i].Score < score)
+                {
+                    index = i;
+                    leaderboard.Insert(index, fakeEntry);
+                    break;
+                }
+            }
+
+            if (index == -1)
+            {
+                leaderboard.Add(fakeEntry);
+            }
+
+            int topAmount = Mathf.Min(7, leaderboard.Count);
+
+            int halfTopAmount = topAmount % 2 == 0 ? (topAmount / 2) - 1 : topAmount / 2;
+            int bottomSize = leaderboard.Count - index - 1;
+            int maxIndex = bottomSize > halfTopAmount ? halfTopAmount : bottomSize;
+            int minIndex = index > halfTopAmount ? topAmount - maxIndex - 1: index;
+
+            if (minIndex <= halfTopAmount)
+            {
+                maxIndex = topAmount - minIndex - 1;
+            }
+            
+            var result = new LeaderboardPosition[topAmount];
+
+            for (int i = index - minIndex; i <= index + maxIndex; i++)
+            {
+                result[i - (index - minIndex)] = new LeaderboardPosition(i + 1, leaderboard[i]);
+
+                if (index == i)
+                {
+                    result[i - (index - minIndex)].IsFake = true;
+                }
+            }
+
+            return result;
         }
 
         private void OnGetResponseFailed()

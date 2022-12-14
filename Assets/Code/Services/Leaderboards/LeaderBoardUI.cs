@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace Code.Services.Leaderboards
 {
-    public class LeaderBoardUI : MonoBehaviour
+    public abstract class LeaderBoardUI : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI[] _positions;
-        [SerializeField] private TextMeshProUGUI[] _aliases;
-        [SerializeField] private TextMeshProUGUI[] _scores;
+        [SerializeField] protected LeaderboardUIElement[] _uiElements;
         [SerializeField] private GameObject _loadingIcon;
         [SerializeField] private GameObject _content;
-        [SerializeField] private LeaderboardService _service;
+        [SerializeField] protected LeaderboardService _service;
 
         private void Start()
         {
@@ -29,13 +27,18 @@ namespace Code.Services.Leaderboards
         {
             _content.SetActive(true);
             _loadingIcon.SetActive(false);
+
+            LeaderboardPosition[] entries = GetEntries();
             
-            for (int i = 0; i < _service.Top.Length; i++)
+            if(entries == null)
+                return;
+            
+            for (int i = 0; i < entries.Length; i++)
             {
-                _positions[i].text = $"{i + 1}.";
-                _aliases[i].text = _service.Top[i].Alias;
-                _scores[i].text = _service.Top[i].Score.ToString("N0");
+                _uiElements[i].SetElement(entries[i].Position, entries[i].Alias, entries[i].Score);
             }
         }
+
+        protected abstract LeaderboardPosition[] GetEntries();
     }
 }

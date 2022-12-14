@@ -13,16 +13,16 @@ namespace Code.Menus
         [SerializeField] private TMP_InputField _tmpInputField;
         [SerializeField] private GameState _gameState;
         [SerializeField] private Button _submitButton;
-        [SerializeField] private Button _cancelButton;
         [SerializeField] private Button _mainMenu;
         [SerializeField] private Button _continue;
         [SerializeField] private LeaderboardService _leaderboardService;
+        [SerializeField] private LeaderboardEndPopup _leaderboardEndPopup;
 
         private int _score;
         
         private void Start()
         {
-            _tmpInputField.onEndEdit.AddListener(NameSet);
+            _tmpInputField.onValueChanged.AddListener(NameSet);
         }
 
         private void NameSet(string newAlias)
@@ -41,18 +41,9 @@ namespace Code.Menus
         public void Submit()
         {
             _leaderboardService.NewEntry(_score);
-            Cancel();
-        }
-
-        public void Cancel()
-        {
-            _mainMenu.gameObject.SetActive(true);
-            _continue.gameObject.SetActive(true);
             _submitButton.gameObject.SetActive(false);
-            _cancelButton.gameObject.SetActive(false);
-            _tmpInputField.gameObject.SetActive(false);
         }
-
+        
         public void OpenPopup(int score)
         {
             _score = score;
@@ -62,10 +53,10 @@ namespace Code.Menus
             _tmpInputField.SetTextWithoutNotify(_leaderboardService.GetAlias());
             NameSet(_tmpInputField.text);
             _tmpInputField.gameObject.SetActive(true);
-            _mainMenu.gameObject.SetActive(false);
-            _continue.gameObject.SetActive(false);
+            _mainMenu.gameObject.SetActive(true);
+            _continue.gameObject.SetActive(true);
             _submitButton.gameObject.SetActive(true);
-            _cancelButton.gameObject.SetActive(true);
+            _leaderboardEndPopup.SetScore(score);
         }
 
         public void Continue()

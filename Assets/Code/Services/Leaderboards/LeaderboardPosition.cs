@@ -3,6 +3,7 @@
     public class LeaderboardPosition : LeaderboardEntry
     {
         public int Position { get; set; }
+        public bool IsFake;
 
         public LeaderboardPosition(int position, LeaderboardEntry entry)
         {
