@@ -91,8 +91,11 @@ namespace Code.Orders
             if (_currentTimeBetweenOrders < _lastOrder)
             {
                 _lastOrder = 0f;
-                _orderInterface.NewOrder();
-                return;
+
+                if (_orderInterface.QueueLength < 7)
+                {
+                    _orderInterface.NewOrder();
+                }
             }
 
             _lastOrder += Time.deltaTime;

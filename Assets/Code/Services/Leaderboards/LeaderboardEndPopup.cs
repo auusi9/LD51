@@ -38,5 +38,10 @@ namespace Code.Services.Leaderboards
                 }
             }
         }
+
+        public void DisableNewEntry()
+        {
+            _newEntry.Disable();
+        }
     }
 }

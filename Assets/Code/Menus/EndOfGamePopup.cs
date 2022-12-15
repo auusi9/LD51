@@ -45,6 +45,8 @@ namespace Code.Menus
             _leaderboardService.NewEntry(_score);
             _submitButton.interactable = false;
             _disableSubmit.SetTrigger(_disableTrigger);
+            _tmpInputField.interactable = false;
+            _leaderboardEndPopup.DisableNewEntry();
         }
         
         public void OpenPopup(int score)
@@ -59,6 +61,7 @@ namespace Code.Menus
             _mainMenu.gameObject.SetActive(true);
             _continue.gameObject.SetActive(true);
             _submitButton.gameObject.SetActive(true);
+            _tmpInputField.interactable = true;
             _leaderboardEndPopup.SetScore(score);
         }
 

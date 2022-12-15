@@ -132,6 +132,7 @@ namespace Code.Services.Leaderboards
             if (index == -1)
             {
                 leaderboard.Add(fakeEntry);
+                index = leaderboard.Count - 1;
             }
 
             int topAmount = Mathf.Min(7, leaderboard.Count);

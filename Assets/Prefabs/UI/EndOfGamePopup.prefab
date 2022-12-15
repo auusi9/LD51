@@ -206,6 +206,7 @@ MonoBehaviour:
   _position: {fileID: 388216179940480874}
   _alias: {fileID: 9180840236204910057}
   _score: {fileID: 7519127874986487973}
+  _animation: {fileID: 469665340487236652}
 --- !u!1 &349384284805826510
 GameObject:
   m_ObjectHideFlags: 0
