@@ -17,7 +17,9 @@ namespace Code.Menus
         [SerializeField] private Button _continue;
         [SerializeField] private LeaderboardService _leaderboardService;
         [SerializeField] private LeaderboardEndPopup _leaderboardEndPopup;
+        [SerializeField] private Animator _disableSubmit;
 
+        private int _disableTrigger = Animator.StringToHash("Disable");
         private int _score;
         
         private void Start()
@@ -41,7 +43,8 @@ namespace Code.Menus
         public void Submit()
         {
             _leaderboardService.NewEntry(_score);
-            _submitButton.gameObject.SetActive(false);
+            _submitButton.interactable = false;
+            _disableSubmit.SetTrigger(_disableTrigger);
         }
         
         public void OpenPopup(int score)

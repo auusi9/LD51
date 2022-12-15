@@ -23,7 +23,7 @@ namespace Code.Basic
 
         void Update()
         {
-            _timer += Time.deltaTime;
+            _timer += Time.unscaledDeltaTime;
             float cycle = _timer * _speed;
             
             const float tau = Mathf.PI * 2f;
