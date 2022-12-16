@@ -151,8 +151,8 @@ namespace Code.Orders
                 OrderUpdated?.Invoke(orderUpdater);
                 Destroy(box.gameObject);
                 Debug.Log("Order completed");
-                OrderCompleted?.Invoke(new OrderCompleted(orderUpdater.Order, orderUpdater.Score));
                 _currentOrders.Remove(orderUpdater);
+                OrderCompleted?.Invoke(new OrderCompleted(orderUpdater.Order, orderUpdater.Score));
             }
             else
             {

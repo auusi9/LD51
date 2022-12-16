@@ -56,7 +56,7 @@ namespace Code.Orders
                     }
                     break;
                 case RushState.Normal:
-                    if (_orderInterface.QueueLength == 1)
+                    if (_orderInterface.QueueLength == 0)
                     {
                         _currentState = RushState.Rush;
                         _currentTimeBetweenOrders = _minTimeBetweenOrders;
@@ -73,7 +73,7 @@ namespace Code.Orders
                         _currentState = RushState.Normal;
                         _currentTimeBetweenOrders = _timeBetweenOrders;
                     }
-                    else if(_orderInterface.QueueLength == 1)
+                    else if(_orderInterface.QueueLength == 0)
                     {
                         _orderInterface.NewOrder();
                     }
