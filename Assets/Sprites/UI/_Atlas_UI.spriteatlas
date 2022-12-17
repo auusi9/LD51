@@ -64,6 +64,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7d0a8be3c2328ab4eb1a3e329da2e9b1, type: 3}
   - {fileID: 21300000, guid: 4655277547885624f9345769dd789688, type: 3}
   - {fileID: 21300000, guid: 431e3095f6d706d41b558ed7191162bc, type: 3}
+  - {fileID: 21300000, guid: 35d3e5959ff26964681198d3dd20aaaa, type: 3}
   - {fileID: 21300000, guid: f6ed67e57db6c9b4386cb71739745dce, type: 3}
   - {fileID: 21300000, guid: 7f9dc44625e80754c95242a546ec7d5c, type: 3}
   - {fileID: 21300000, guid: eadc1756b90f6094f9933af567f2a3f4, type: 3}
@@ -111,6 +112,7 @@ SpriteAtlas:
   - IconCross
   - Title&
   - PanelTimerFill
+  - CircleTiny_UI
   - TutoLine
   - SquareDefaultUI_Frame
   - Button03

@@ -15,5 +15,10 @@ namespace Code.Menus
                 _pauseMenu.Show();
             }
         }
+
+        public void ShowPauseMenu()
+        {
+            _pauseMenu.Show();
+        }
     }
 }
