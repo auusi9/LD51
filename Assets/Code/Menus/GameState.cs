@@ -22,6 +22,7 @@ namespace Code.Menus
         public void StartGame()
         {
             _gameStarted = true;
+            _gamePaused = false;
             GameStart?.Invoke();
         }
 

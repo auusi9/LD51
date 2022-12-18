@@ -26,6 +26,7 @@ namespace Code.Menus
             
             DontDestroyOnLoad(this);
             SceneManager.sceneLoaded += SceneManagerOnsceneLoaded;
+            gameObject.SetActive(false);
         }
 
         private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -34,10 +35,6 @@ namespace Code.Menus
             {
                 _animator.SetTrigger(_outHash);
                 StartCoroutine(WaitForAnimationToFinish());
-            }
-            else
-            {
-                StartCoroutine(WaitForOut());
             }
         }
 
@@ -49,21 +46,20 @@ namespace Code.Menus
         private IEnumerator WaitForOut()
         {
             yield return new WaitUntil(AnimationFinished);
-            _animator.SetTrigger(_outHash);
-            yield return 0;
-            yield return WaitForAnimationToFinish();
+            SceneManager.LoadSceneAsync(0);
         }
 
         private IEnumerator WaitForAnimationToFinish()
         {
+            yield return 0;
             yield return new WaitUntil(AnimationFinished);
             gameObject.SetActive(false);
         }
 
         public void LoadMainMenu()
         {
-            SceneManager.LoadSceneAsync(0);
             gameObject.SetActive(true);
+            StartCoroutine(WaitForOut());
         }
     }
 }
