@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 2852570153978023272}
   - component: {fileID: 1637988005}
   - component: {fileID: 2097818887}
+  - component: {fileID: 5355373209934672231}
   m_Layer: 5
   m_Name: SceneOpening
   m_TagString: Untagged
@@ -649,6 +650,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5355373209934672231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837816023171857554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff8a225349144cbab5649afb5b6eead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2852570153978023272}
 --- !u!1 &1953157248397392963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2061,18 @@ PrefabInstance:
     - target: {fileID: 3778768736479760943, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350898657576326760, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5355373209934672231}
+    - target: {fileID: 5350898657576326760, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350898657576326760, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Code.Menus.SceneOpening, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5500549325758006998, guid: d71f5227e8a9b014688679c88fe56a32, type: 3}
       propertyPath: m_text
