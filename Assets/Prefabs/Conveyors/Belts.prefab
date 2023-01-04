@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 4512103976515456042}
   - component: {fileID: 4512103976515456041}
   - component: {fileID: 4512103976515456040}
+  - component: {fileID: 1516160956}
   m_Layer: 5
   m_Name: Belt2
   m_TagString: Untagged
@@ -441,6 +442,24 @@ MonoBehaviour:
   _beltItemSpawner: {fileID: 4512103976209694428}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
   _beltLocator: {fileID: 11400000, guid: 27f755757c9451f45a445a6c1ec97d62, type: 2}
+--- !u!114 &1516160956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512103976515456054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5bc41ceeaa4a1e9400dbc87174083a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
+  _startObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  _belt: {fileID: 4512103976515456040}
+  _offset: {x: 0, y: -4, z: 0}
 --- !u!1 &4512103976805969550
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,8 +647,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
-  _startObjects: []
+  _startObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _belt: {fileID: 4512103977131108684}
+  _offset: {x: 0, y: 4, z: 0}
 --- !u!1 &4512103977177097690
 GameObject:
   m_ObjectHideFlags: 0

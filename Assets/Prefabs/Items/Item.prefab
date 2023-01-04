@@ -305,6 +305,7 @@ MonoBehaviour:
   _itemPickUp: {fileID: 8300000, guid: 76228a0fa360f7a49a37f7047abf6cf6, type: 3}
   _itemPutDown: {fileID: 8300000, guid: 41c54168b0f24704394f4e8c9143bf4c, type: 3}
   _beltLocator: {fileID: 11400000, guid: 27f755757c9451f45a445a6c1ec97d62, type: 2}
+  _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
 --- !u!114 &5334699788442945068
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1942,6 +1942,8 @@ MonoBehaviour:
   _boxAudioSource: {fileID: 7972871935778174428}
   _openBoxAudio: {fileID: 8300000, guid: 77083f4cb8d49b5488ca68c408bb8f7e, type: 3}
   _closeBoxAudio: {fileID: 8300000, guid: 379544a4d73d7b64f9632ed52cb9c3d7, type: 3}
+  _boxAnimator: {fileID: 6622471322734620334}
+  _openAtEnable: 1
 --- !u!95 &6622471322734620334
 Animator:
   serializedVersion: 4

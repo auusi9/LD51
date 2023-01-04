@@ -51,13 +51,16 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 0d580b301ffbbcc4695b106580ba8d2f, type: 3}
+  - {fileID: 21300000, guid: ce7f96d005c960347969a410d9cd883a, type: 3}
   - {fileID: 21300000, guid: 555d36410026dbc4b838b75111f3fec7, type: 3}
   - {fileID: 21300000, guid: 839e4105f18f72d4db4b1dc245c9d072, type: 3}
   - {fileID: 21300000, guid: 30547476953b0b6409199ed62cd02df5, type: 3}
   - {fileID: 21300000, guid: 2caa75573b7cbf647afe7234bba7b0f5, type: 3}
   - {fileID: 21300000, guid: bbde3ec74cdbfae459401f64b4e6b15a, type: 3}
   - {fileID: 21300000, guid: 8c550948df8b86d4b96570fda2a8db79, type: 3}
+  - {fileID: 21300000, guid: 4d31057819617b84a9e8a6a44871c529, type: 3}
   - {fileID: 21300000, guid: 19c4249850d2b69408098f80562e4570, type: 3}
+  - {fileID: 21300000, guid: b9c077b92985c5d4c928c7383c54e8e4, type: 3}
   - {fileID: 21300000, guid: 40f14fbad424ded48a742d736079678e, type: 3}
   - {fileID: 21300000, guid: c8d6bf0be27aeea4d8a80d9ad7995dfa, type: 3}
   - {fileID: 21300000, guid: 4246cd2b2a2fcdc41800b169a5e7f776, type: 3}
@@ -68,13 +71,16 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c601387cf0c134649994ee69ea40fa72, type: 3}
   m_PackedSpriteNamesToIndex:
   - BoxLid02
+  - TextIllustration
   - BoxLid03
   - BoxClosed3x5
   - BoxLid01
   - Pixel_Boxes
   - BoxClosed2x2
   - TapeBox
+  - TextDesign
   - BoxLid05
+  - TextCode
   - BoxClosed1x1
   - BoxClosed3x3
   - BoxClosed1x3
