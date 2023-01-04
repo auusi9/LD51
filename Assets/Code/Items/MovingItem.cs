@@ -20,7 +20,6 @@ namespace Code.Items
         [SerializeField] private GameState _gameState;
 
         private List<BoxTile> _lastTiles;
-        private Transform _defaultParent;
         private Transform _lastParent;
         private Vector3 _oldPosition;
         private bool _isDragging = false;
@@ -29,11 +28,6 @@ namespace Code.Items
 
 
         public override bool HasPool => _myPool != null;
-
-        private void Awake()
-        {
-            _defaultParent = transform.parent;
-        }
 
         public void SetPool(ComponentPool<MovingItem> myPool)
         {
@@ -68,7 +62,7 @@ namespace Code.Items
             {
                 if (_myBelt == null)
                 {
-
+                    transform.position = _oldPosition;
                 }
                 else
                 {
@@ -93,7 +87,7 @@ namespace Code.Items
 
             _oldPosition = transform.position;
             _lastParent = transform.parent;
-            transform.SetParent(_defaultParent);
+            transform.SetParent(_gridCanvas.Parent);
             base.OnPointerDown(eventData);
             _isDragging = true;
             _itemAudioSource.clip = _itemPickUp;
@@ -183,7 +177,7 @@ namespace Code.Items
                 //Return to old position
                 ClearLastTiles();
                 
-                transform.SetParent(_defaultParent);
+                transform.SetParent(_gridCanvas.Parent);
                 _item.MyBox = null;
             }
         }

@@ -22,8 +22,7 @@ namespace Code.Boxes
         [SerializeField] private AudioSource _boxAudioSource;
         [SerializeField] private AudioClip _openBoxAudio;
         [SerializeField] private AudioClip _closeBoxAudio;
-
-        private bool _open = true;
+        [SerializeField] private bool _open = true;
 
         public bool IsOpen => _open;
         
