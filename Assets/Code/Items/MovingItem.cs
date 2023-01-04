@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.Basic;
 using Code.Boxes;
 using Code.ConveyorBelts;
+using Code.Menus;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,6 +16,8 @@ namespace Code.Items
         [SerializeField] private AudioSource _itemAudioSource;
         [SerializeField] private AudioClip _itemPickUp;
         [SerializeField] private AudioClip _itemPutDown;
+        [SerializeField] private BeltLocator _beltLocator;
+        [SerializeField] private GameState _gameState;
 
         private List<BoxTile> _lastTiles;
         private Transform _defaultParent;
@@ -50,13 +53,29 @@ namespace Code.Items
         
         public override void Destroy()
         {
-            if (HasPool)
+            if (_gameState.GameStarted)
             {
-                ReturnToPool();
+                if (HasPool)
+                {
+                    ReturnToPool();
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
-                Destroy(gameObject);
+                if (_myBelt == null)
+                {
+
+                }
+                else
+                {
+                    Belt belt = _beltLocator.GetOtherBelt(_myBelt);
+                    transform.position = belt.GetInitPosition().position;
+                    SetBelt(belt);
+                }
             }
         }
 
