@@ -89,9 +89,9 @@ namespace Code.Boxes
         {
             if (_myBelt == null)
             {
-                transform.position = _initialPosition;
-                _animator.enabled = true;
-                _animator.Rebind(); 
+                Belt belt = _beltLocator.GetRandomBelt();
+                transform.position = belt.GetInitPosition().position;
+                SetBelt(belt);
             }
             else
             {

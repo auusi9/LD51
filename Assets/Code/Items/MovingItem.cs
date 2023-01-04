@@ -62,7 +62,9 @@ namespace Code.Items
             {
                 if (_myBelt == null)
                 {
-                    transform.position = _oldPosition;
+                    Belt belt = _beltLocator.GetRandomBelt();
+                    transform.position = belt.GetInitPosition().position;
+                    SetBelt(belt);
                 }
                 else
                 {

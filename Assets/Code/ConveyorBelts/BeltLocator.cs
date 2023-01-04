@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code.ConveyorBelts
 {
@@ -34,6 +35,11 @@ namespace Code.ConveyorBelts
         public Belt GetOtherBelt(Belt belt)
         {
             return _belts.FirstOrDefault(x => x != belt);
+        }
+        
+        public Belt GetRandomBelt()
+        {
+            return _belts[Random.Range(0, _belts.Count)];
         }
     }
 }
