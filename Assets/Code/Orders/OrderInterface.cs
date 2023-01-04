@@ -28,6 +28,7 @@ namespace Code.Orders
         public event Action<OrderCompleted> OrderCancelled;
         public event Action<OrderUpdater> OrderUpdated;
         public event Action MainMenuBoxSent;
+        public event Action MainMenuBoxInvalidSent;
         public event Action InvalidBox;
         public event Action<Order> NewOrderCreated;
 
@@ -58,6 +59,11 @@ namespace Code.Orders
         public void MainMenuBox()
         {
             MainMenuBoxSent?.Invoke();
+        }  
+        
+        public void MainMenuBoxInvalid()
+        {
+            MainMenuBoxInvalidSent?.Invoke();
         }
 
         public void NewOrder()

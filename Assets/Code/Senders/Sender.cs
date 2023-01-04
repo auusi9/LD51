@@ -22,6 +22,7 @@ namespace Code.Senders
         {
             _orderInterface.OrderUpdated += OrderUpdated;
             _orderInterface.InvalidBox += BadBox;
+            _orderInterface.MainMenuBoxInvalidSent += BadBox;
             _orderInterface.MainMenuBoxSent += ValidBoxOnSender;
             _scoreSystem.LastBoxCompletedScore += OrderCompleted;
         }
@@ -30,6 +31,7 @@ namespace Code.Senders
         {
             _orderInterface.OrderUpdated -= OrderUpdated;
             _orderInterface.InvalidBox -= BadBox;
+            _orderInterface.MainMenuBoxInvalidSent -= BadBox;
             _orderInterface.MainMenuBoxSent -= ValidBoxOnSender;
             _scoreSystem.LastBoxCompletedScore -= OrderCompleted;
         }

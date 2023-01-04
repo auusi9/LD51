@@ -6245,6 +6245,7 @@ GameObject:
   - component: {fileID: 4667163637451997962}
   - component: {fileID: 9066429740852904173}
   - component: {fileID: 6941935417226581038}
+  - component: {fileID: 1339963435}
   m_Layer: 5
   m_Name: CreditsBox_Code
   m_TagString: Untagged
@@ -6325,7 +6326,7 @@ MonoBehaviour:
   _burner: {fileID: 11400000, guid: 4330b24143ca9f34c9be7ad0cc3acc65, type: 2}
   _sender: {fileID: 11400000, guid: 38d225fac71f0ce4cba21c2d0068d04e, type: 2}
   _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
-  _action: {fileID: 0}
+  _action: {fileID: 963513592}
   _animator: {fileID: 6130629615209516892}
   _boxAudioSource: {fileID: 6941935417226581038}
   _boxPickUp: {fileID: 8300000, guid: 63f7c64f98c0f5b49acd09bdc1998f85, type: 3}
@@ -6521,6 +6522,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1339963435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574629158009957853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
 --- !u!1 &7574629158218405471
 GameObject:
   m_ObjectHideFlags: 0
@@ -7071,6 +7085,7 @@ GameObject:
   - component: {fileID: 6485006768384550618}
   - component: {fileID: 7271107788379645245}
   - component: {fileID: 8749634984276177406}
+  - component: {fileID: 963513592}
   m_Layer: 5
   m_Name: CreditsBox_Illustration
   m_TagString: Untagged
@@ -7151,7 +7166,7 @@ MonoBehaviour:
   _burner: {fileID: 11400000, guid: 4330b24143ca9f34c9be7ad0cc3acc65, type: 2}
   _sender: {fileID: 11400000, guid: 38d225fac71f0ce4cba21c2d0068d04e, type: 2}
   _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
-  _action: {fileID: 0}
+  _action: {fileID: 963513592}
   _animator: {fileID: 5489352436716890764}
   _boxAudioSource: {fileID: 8749634984276177406}
   _boxPickUp: {fileID: 8300000, guid: 63f7c64f98c0f5b49acd09bdc1998f85, type: 3}
@@ -7346,6 +7361,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &963513592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080648245050411021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
 --- !u!1 &8080648245393388431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9069,6 +9097,7 @@ GameObject:
   - component: {fileID: 6264539510880113474}
   - component: {fileID: 7775297867262578853}
   - component: {fileID: 8530856304722609254}
+  - component: {fileID: 1131573519}
   m_Layer: 5
   m_Name: CreditsBox_Design
   m_TagString: Untagged
@@ -9149,7 +9178,7 @@ MonoBehaviour:
   _burner: {fileID: 11400000, guid: 4330b24143ca9f34c9be7ad0cc3acc65, type: 2}
   _sender: {fileID: 11400000, guid: 38d225fac71f0ce4cba21c2d0068d04e, type: 2}
   _conveyorBeltCanvas: {fileID: 11400000, guid: bbbce305b7f013d46a5940606293c203, type: 2}
-  _action: {fileID: 0}
+  _action: {fileID: 963513592}
   _animator: {fileID: 4837247257291480852}
   _boxAudioSource: {fileID: 8530856304722609254}
   _boxPickUp: {fileID: 8300000, guid: 63f7c64f98c0f5b49acd09bdc1998f85, type: 3}
@@ -9347,6 +9376,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1131573519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163550845208706453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
 --- !u!1001 &2236999829431019268
 PrefabInstance:
   m_ObjectHideFlags: 0

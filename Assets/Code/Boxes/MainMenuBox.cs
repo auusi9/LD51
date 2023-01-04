@@ -115,6 +115,7 @@ namespace Code.Boxes
                 if (slot != null)
                 {
                     _action.DoAction();
+                    Destroy();
                     return true;
                 }
             }
