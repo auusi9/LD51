@@ -31,7 +31,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BeltTexTilling: 8
-    - _Speed: 1.2
+    - _Speed: 1
     - _UnscaledTime: 0
     m_Colors:
     - _Color: {r: 0.34509805, g: 0.36078432, b: 0.75294125, a: 1}

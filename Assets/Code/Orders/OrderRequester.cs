@@ -92,7 +92,7 @@ namespace Code.Orders
             {
                 _lastOrder = 0f;
 
-                if (_orderInterface.QueueLength < 7)
+                if (_orderInterface.QueueLength < 6)
                 {
                     _orderInterface.NewOrder();
                 }

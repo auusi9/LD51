@@ -438,7 +438,7 @@ MonoBehaviour:
   _timeBetweenItems: 2
   _initialPosition: {fileID: 4512103976188218463}
   _finalPosition: {fileID: 4512103976805969551}
-  _velocity: 2
+  _velocity: 1.66
   _beltItemSpawner: {fileID: 4512103976209694428}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
   _beltLocator: {fileID: 11400000, guid: 27f755757c9451f45a445a6c1ec97d62, type: 2}
@@ -630,7 +630,7 @@ MonoBehaviour:
   _timeBetweenItems: 2
   _initialPosition: {fileID: 4512103977177097691}
   _finalPosition: {fileID: 4512103977065322290}
-  _velocity: 2
+  _velocity: 1.66
   _beltItemSpawner: {fileID: 4512103976209694428}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
   _beltLocator: {fileID: 11400000, guid: 27f755757c9451f45a445a6c1ec97d62, type: 2}
