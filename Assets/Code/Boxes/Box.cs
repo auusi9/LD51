@@ -23,6 +23,8 @@ namespace Code.Boxes
         [SerializeField] private AudioClip _openBoxAudio;
         [SerializeField] private AudioClip _closeBoxAudio;
         [SerializeField] private bool _open = true;
+        [SerializeField] private Animator _boxAnimator;
+        private int _openCloseTrigger = Animator.StringToHash("OpenClose");
 
         public bool IsOpen => _open;
         
@@ -51,6 +53,9 @@ namespace Code.Boxes
                 {
                     tile.gameObject.SetActive(false);
                 }
+
+                _boxAnimator.ResetTrigger(_openCloseTrigger);
+                _boxAnimator.SetTrigger(_openCloseTrigger);
                 _boxAudioSource.clip = _closeBoxAudio;
                 _boxAudioSource.Play();
             }
@@ -62,10 +67,14 @@ namespace Code.Boxes
                 _closedBoxShadow.gameObject.SetActive(false);
                 _boxOpened.gameObject.SetActive(true);
                 _boxOpenedShadow.gameObject.SetActive(true);
+
                 foreach (var tile in _tiles)
                 {
                     tile.gameObject.SetActive(true);
                 }
+
+                _boxAnimator.ResetTrigger(_openCloseTrigger);
+                _boxAnimator.SetTrigger(_openCloseTrigger);
                 _boxAudioSource.clip = _openBoxAudio;
                 _boxAudioSource.Play();
             }
