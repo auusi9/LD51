@@ -50,7 +50,6 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 2322c63082b5ccf4b943c46147f2c4b3, type: 3}
   - {fileID: 21300000, guid: dd27998067e667d4f8d48dd233a257ea, type: 3}
   - {fileID: 21300000, guid: aff4abc05ae58f74899f9cd0fa36e968, type: 3}
   - {fileID: 21300000, guid: cbbfac92e8ced7a449bd089fe8f6c687, type: 3}
@@ -59,18 +58,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5e6ed3b6269b9cf408b51934c5aa4b77, type: 3}
   - {fileID: 21300000, guid: b1299cc68f310a445a4abe702eff4eea, type: 3}
   - {fileID: 21300000, guid: 95e0e317169573d40bbb797c651c5714, type: 3}
-  - {fileID: 21300000, guid: ff9cade7a75647b4fa0e3bec8eb89fe8, type: 3}
   - {fileID: 21300000, guid: 9b676c08562bb8644876da82b2031539, type: 3}
   - {fileID: 21300000, guid: de427e681dce8d341b9212087bfccfaa, type: 3}
   - {fileID: 21300000, guid: 158c1a7876790914491fe124fc5825ad, type: 3}
   - {fileID: 21300000, guid: 4092ee499d942b540bcfac5e26016213, type: 3}
   - {fileID: 21300000, guid: 4534f67b33edf0249b2f51de926f4b46, type: 3}
   - {fileID: 21300000, guid: fa6f183cc4067964cbbb1046e0fdd134, type: 3}
+  - {fileID: 21300000, guid: a4c187bc0426884479c489f350451989, type: 3}
   - {fileID: 21300000, guid: 5ebd484d3fc87da4887d6eddb0cbeb2e, type: 3}
   - {fileID: 21300000, guid: dd10b55d3b8605f4085ce37fdb728c9a, type: 3}
   - {fileID: 21300000, guid: 2890377fb3f31b94eb28711564837b6d, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Item04U_04
   - ItemFrame03U_01
   - Item02U_01
   - ItemFrame04U_03
@@ -79,13 +77,13 @@ SpriteAtlas:
   - ItemFrame04U_01
   - ItemFrame03U_02
   - ItemFrame04U_02
-  - ItemFrame04U_04
   - Item04U_05
   - Item03U_02
   - ItemFrame01U_01
   - Item04U_02
   - Item04U_01
   - ItemFrame04U_05
+  - Peanuts
   - Item04U_03
   - ItemFrame02U_01
   - Item03U_01
