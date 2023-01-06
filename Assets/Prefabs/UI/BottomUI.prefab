@@ -1153,6 +1153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c88c5061f841f3bd1bc8928f73fe11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 1395569251274179364, guid: c7d7b45fe50b0ec41aa49c747c0e67de, type: 3}
+  _itemPrefab: {fileID: 4819859262428607000, guid: c7edbcf2db213aa41853ce5e4d77fae2, type: 3}
   _gridCanvas: {fileID: 11400000, guid: 9e69418d6db15c54fb48db3847fda42c, type: 2}
   _spawnerAudioSource: {fileID: 5095235658300214337}
+  _positionCenter: {x: 150, y: -40, z: 0}
+  _range: 50
