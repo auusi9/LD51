@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using Code.ConveyorBelts;
 using Code.Services.Configurations;
 using Code.Services.Entities;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Code.Services
@@ -12,8 +13,6 @@ namespace Code.Services
     {
         private readonly OrderConfigurator _orderConfigurator;
         private readonly RandomNumberGenerator<int> _randomNumberGenerator;
-
-        private int _lastQuantity = 0;
         
         public OrderGenerator(OrderConfigurator orderConfigurator)
         {
@@ -27,21 +26,15 @@ namespace Code.Services
             }
         }
 
-        public Order NewOrder()
+        public Order NewOrder(int ordersCreated)
         {
-            return new Order(Guid.NewGuid().ToString(), GetItems(), _orderConfigurator.OrderExpirationTime);
+            return new Order(Guid.NewGuid().ToString(), GetItems(ordersCreated), _orderConfigurator.OrderExpirationTime);
         }
 
-        private List<ItemEntity> GetItems()
+        private List<ItemEntity> GetItems(int ordersCreated)
         {
-            int quantity = Random.Range(_orderConfigurator.MinimumItemsXOrder, _orderConfigurator.MaximumItemsXOrder);
-
-            if (quantity == _lastQuantity)
-            {
-                quantity = Random.Range(_orderConfigurator.MinimumItemsXOrder, _orderConfigurator.MaximumItemsXOrder);
-            }
-
-            _lastQuantity = quantity;
+            int max = Mathf.Min(_orderConfigurator.MaximumItemsXOrder, ordersCreated + 1);
+            int quantity = Random.Range(_orderConfigurator.MinimumItemsXOrder, max);
             
             List<ItemEntity> newItems = new List<ItemEntity>(quantity);
 

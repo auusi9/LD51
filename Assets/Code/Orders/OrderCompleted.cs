@@ -28,7 +28,7 @@ namespace Code.Orders
                 score += scoreConfiguration.FilledUpBonus;
             }
              
-            if(boxInfo.EmptyTiles == 0 && (boxInfo.FillTiles / ((float)boxInfo.ItemTiles + boxInfo.FillTiles)) < 0.3f && Order.Items.Count == boxInfo.ItemCount)
+            if(boxInfo.EmptyTiles == 0 && (boxInfo.FillTiles / ((float)boxInfo.ItemTiles + boxInfo.FillTiles)) < 0.34f && Order.Items.Count == boxInfo.ItemCount)
             {
                 score += scoreConfiguration.PerfectBoxBonus;
                 isPerfectBox = true;

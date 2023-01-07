@@ -68,7 +68,8 @@ namespace Code.Orders
 
         public void NewOrder()
         {
-            Order order = _orderGenerator.NewOrder();
+            Order order = _orderGenerator.NewOrder(GameStats.OrdersCreated);
+            GameStats.OrdersCreated++;
             _currentOrders.Add(new OrderUpdater(order, 0, new List<ItemsCompleted>()));
             NewOrderCreated?.Invoke(order);
         }
@@ -217,6 +218,7 @@ namespace Code.Orders
         public int PerfectBoxesSent;
         public int OrdersCompleted;
         public int OrdersLost;
+        public int OrdersCreated;
 
         public void Clear()
         {
@@ -225,6 +227,7 @@ namespace Code.Orders
             PerfectBoxesSent = 0;
             OrdersCompleted = 0;
             OrdersLost = 0;
+            OrdersCreated = 0;
         }
     }
 }
