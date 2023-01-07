@@ -190,6 +190,12 @@ namespace Code.Orders
         public void OrderExpired(string id)
         {
             OrderUpdater order = _currentOrders.FirstOrDefault(x => x.Order.Id == id);
+
+            if (order == null)
+            {
+                return;
+            }
+            
             _currentOrders.Remove(order);
             GameStats.OrdersLost++;
             OrderCancelled?.Invoke(order);
@@ -201,9 +207,9 @@ namespace Code.Orders
     {
         public int ScoreXEmptyTile;
         public int ScoreXItemTile;
-        public int BonusNoFillNoEmpty;
-        public int BonusLessFillThanItem;
-        public int BonusMoreFillThanItem;
+        public int FilledUpBonus;
+        public int PerfectBoxBonus;
+        public int ItemBonus;
     }
 
     public struct GameStats

@@ -413,8 +413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
-  _scoreTimeBonus: 100
-  _scoreTime: 50
+  _scoreTimeBonus: 50
+  _scoreTimeNormal: 30
+  _scoreTime: 10
   _missedOrderPenalization: 100
   _scoreAnimator: {fileID: 1940151178675918520}
 --- !u!114 &3929320703220395656

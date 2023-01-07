@@ -22,18 +22,25 @@ namespace Code.Orders
 
             score = boxInfo.EmptyTiles * -scoreConfiguration.ScoreXEmptyTile;
 
-            if (boxInfo.FillTiles == 0 && boxInfo.EmptyTiles == 0)
+            if (boxInfo.EmptyTiles == 0)
             {
-                score += scoreConfiguration.BonusNoFillNoEmpty;
+                score += scoreConfiguration.FilledUpBonus;
             }
-            else
+             
+            if(boxInfo.EmptyTiles == 0 && (boxInfo.FillTiles / ((float)boxInfo.ItemTiles + boxInfo.FillTiles)) < 0.3f && Order.Items.Count == boxInfo.ItemCount)
             {
-                score += boxInfo.FillTiles >= boxInfo.ItemTiles ? scoreConfiguration.BonusMoreFillThanItem : scoreConfiguration.BonusLessFillThanItem;
+                score += scoreConfiguration.PerfectBoxBonus;
             }
 
-            score += boxInfo.ItemTiles * (scoreConfiguration.ScoreXItemTile / Boxes);
+            score += scoreConfiguration.ItemBonus * (boxInfo.ItemCount - 1);
+            score += boxInfo.ItemTiles * scoreConfiguration.ScoreXItemTile;
 
-            Score = score;
+            if (Boxes > 1)
+            {
+                score /= (Boxes-1 * 2);
+            }
+
+            Score += score;
         }
     }
 }

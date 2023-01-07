@@ -183,6 +183,8 @@ namespace Code.Boxes
                 }
             }
 
+            boxInfo.ItemCount = items.Count;
+            
             return items;
         }
 
@@ -191,6 +193,7 @@ namespace Code.Boxes
             public int EmptyTiles;
             public int FillTiles;
             public int ItemTiles;
+            public int ItemCount;
         }
     }
 }

@@ -99,8 +99,8 @@ namespace Code.Notifications
             
             if(_order.OrderExpirationTime < Time.time && !_callbackCalled)
             {
-                _orderInterface.OrderExpired(_order.Id);
                 _callbackCalled = true;
+                _orderInterface.OrderExpired(_order.Id);
             }
 
             UpdateColor();

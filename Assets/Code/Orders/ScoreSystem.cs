@@ -8,6 +8,7 @@ namespace Code.Orders
     {
         [SerializeField] private OrderInterface _orderInterface;
         [SerializeField] private int _scoreTimeBonus = 100;
+        [SerializeField] private int _scoreTimeNormal = 50;
         [SerializeField] private int _scoreTime = 50;
         [SerializeField] private int _missedOrderPenalization = 100;
         [SerializeField] private Animator _scoreAnimator;
@@ -48,15 +49,8 @@ namespace Code.Orders
             int score = obj.Score;
             float time = 1 - (Time.time - obj.Order.OrderCreatedTime) /
                 (obj.Order.OrderExpirationTime - obj.Order.OrderCreatedTime);
-
-            if (time > 0.4f)
-            {
-                score += _scoreTimeBonus;
-            }
-            else
-            {
-                score += _scoreTime;
-            }
+            
+            score += GetTimeBonus(time, obj.Boxes);
 
             obj.Score = score;
             
@@ -65,6 +59,30 @@ namespace Code.Orders
 
             ScoreUpdated?.Invoke(_currentScore);
             LastBoxCompletedScore?.Invoke(score);
+        }
+
+        private int GetTimeBonus(float time, int boxes)
+        {
+            int score = 0;
+            if (time > 0.6f)
+            {
+                score += _scoreTimeBonus;
+            }
+            else if (time > 0.3f)
+            {
+                score += _scoreTimeNormal;
+            }
+            else
+            {
+                score += _scoreTime;
+            }
+
+            if (boxes > 1)
+            {
+                score /= (boxes-1 * 2);
+            }
+            
+            return score;
         }
 
         private void OrderUpdated(OrderUpdater obj)
