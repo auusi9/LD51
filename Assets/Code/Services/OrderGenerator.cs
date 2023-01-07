@@ -12,6 +12,8 @@ namespace Code.Services
     {
         private readonly OrderConfigurator _orderConfigurator;
         private readonly RandomNumberGenerator<int> _randomNumberGenerator;
+
+        private int _lastQuantity = 0;
         
         public OrderGenerator(OrderConfigurator orderConfigurator)
         {
@@ -33,6 +35,14 @@ namespace Code.Services
         private List<ItemEntity> GetItems()
         {
             int quantity = Random.Range(_orderConfigurator.MinimumItemsXOrder, _orderConfigurator.MaximumItemsXOrder);
+
+            if (quantity == _lastQuantity)
+            {
+                quantity = Random.Range(_orderConfigurator.MinimumItemsXOrder, _orderConfigurator.MaximumItemsXOrder);
+            }
+
+            _lastQuantity = quantity;
+            
             List<ItemEntity> newItems = new List<ItemEntity>(quantity);
 
             for (int i = 0; i < quantity; i++)
@@ -46,7 +56,6 @@ namespace Code.Services
                 }
                 else
                 {
-                                    
                     newItems.Add(new ItemEntity(
                         Random.Range(0, _orderConfigurator.ItemAmount),
                         Random.Range(0, _orderConfigurator.ShapesAmount)

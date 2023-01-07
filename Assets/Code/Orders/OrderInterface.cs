@@ -141,9 +141,7 @@ namespace Code.Orders
                 }
             }
             
-            orderUpdater.UpdateScore(boxInfo, _scoreConfiguration);
-
-            if (boxInfo.EmptyTiles == 0)
+            if (orderUpdater.UpdateScore(boxInfo, _scoreConfiguration))
             {
                 GameStats.PerfectBoxesSent++;
             }

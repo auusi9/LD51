@@ -15,8 +15,9 @@ namespace Code.Orders
             Score = score;
         }
 
-        public void UpdateScore(Box.BoxInfo boxInfo, ScoreConfiguration scoreConfiguration)
+        public bool UpdateScore(Box.BoxInfo boxInfo, ScoreConfiguration scoreConfiguration)
         {
+            bool isPerfectBox = false;
             Boxes++;
             int score = 0;
 
@@ -30,6 +31,7 @@ namespace Code.Orders
             if(boxInfo.EmptyTiles == 0 && (boxInfo.FillTiles / ((float)boxInfo.ItemTiles + boxInfo.FillTiles)) < 0.3f && Order.Items.Count == boxInfo.ItemCount)
             {
                 score += scoreConfiguration.PerfectBoxBonus;
+                isPerfectBox = true;
             }
 
             score += scoreConfiguration.ItemBonus * (boxInfo.ItemCount - 1);
@@ -41,6 +43,7 @@ namespace Code.Orders
             }
 
             Score += score;
+            return isPerfectBox;
         }
     }
 }
