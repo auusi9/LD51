@@ -18,8 +18,8 @@ MonoBehaviour:
   _itemsHaveDifferentShapes: 0
   _orderExpirationTime: 60
   _scoreConfiguration:
-    ScoreXEmptyTile: 20
-    ScoreXItemTile: 10
-    BonusNoFillNoEmpty: 50
-    BonusLessFillThanItem: 30
-    BonusMoreFillThanItem: 10
+    ScoreXEmptyTile: 10
+    ScoreXItemTile: 20
+    FilledUpBonus: 30
+    PerfectBoxBonus: 50
+    ItemBonus: 30
