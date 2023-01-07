@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febae32571754418aac0a3609bdb5f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minTimeBetweenOrders: 5
-  _timeBetweenOrders: 10
-  _maxTimeBetweenOrders: 20
-  _slowDownOrders: 6
+  _minTimeBetweenOrders: 8
+  _timeBetweenOrders: 15
+  _maxTimeBetweenOrders: 23
+  _slowDownOrders: 5
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
   _gameState: {fileID: 11400000, guid: 0c895b2cb4910c54fa3c77a5408019a4, type: 2}
 --- !u!114 &1578759189

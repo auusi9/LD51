@@ -109,11 +109,11 @@ namespace Code.Notifications
         private void UpdateColor()
         {
             Color newColor = Color.white;
-            if(_barFill.fillAmount < 0.33)
+            if(_barFill.fillAmount < 0.3)
             {
                 newColor = _color03;
             }
-            else if (_barFill.fillAmount < 0.66)
+            else if (_barFill.fillAmount < 0.6)
             {
                 newColor = _color02;
             }

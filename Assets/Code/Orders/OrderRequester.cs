@@ -27,6 +27,7 @@ namespace Code.Orders
 
         private void Start()
         {
+            _lastOrder = _timeBetweenOrders - 3;
             _orderInterface.OrderCompleted += OrderCompleted;
             _orderInterface.OrderCancelled += OrderCompleted;
             _currentTimeBetweenOrders = _timeBetweenOrders;
