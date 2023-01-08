@@ -173,6 +173,12 @@ MonoBehaviour:
   _boxPrefab: {fileID: 6636916372255802660, guid: d76d35d9959a3544baa0ba127e0282bb, type: 3}
   _gridCanvas: {fileID: 11400000, guid: 9e69418d6db15c54fb48db3847fda42c, type: 2}
   _spawnerAudioSource: {fileID: 3368647151281257174}
+  _positionCenter: {x: 130, y: -40, z: 0}
+  _range: 100
+  _hoverClip: {fileID: 8300000, guid: e041f92521f098e4ebe8e0d1349e2c98, type: 3}
+  _pressClip: {fileID: 8300000, guid: eb751b58c5902594e9e364fb7fcd8fea, type: 3}
+  _hoverAudioPitch: 0.5
+  _pressAudioPitch: 1
 --- !u!82 &3368647151281257174
 AudioSource:
   m_ObjectHideFlags: 0
@@ -183,9 +189,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: eb751b58c5902594e9e364fb7fcd8fea, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

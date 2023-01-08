@@ -258,6 +258,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3530224222175772474, guid: 5fb4954111b542d4d89d0c1822e49b1f, type: 3}
     - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: _positionCenter.y
       value: -40
       objectReference: {fileID: 0}
@@ -383,6 +387,10 @@ PrefabInstance:
       propertyPath: _boxPrefab
       value: 
       objectReference: {fileID: 3557444340237843426, guid: 683c0a32b4bcc6b40919b847c2b0fec5, type: 3}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -505,6 +513,10 @@ PrefabInstance:
       propertyPath: _boxPrefab
       value: 
       objectReference: {fileID: 3711591946258860090, guid: bd92d5a31bdb5bf4f8c3d5b9b3e176a9, type: 3}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -627,6 +639,14 @@ PrefabInstance:
       propertyPath: _boxPrefab
       value: 
       objectReference: {fileID: 7224159023626285736, guid: 368b788df8870534eb183f024db4e3d8, type: 3}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _pressAudioPitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -749,6 +769,10 @@ PrefabInstance:
       propertyPath: _boxPrefab
       value: 
       objectReference: {fileID: 6395209145660669392, guid: 23990b9f25cd5894f9cfa57f0bd0de53, type: 3}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -866,6 +890,10 @@ PrefabInstance:
     - target: {fileID: 299546126646520934, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
@@ -985,6 +1013,10 @@ PrefabInstance:
       propertyPath: _boxPrefab
       value: 
       objectReference: {fileID: 8225261567019134091, guid: c1d99b93b1eb04147b71b1e83a0ae9c8, type: 3}
+    - target: {fileID: 299546126646520935, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
+      propertyPath: _hoverAudioPitch
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 299546126646520952, guid: e8e91e292afba94448c4b4c7f9decc55, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -1158,3 +1190,7 @@ MonoBehaviour:
   _spawnerAudioSource: {fileID: 5095235658300214337}
   _positionCenter: {x: 150, y: -40, z: 0}
   _range: 50
+  _hoverClip: {fileID: 8300000, guid: e041f92521f098e4ebe8e0d1349e2c98, type: 3}
+  _pressClip: {fileID: 8300000, guid: b36f063cedb98a64eb43f899184da665, type: 3}
+  _hoverAudioPitch: 1
+  _pressAudioPitch: 1
