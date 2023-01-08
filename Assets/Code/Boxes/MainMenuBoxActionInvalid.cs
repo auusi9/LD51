@@ -7,16 +7,24 @@ namespace Code.Boxes
 {
     public class MainMenuBoxActionInvalid : MainMenuBoxAction
     {
-        [SerializeField] private string[] _url;
         [SerializeField] private OrderInterface _orderInterface;
+        [SerializeField] private Box _box;
 
         public override void DoAction()
         {
             _orderInterface.MainMenuBoxInvalid();
 
-            foreach (var url in _url)
+            Box.BoxInfo boxInfo;
+            var items = _box.GetItems(out boxInfo);
+
+            foreach (var item in items)
             {
-                Link.Open(url);
+                var itemMainMenu = item.GetComponent<ItemMainMenu>();
+
+                if (itemMainMenu != null)
+                {
+                    Link.Open(itemMainMenu.URL);
+                }
             }
         }
     }

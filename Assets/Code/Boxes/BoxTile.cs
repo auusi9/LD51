@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Basic;
 using Code.Items;
 using UnityEngine;
@@ -10,6 +11,18 @@ namespace Code.Boxes
         [SerializeField] private Box _box;
 
         [HideInInspector] public Item Item;
+
+        private void Start()
+        {
+            foreach (Transform child in transform)
+            {
+                var item = child.GetComponent<MovingItem>();
+                if (item != null)
+                {
+                    item.SetIntoBox(_box);
+                }
+            }
+        }
 
         public void SetItemToBox(Item item, List<BoxTile> tilesToGo)
         {

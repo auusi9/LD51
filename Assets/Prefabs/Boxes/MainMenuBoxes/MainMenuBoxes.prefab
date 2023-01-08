@@ -6971,9 +6971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _url:
-  - https://www.linkedin.com/in/ausias-dalmau/
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
+  _box: {fileID: 7574629158009957828}
 --- !u!1 &7574629158218405471
 GameObject:
   m_ObjectHideFlags: 0
@@ -7813,9 +7812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _url:
-  - https://www.linkedin.com/in/sergiperezc/
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
+  _box: {fileID: 8080648245050411028}
 --- !u!1 &8080648245393388431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9909,10 +9907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1523d3464dea473ea1f410c5707c3ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _url:
-  - https://www.linkedin.com/in/alexiscr/
-  - https://www.linkedin.com/in/sergiperezc/
   _orderInterface: {fileID: 11400000, guid: 78c66dfc6cc43c249ab84c8be4c1bdac, type: 2}
+  _box: {fileID: 9163550845208706444}
 --- !u!1001 &2236999829431019268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10072,6 +10068,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004053662930, guid: 663a0130ab2a9074d96fbc99581c6283, type: 3}
   m_PrefabInstance: {fileID: 2236999829431019268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2010823000121793495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354812004053662931, guid: 663a0130ab2a9074d96fbc99581c6283, type: 3}
+  m_PrefabInstance: {fileID: 2236999829431019268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15563278582891623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010823000121793495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdd97fd7b6c41e9b1917ba58d28dfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _url: https://www.linkedin.com/in/alexiscr/
 --- !u!1001 &2842157760654736577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10181,6 +10195,24 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 922ff6171272cfc44bb3f7a7585de9f0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91777ce8442b6bd449fa7fd183444eb0, type: 3}
+--- !u!1 &2566441350356025362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354812004053662931, guid: 91777ce8442b6bd449fa7fd183444eb0, type: 3}
+  m_PrefabInstance: {fileID: 2842157760654736577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8800146281735968135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566441350356025362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdd97fd7b6c41e9b1917ba58d28dfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _url: https://www.linkedin.com/in/sergiperezc/
 --- !u!224 &2566441350356025363 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004053662930, guid: 91777ce8442b6bd449fa7fd183444eb0, type: 3}
@@ -10305,6 +10337,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004634145071, guid: af204d8ef4236364ea89dcc539496cb4, type: 3}
   m_PrefabInstance: {fileID: 5002787422795328901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4720321087012360534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354812004053662931, guid: af204d8ef4236364ea89dcc539496cb4, type: 3}
+  m_PrefabInstance: {fileID: 5002787422795328901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3600993843562127721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720321087012360534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdd97fd7b6c41e9b1917ba58d28dfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _url: https://www.linkedin.com/in/ausias-dalmau/
 --- !u!224 &4720321087012360535 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004053662930, guid: af204d8ef4236364ea89dcc539496cb4, type: 3}
@@ -10644,6 +10694,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004634145071, guid: e99ceaed69d6c7e4ab12d6a4c2759790, type: 3}
   m_PrefabInstance: {fileID: 6141031792257632501}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5896857072142398502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354812004053662931, guid: e99ceaed69d6c7e4ab12d6a4c2759790, type: 3}
+  m_PrefabInstance: {fileID: 6141031792257632501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5978554678099950353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896857072142398502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdd97fd7b6c41e9b1917ba58d28dfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _url: https://www.linkedin.com/in/sergiperezc/
 --- !u!224 &5896857072142398503 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 354812004053662930, guid: e99ceaed69d6c7e4ab12d6a4c2759790, type: 3}

@@ -155,11 +155,7 @@ namespace Code.Items
                     if(mainTile == null)
                         continue;
                     
-                    ClearLastTiles();
-                    _lastTiles = tiles;
-                    currentTile = mainTile;
-                    mainTile.SetItemToBox(_item, tiles);
-                    transform.SetParent(mainTile.transform);
+                    currentTile = SetIntoBox(tiles, mainTile);
                     break;
                 }
 
@@ -184,6 +180,30 @@ namespace Code.Items
             }
         }
 
+        public void SetIntoBox(Box box)
+        {
+            List<BoxTile> tiles = new List<BoxTile>();
+
+            if (box.Fits(_item, _item.transform.position, tiles, out BoxTile mainTile))
+            {
+                if(mainTile == null)
+                    return;
+                    
+                SetIntoBox(tiles, mainTile);
+            }
+        }
+        
+        private BoxTile SetIntoBox(List<BoxTile> tiles, BoxTile mainTile)
+        {
+            BoxTile currentTile;
+            ClearLastTiles();
+            _lastTiles = tiles;
+            currentTile = mainTile;
+            mainTile.SetItemToBox(_item, tiles);
+            transform.SetParent(mainTile.transform);
+            return currentTile;
+        }
+
         private void ClearLastTiles()
         {
             if (_lastTiles is {Count: > 0})
@@ -196,7 +216,7 @@ namespace Code.Items
                 _lastTiles.Clear();
             }
         }
-
+        
         public override void OnDrag(PointerEventData eventData)
         {
             if(eventData.pointerId > 0)
