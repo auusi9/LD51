@@ -39,7 +39,7 @@ namespace Code.Orders
 
             if (Boxes > 1)
             {
-                score /= (Boxes-1 * 2);
+                score /= ((Boxes-1) * 2);
             }
 
             Score += score;
