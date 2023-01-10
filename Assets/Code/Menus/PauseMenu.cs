@@ -21,12 +21,12 @@ namespace Code.Menus
 
             if (_audioMixer.GetFloat("FXVolume", out float fxValue))
             {
-                _fxSlider.SetValueWithoutNotify(fxValue);
+                _fxSlider.SetValueWithoutNotify(Mathf.Pow(10, fxValue/20));
             }
             
             if (_audioMixer.GetFloat("MusicVolume", out float musicValue))
             {
-                _musicSlider.SetValueWithoutNotify(musicValue);
+                _musicSlider.SetValueWithoutNotify(Mathf.Pow(10, musicValue / 20));
             }
         }
 
@@ -50,12 +50,12 @@ namespace Code.Menus
 
         public void SetFXVolume(float fxVolume)
         {
-            _audioMixer.SetFloat("FXVolume", fxVolume);
+            _audioMixer.SetFloat("FXVolume", Mathf.Log10(fxVolume) * 20);
         }
 
         public void SetMusicVolume(float musicVolume)
         {
-            _audioMixer.SetFloat("MusicVolume", musicVolume);
+            _audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
         }
     }
 }
