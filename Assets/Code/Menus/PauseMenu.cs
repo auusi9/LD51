@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using Code.Basic;
+using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Code.Menus
@@ -28,11 +28,14 @@ namespace Code.Menus
             {
                 _musicSlider.SetValueWithoutNotify(Mathf.Pow(10, musicValue / 20));
             }
+            
+            AudioEffectTransition.Get().Pause();
         }
 
         public void Resume()
         {
             _pauseAnimator.SetTrigger(_outTrigger);
+            AudioEffectTransition.Get().Resume();
         }
 
         public void MainMenu()

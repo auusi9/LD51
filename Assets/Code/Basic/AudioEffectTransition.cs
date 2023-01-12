@@ -1,31 +1,25 @@
 ﻿using System.Collections;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Code.Basic
 {
-    public class AudioEffectTransition : MonoBehaviour
+    public class AudioEffectTransition : SingleInstance<AudioEffectTransition>
     {
         [SerializeField] private AudioSource _source;
         [SerializeField] private AudioHighPassFilter _filter;
         [SerializeField] private float _duration;
         [SerializeField] private float _amount;
-        private bool _isPaused = false;
 
-        private void Update()
+        public void Resume()
         {
-            if (Time.timeScale == 0f && _isPaused == false)
-            {
-                _isPaused = true;
-                StartCoroutine(AudioFilterTransitionIn());
-            }
+            StopAllCoroutines();
+            StartCoroutine(AudioFilterTransitionOut());
+        }
 
-            if (Time.timeScale != 0f && _isPaused == true)
-            {
-                _isPaused = false;
-                StartCoroutine(AudioFilterTransitionOut());
-            }
+        public void Pause()
+        {
+            StopAllCoroutines();
+            StartCoroutine(AudioFilterTransitionIn());
         }
 
         private IEnumerator AudioFilterTransitionIn()
