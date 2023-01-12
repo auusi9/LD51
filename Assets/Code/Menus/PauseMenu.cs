@@ -40,6 +40,7 @@ namespace Code.Menus
 
         public void MainMenu()
         {
+            AudioEffectTransition.Get().Resume();
             _gameState.ResumeGame();
             _gameState.EndGame();
             LoadTransition.Instance.LoadMainMenu();

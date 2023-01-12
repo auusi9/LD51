@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Basic;
 using Code.Services.Leaderboards;
 using TMPro;
 using UnityEngine;
@@ -51,6 +52,7 @@ namespace Code.Menus
         
         public void OpenPopup(int score)
         {
+            AudioEffectTransition.Get().Pause();
             _score = score;
             _gameState.PauseGame();
             gameObject.SetActive(true);
@@ -67,12 +69,14 @@ namespace Code.Menus
 
         public void Continue()
         {
+            AudioEffectTransition.Get().Resume();
             _gameState.ResumeGame();
             gameObject.SetActive(false);
         }
 
         public void MainMenu()
         {
+            AudioEffectTransition.Get().Resume();
             _gameState.ResumeGame();
             _gameState.EndGame();
             LoadTransition.Instance.LoadMainMenu();
