@@ -6,9 +6,11 @@ namespace Code.Basic
     public class AudioEffectTransition : SingleInstance<AudioEffectTransition>
     {
         [SerializeField] private AudioSource _source;
-        [SerializeField] private AudioHighPassFilter _filter;
+        //[SerializeField] private AudioHighPassFilter _filter;
+        [SerializeField] private AudioLowPassFilter _filter;
         [SerializeField] private float _duration;
-        [SerializeField] private float _amount;
+        [SerializeField] private float _startAmount;
+        [SerializeField] private float _endAmount;
 
         public void Resume()
         {
@@ -24,28 +26,28 @@ namespace Code.Basic
 
         private IEnumerator AudioFilterTransitionIn()
         {
-            float amountPerSec = _amount / _duration;
+            float amountPerSec = (_endAmount - _filter.cutoffFrequency) / _duration;
 
             for (float t = 0f; t<= _duration; t += Time.unscaledDeltaTime)
             {
-                _filter.cutoffFrequency = amountPerSec * t;
+                _filter.cutoffFrequency += amountPerSec * Time.unscaledDeltaTime;
                 yield return null;
             }
 
-            _filter.cutoffFrequency = _amount;
+            _filter.cutoffFrequency = _endAmount;
         }
 
         private IEnumerator AudioFilterTransitionOut()
         {
-            float amountPerSec = _amount / _duration;
+            float amountPerSec = (_startAmount - _filter.cutoffFrequency) / _duration;
 
             for (float t = 0f; t <= _duration; t += Time.unscaledDeltaTime)
             {
-                _filter.cutoffFrequency = _amount - (amountPerSec * t);
+                _filter.cutoffFrequency += amountPerSec * Time.unscaledDeltaTime;
                 yield return null;
             }
 
-            _filter.cutoffFrequency = 0f;
+            _filter.cutoffFrequency = _startAmount;
         }
     }
 }
