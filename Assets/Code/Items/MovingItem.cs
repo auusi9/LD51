@@ -19,6 +19,7 @@ namespace Code.Items
         [SerializeField] private BeltLocator _beltLocator;
         [SerializeField] private GameState _gameState;
 
+        private Vector2 _pitchRange = new Vector2(0.6f, 1.0f);
         private List<BoxTile> _lastTiles;
         private Transform _lastParent;
         private Vector3 _oldPosition;
@@ -92,6 +93,8 @@ namespace Code.Items
             transform.SetParent(_gridCanvas.Parent);
             base.OnPointerDown(eventData);
             _isDragging = true;
+
+            _itemAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
             _itemAudioSource.clip = _itemPickUp;
             _itemAudioSource.Play();
             
@@ -110,6 +113,8 @@ namespace Code.Items
             
             base.OnPointerUp(eventData);
             _isDragging = false;
+
+            _itemAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
             _itemAudioSource.clip = _itemPutDown;
             _itemAudioSource.Play();
 

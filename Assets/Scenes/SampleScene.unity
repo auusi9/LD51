@@ -439,10 +439,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneOpening
       objectReference: {fileID: 0}
-    - target: {fileID: 1837816023171857554, guid: c175ec97b1d1898499d1d71b20a5f962, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c175ec97b1d1898499d1d71b20a5f962, type: 3}
 --- !u!224 &424223448 stripped

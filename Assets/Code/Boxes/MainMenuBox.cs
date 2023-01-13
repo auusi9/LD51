@@ -20,6 +20,7 @@ namespace Code.Boxes
         [SerializeField] private BeltLocator _beltLocator;
         private int _dropTrigger = Animator.StringToHash("Drop");
         private int _grabTrigger = Animator.StringToHash("Grab");
+        private Vector2 _pitchRange = new Vector2(0.9f, 1.1f);
         private Belt _myBelt;
 
         private Vector3 _initialPosition;
@@ -41,8 +42,11 @@ namespace Code.Boxes
                 return;
             
             base.OnPointerDown(eventData);
+
+            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
             _boxAudioSource.clip = _boxPickUp;
             _boxAudioSource.Play();
+
             _boxAnimator.ResetTrigger(_grabTrigger);
             _boxAnimator.SetTrigger(_grabTrigger);
             if (_myBelt != null)
@@ -62,8 +66,11 @@ namespace Code.Boxes
             {
                 return;
             }
+
+            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
             _boxAudioSource.clip = _boxPutDown;
             _boxAudioSource.Play();
+
             _boxAnimator.ResetTrigger(_dropTrigger);
             _boxAnimator.SetTrigger(_dropTrigger);
             TrySetIntoBelt(eventData);

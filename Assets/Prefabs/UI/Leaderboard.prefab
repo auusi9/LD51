@@ -745,8 +745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 8047676566590751498}
-  _hoverEnter: {fileID: 3566210256929909614}
-  _hoverExit: {fileID: 5597634116252815525}
+  _hoverEnter: {fileID: 5597634116252815525}
+  _hoverExit: {fileID: 3566210256929909614}
 --- !u!82 &5597634116252815525
 AudioSource:
   m_ObjectHideFlags: 0
@@ -760,7 +760,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3ed111aad76393145b6b51b6d68a69ac, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -853,10 +853,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e041f92521f098e4ebe8e0d1349e2c98, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3ed111aad76393145b6b51b6d68a69ac, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.4
   Loop: 0
   Mute: 0
   Spatialize: 0

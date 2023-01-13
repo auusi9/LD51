@@ -25,6 +25,7 @@ namespace Code.Boxes
         [SerializeField] private bool _open = true;
         [SerializeField] private Animator _boxAnimator;
         private int _openCloseTrigger = Animator.StringToHash("OpenClose");
+        private Vector2 _pitchRange = new Vector2(0.9f, 1.1f);
 
         public bool IsOpen => _open;
         
@@ -56,6 +57,7 @@ namespace Code.Boxes
 
                 _boxAnimator.ResetTrigger(_openCloseTrigger);
                 _boxAnimator.SetTrigger(_openCloseTrigger);
+                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
                 _boxAudioSource.clip = _closeBoxAudio;
                 _boxAudioSource.Play();
             }
@@ -75,6 +77,7 @@ namespace Code.Boxes
 
                 _boxAnimator.ResetTrigger(_openCloseTrigger);
                 _boxAnimator.SetTrigger(_openCloseTrigger);
+                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
                 _boxAudioSource.clip = _openBoxAudio;
                 _boxAudioSource.Play();
             }

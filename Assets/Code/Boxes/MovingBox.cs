@@ -16,6 +16,7 @@ namespace Code.Boxes
         [SerializeField] private Animator _boxAnimator;
         private int _dropTrigger = Animator.StringToHash("Drop");
         private int _grabTrigger = Animator.StringToHash("Grab");
+        private Vector2 _pitchRange = new Vector2(0.9f, 1.1f);
         public Box Box;
         private Belt _myBelt;
 
@@ -31,8 +32,11 @@ namespace Code.Boxes
                 return;
             
             base.OnPointerDown(eventData);
+
+            _boxAudioSource.pitch = Random.Range(_pitchRange.x, _pitchRange.y);
             _boxAudioSource.clip = _boxPickUp;
             _boxAudioSource.Play();
+
             _boxAnimator.ResetTrigger(_grabTrigger);
             _boxAnimator.SetTrigger(_grabTrigger);
             if (_myBelt != null)
@@ -47,8 +51,11 @@ namespace Code.Boxes
                 return;
             
             base.OnPointerUp(eventData);
+
+            _boxAudioSource.pitch = Random.Range(_pitchRange.x, _pitchRange.y);
             _boxAudioSource.clip = _boxPutDown;
             _boxAudioSource.Play();
+
             _boxAnimator.ResetTrigger(_dropTrigger);
             _boxAnimator.SetTrigger(_dropTrigger);
             if (TrySend(eventData))
