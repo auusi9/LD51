@@ -69,7 +69,7 @@ namespace Code.Orders
                     }
                     break;
                 case RushState.Rush:
-                    if (_orderInterface.QueueLength > _slowDownOrders)
+                    if (_orderInterface.QueueLength > (_slowDownOrders - 1))
                     {
                         _currentState = RushState.Normal;
                         _currentTimeBetweenOrders = _timeBetweenOrders;
