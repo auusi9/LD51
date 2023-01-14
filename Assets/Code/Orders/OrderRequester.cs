@@ -15,7 +15,7 @@ namespace Code.Orders
 
         private float _lastOrder = 0f;
 
-        private float _currentTimeBetweenOrders = 10f;
+        [SerializeField] private float _currentTimeBetweenOrders = 10f;
         private RushState _currentState = RushState.Normal;
 
         private enum RushState
