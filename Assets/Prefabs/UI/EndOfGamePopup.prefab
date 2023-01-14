@@ -91,7 +91,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2043866779688165378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ AudioSource:
   m_GameObject: {fileID: 16701150705519135}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
   m_audioClip: {fileID: 8300000, guid: b452f03695ac0154798692eeaa860a1a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
@@ -875,7 +875,7 @@ AudioSource:
   m_GameObject: {fileID: 729955124307131785}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3ed111aad76393145b6b51b6d68a69ac, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2382,7 +2382,7 @@ AudioSource:
   m_GameObject: {fileID: 2361672153677862841}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3300067365328831241, guid: 8d420dac617c1f145a687a415dad670d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3ed111aad76393145b6b51b6d68a69ac, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
