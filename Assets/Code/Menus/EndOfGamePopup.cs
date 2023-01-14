@@ -19,6 +19,7 @@ namespace Code.Menus
         [SerializeField] private LeaderboardService _leaderboardService;
         [SerializeField] private LeaderboardEndPopup _leaderboardEndPopup;
         [SerializeField] private Animator _disableSubmit;
+        [SerializeField] private ParticleSystem _psUser;
 
         private int _disableTrigger = Animator.StringToHash("Disable");
         private int _score;
@@ -48,6 +49,7 @@ namespace Code.Menus
             _disableSubmit.SetTrigger(_disableTrigger);
             _tmpInputField.interactable = false;
             _leaderboardEndPopup.DisableNewEntry();
+            _psUser.Play();
         }
         
         public void OpenPopup(int score)

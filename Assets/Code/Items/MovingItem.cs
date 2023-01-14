@@ -16,6 +16,7 @@ namespace Code.Items
         [SerializeField] private AudioSource _itemAudioSource;
         [SerializeField] private AudioClip _itemPickUp;
         [SerializeField] private AudioClip _itemPutDown;
+        [SerializeField] private AudioSource _itemRotateAudioSource;
         [SerializeField] private BeltLocator _beltLocator;
         [SerializeField] private GameState _gameState;
 
@@ -83,6 +84,9 @@ namespace Code.Items
             
             if (eventData.button == PointerEventData.InputButton.Right && _isDragging)
             {
+                _itemRotateAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+                _itemRotateAudioSource.Play();
+
                 _item.Rotate();
                 base.OnDrag(eventData);
                 return;
