@@ -10,6 +10,7 @@ namespace Code.Orders
         [SerializeField] private float _timeBetweenOrders = 10f;
         [SerializeField] private float _maxTimeBetweenOrders = 20f;
         [SerializeField] private int _slowDownOrders = 6;
+        [SerializeField] private int _minimumOrdersToGoToRush = 3;
         [SerializeField] private OrderInterface _orderInterface;
         [SerializeField] private GameState _gameState;
 
@@ -59,8 +60,18 @@ namespace Code.Orders
                 case RushState.Normal:
                     if (_orderInterface.QueueLength == 0)
                     {
-                        _currentState = RushState.Rush;
-                        _currentTimeBetweenOrders = _minTimeBetweenOrders;
+                        if (_orderInterface.GameStats.OrdersCreated >= _minimumOrdersToGoToRush)
+                        {
+                            _currentState = RushState.Rush;
+                            _currentTimeBetweenOrders = _minTimeBetweenOrders;
+                        }
+                        else
+                        {
+                            if (_lastOrder + 1 < _currentTimeBetweenOrders)
+                            {
+                                _lastOrder = _currentTimeBetweenOrders - 1;
+                            }
+                        }
                     }
                     else if (_orderInterface.QueueLength > _slowDownOrders)
                     {
