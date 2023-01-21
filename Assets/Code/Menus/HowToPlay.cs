@@ -1,15 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Code.Menus
 {
     public class HowToPlay : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _pages;
+        [SerializeField] private CanvasGroup[] _pages;
+        [SerializeField] private Button _rightButton;
+        [SerializeField] private Button _leftButton;
+        [SerializeField] private float _pageTransitionTime;
 
         private int _currentPage;
 
-        private void Start()
+        private void OnEnable()
         {
+            _currentPage = 0;
             SetPage();
         }
 
@@ -19,7 +26,7 @@ namespace Code.Menus
 
             if (_currentPage > _pages.Length - 1)
             {
-                _currentPage = 0;
+                return;
             }
             SetPage();
         }
@@ -29,7 +36,7 @@ namespace Code.Menus
             _currentPage--;
             if (_currentPage < 0)
             {
-                _currentPage = _pages.Length - 1;
+                return;
             }
             SetPage();
         }
@@ -40,13 +47,47 @@ namespace Code.Menus
             {
                 if (i == _currentPage)
                 {
-                    _pages[i].SetActive(true);
+                    StopAllCoroutines();
+                    StartCoroutine(EnablePage(_pages[i]));
                 }
                 else
                 {
-                    _pages[i].SetActive(false);
+                    _pages[i].alpha = 0f;
                 }
             }
+
+            if (_currentPage == _pages.Length - 1)
+            {
+                _rightButton.interactable = false;
+                _leftButton.interactable = true;
+            }
+            else if(_currentPage == 0)
+            {
+                _rightButton.interactable = true;
+                _leftButton.interactable = false;
+            }
+            else
+            {
+                _rightButton.interactable = true;
+                _leftButton.interactable = true;
+            }
+        }
+
+        private IEnumerator EnablePage(CanvasGroup page)
+        {
+            page.gameObject.SetActive(true);
+            page.alpha = 0f;
+            float time = 0f;
+            while (_pageTransitionTime > time)
+            {
+                float t = time/_pageTransitionTime;
+                t = t * t * (3f - 2f * t);
+                page.alpha = Mathf.Lerp(page.alpha, 1f, t);
+                yield return 0;
+                time += Time.deltaTime;
+            }
+
+            page.alpha = 1f;
         }
     }
 }

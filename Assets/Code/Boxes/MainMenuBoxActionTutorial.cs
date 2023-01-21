@@ -11,7 +11,6 @@ namespace Code.Boxes
         public override void DoAction()
         {
             _tutorial.SetActive(true);
-            GetComponent<MainMenuBox>().Destroy();
             _orderInterface.MainMenuBox();
         }
     }
