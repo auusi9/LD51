@@ -33,11 +33,11 @@ namespace Code.Boxes
         {
             if (_open)
             {
-                SetOpen();
+                SetOpen(false);
             }
             else
             {
-                SetClosed();
+                SetClosed(false);
             }
         }
 
@@ -65,7 +65,7 @@ namespace Code.Boxes
             }
         }
 
-        private void SetOpen()
+        private void SetOpen(bool playSound = true)
         {
             _closeButtonImage.sprite = _closeImage;
             _closedBox.gameObject.SetActive(false);
@@ -80,12 +80,15 @@ namespace Code.Boxes
 
             _boxAnimator.ResetTrigger(_openCloseTrigger);
             _boxAnimator.SetTrigger(_openCloseTrigger);
-            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
-            _boxAudioSource.clip = _openBoxAudio;
-            _boxAudioSource.Play();
+            if (playSound)
+            {
+                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+                _boxAudioSource.clip = _openBoxAudio;
+                _boxAudioSource.Play();
+            }
         }
 
-        private void SetClosed()
+        private void SetClosed(bool playSound = true)
         {
             _closedBox.gameObject.SetActive(true);
             _closedBoxShadow.gameObject.SetActive(true);
@@ -100,9 +103,12 @@ namespace Code.Boxes
 
             _boxAnimator.ResetTrigger(_openCloseTrigger);
             _boxAnimator.SetTrigger(_openCloseTrigger);
-            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
-            _boxAudioSource.clip = _closeBoxAudio;
-            _boxAudioSource.Play();
+            if (playSound)
+            {
+                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+                _boxAudioSource.clip = _closeBoxAudio;
+                _boxAudioSource.Play();
+            }
         }
 
         public bool Fits(Item item, Vector3 position, List<BoxTile> boxTiles, out BoxTile mainTile)

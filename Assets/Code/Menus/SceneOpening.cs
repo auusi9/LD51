@@ -27,6 +27,13 @@ namespace Code.Menus
 
         private void OnEnable()
         {
+            StartCoroutine(StartAnimation());
+        }
+
+        private IEnumerator StartAnimation()
+        {
+            yield return 0;
+            yield return 0;
             _animator.SetTrigger(_inHash);
         }
 
