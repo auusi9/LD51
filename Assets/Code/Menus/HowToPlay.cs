@@ -11,13 +11,33 @@ namespace Code.Menus
         [SerializeField] private Button _rightButton;
         [SerializeField] private Button _leftButton;
         [SerializeField] private float _pageTransitionTime;
+        [SerializeField] private Animator _animator;
 
         private int _currentPage;
+        private int _outTrigger = Animator.StringToHash("Out");
 
         private void OnEnable()
         {
             _currentPage = 0;
             SetPage();
+        }
+
+        public void DisableObject()
+        {
+            _animator.SetTrigger(_outTrigger);
+            StartCoroutine(WaitForAnimationToFinish());
+        }
+        
+        private bool AnimationFinished()
+        {
+            return _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0);
+        }
+        
+        private IEnumerator WaitForAnimationToFinish()
+        {
+            yield return 0;
+            yield return new WaitUntil(AnimationFinished);
+            gameObject.SetActive(false);
         }
 
         public void NextPage()
