@@ -28,7 +28,19 @@ namespace Code.Boxes
         private Vector2 _pitchRange = new Vector2(0.9f, 1.1f);
 
         public bool IsOpen => _open;
-        
+
+        private void Start()
+        {
+            if (_open)
+            {
+                SetOpen();
+            }
+            else
+            {
+                SetClosed();
+            }
+        }
+
         private void OnEnable()
         {
             _closeBoxButton.onClick.AddListener(CloseOpenBox);
@@ -44,43 +56,53 @@ namespace Code.Boxes
             if (_open)
             {
                 _open = false;
-                _closedBox.gameObject.SetActive(true);
-                _closedBoxShadow.gameObject.SetActive(true);
-                _boxOpened.gameObject.SetActive(false);
-                _boxOpenedShadow.gameObject.SetActive(false);
-                _closeButtonImage.sprite = _openImage;
-
-                foreach (var tile in _tiles)
-                {
-                    tile.gameObject.SetActive(false);
-                }
-
-                _boxAnimator.ResetTrigger(_openCloseTrigger);
-                _boxAnimator.SetTrigger(_openCloseTrigger);
-                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
-                _boxAudioSource.clip = _closeBoxAudio;
-                _boxAudioSource.Play();
+                SetClosed();
             }
             else
             {
                 _open = true;
-                _closeButtonImage.sprite = _closeImage;
-                _closedBox.gameObject.SetActive(false);
-                _closedBoxShadow.gameObject.SetActive(false);
-                _boxOpened.gameObject.SetActive(true);
-                _boxOpenedShadow.gameObject.SetActive(true);
-
-                foreach (var tile in _tiles)
-                {
-                    tile.gameObject.SetActive(true);
-                }
-
-                _boxAnimator.ResetTrigger(_openCloseTrigger);
-                _boxAnimator.SetTrigger(_openCloseTrigger);
-                _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
-                _boxAudioSource.clip = _openBoxAudio;
-                _boxAudioSource.Play();
+                SetOpen();
             }
+        }
+
+        private void SetOpen()
+        {
+            _closeButtonImage.sprite = _closeImage;
+            _closedBox.gameObject.SetActive(false);
+            _closedBoxShadow.gameObject.SetActive(false);
+            _boxOpened.gameObject.SetActive(true);
+            _boxOpenedShadow.gameObject.SetActive(true);
+
+            foreach (var tile in _tiles)
+            {
+                tile.gameObject.SetActive(true);
+            }
+
+            _boxAnimator.ResetTrigger(_openCloseTrigger);
+            _boxAnimator.SetTrigger(_openCloseTrigger);
+            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+            _boxAudioSource.clip = _openBoxAudio;
+            _boxAudioSource.Play();
+        }
+
+        private void SetClosed()
+        {
+            _closedBox.gameObject.SetActive(true);
+            _closedBoxShadow.gameObject.SetActive(true);
+            _boxOpened.gameObject.SetActive(false);
+            _boxOpenedShadow.gameObject.SetActive(false);
+            _closeButtonImage.sprite = _openImage;
+
+            foreach (var tile in _tiles)
+            {
+                tile.gameObject.SetActive(false);
+            }
+
+            _boxAnimator.ResetTrigger(_openCloseTrigger);
+            _boxAnimator.SetTrigger(_openCloseTrigger);
+            _boxAudioSource.pitch = UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+            _boxAudioSource.clip = _closeBoxAudio;
+            _boxAudioSource.Play();
         }
 
         public bool Fits(Item item, Vector3 position, List<BoxTile> boxTiles, out BoxTile mainTile)

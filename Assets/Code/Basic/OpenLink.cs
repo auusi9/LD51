@@ -7,21 +7,7 @@ namespace Code.Basic
     {
         public static void Open(string link)
         {
-#if UNITY_EDITOR
-                Application.OpenURL(link);
-#else 
-                OpenLinkJSPlugin(link);
-#endif
-
+            Application.OpenURL(link);
         }
-        public static void OpenLinkJSPlugin(string link) 
-        {
-#if !UNITY_EDITOR
-		openWindow(link);
-#endif
-        }
-
-        [DllImport("__Internal")]
-        private static extern void openWindow(string url);
     }
 }

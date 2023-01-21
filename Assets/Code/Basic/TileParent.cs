@@ -24,7 +24,7 @@ namespace Code.Basic
         private float _yMax;
         private float _yMin;
 
-        private void Start()
+        private void Awake()
         {
             CalculateTilePositions();
         }
